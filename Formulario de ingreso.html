@@ -1,146 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro / Ingreso</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro / Inicio de sesión</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #ffe5ec, #fff5e4);
-      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-    .card {
-      border-radius: 1rem;
+    .container {
       background-color: #fffdfb;
-      border: none;
-    }
-    .btn-success {
-      background-color: #fbb1bd;
-      border: none;
-    }
-    .btn-success:hover {
-      background-color: #f89cab;
-    }
-    .btn-primary {
-      background-color: #fcd5ce;
-      border: none;
-      color: #6c4c4c;
-    }
-    .btn-primary:hover {
-      background-color: #f8b4a0;
-      color: #fff;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
     }
     h2 {
       color: #6c4c4c;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #f0cfcf;
+      font-size: 16px;
+    }
+    button {
+      width: 45%;
+      margin: 10px 5%;
+      padding: 12px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    #btn-signup {
+      background-color: #fbb1bd;
+    }
+    #btn-signup:hover {
+      background-color: #f89cab;
+    }
+    #btn-login {
+      background-color: #fcd5ce;
+      color: #6c4c4c;
+    }
+    #btn-login:hover {
+      background-color: #f8b4a0;
+      color: white;
+    }
+    #auth-error {
+      color: #d9534f;
+      font-size: 14px;
+      margin-top: 10px;
+      min-height: 20px;
     }
   </style>
 </head>
 <body>
-
-<div class="container py-5">
-  <h2 class="text-center mb-4">Crea tu cuenta o inicia sesión</h2>
-  <div class="card p-4 shadow-sm mx-auto" style="max-width: 400px;">
-    <div class="mb-3">
-      <label class="form-label">Correo electrónico</label>
-      <input type="email" id="email" class="form-control" placeholder="tucorreo@ejemplo.com">
+  <div class="container">
+    <h2>Registro / Inicio de sesión</h2>
+    <input type="email" id="email" placeholder="Correo electrónico" />
+    <input type="password" id="password" placeholder="Contraseña (mínimo 6 caracteres)" />
+    <div>
+      <button id="btn-signup">Crear cuenta</button>
+      <button id="btn-login">Ingresar</button>
     </div>
-    <div class="mb-3">
-      <label class="form-label">Contraseña</label>
-      <input type="password" id="password" class="form-control" placeholder="Mínimo 6 caracteres">
-    </div>
-    <div class="d-flex gap-2">
-      <button id="btn-signup" class="btn btn-success w-50">Crear cuenta</button>
-      <button id="btn-login" class="btn btn-primary w-50">Ingresar</button>
-    </div>
-    <div id="auth-error" class="text-danger small mt-2"></div>
+    <div id="auth-error"></div>
   </div>
-</div>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-  import { 
-    getAuth, 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword, 
-    onAuthStateChanged 
-  } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-  import { 
-    getFirestore, 
-    doc, 
-    setDoc, 
-    getDoc, 
-    serverTimestamp, 
-    Timestamp 
-  } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+    import {
+      getFirestore,
+      doc,
+      setDoc,
+      getDoc,
+      serverTimestamp,
+      Timestamp
+    } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDeF0B1wEupn4icVvAbdkhxl8pji53gfuY",
-    authDomain: "premium-34ee0.firebaseapp.com",
-    projectId: "premium-34ee0",
-    storageBucket: "premium-34ee0.firebasestorage.app",
-    messagingSenderId: "707778949824",
-    appId: "1:707778949824:web:7af4e01cba5d5021647325"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyDeF0B1wEupn4icVvAbdkhxl8pji53gfuY",
+      authDomain: "premium-34ee0.firebaseapp.com",
+      projectId: "premium-34ee0",
+      storageBucket: "premium-34ee0.firebasestorage.app",
+      messagingSenderId: "707778949824",
+      appId: "1:707778949824:web:7af4e01cba5d5021647325"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
 
-  function addDaysAsTimestamp(date, days) {
-    const d = new Date(date);
-    d.setDate(d.getDate() + days);
-    return Timestamp.fromDate(d);
-  }
-
-  document.getElementById('btn-signup').addEventListener('click', async () => {
-    const email = document.getElementById('email').value.trim();
-    const pass = document.getElementById('password').value.trim();
-    const err = document.getElementById('auth-error');
-    err.textContent = '';
-    try {
-      const cred = await createUserWithEmailAndPassword(auth, email, pass);
-      await setDoc(doc(db, "users", cred.user.uid), {
-        email,
-        createdAt: serverTimestamp(),
-        trialEnd: addDaysAsTimestamp(new Date(), 7),
-        subscription: { active: false }
-      });
-    } catch (e) {
-      err.textContent = e.message;
+    function addDaysAsTimestamp(date, days) {
+      const d = new Date(date);
+      d.setDate(d.getDate() + days);
+      return Timestamp.fromDate(d);
     }
-  });
 
-  document.getElementById('btn-login').addEventListener('click', async () => {
-    const email = document.getElementById('email').value.trim();
-    const pass = document.getElementById('password').value.trim();
-    const err = document.getElementById('auth-error');
-    err.textContent = '';
-    try {
-      await signInWithEmailAndPassword(auth, email, pass);
-    } catch (e) {
-      err.textContent = e.message;
-    }
-  });
+    const errorDiv = document.getElementById("auth-error");
 
-  onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      const ref = doc(db, "users", user.uid);
-      const snap = await getDoc(ref);
-      if (snap.exists()) {
-        const data = snap.data();
-        const now = new Date();
-        const trialEnd = data.trialEnd.toDate();
-        if (data.subscription?.active) {
-          window.location.href = "index.html";
-        } else if (now < trialEnd) {
-          window.location.href = "index.html";
-        } else {
-          window.location.href = "pago.html";
-        }
+    async function handleSignup() {
+      errorDiv.textContent = "";
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      if (password.length < 6) {
+        errorDiv.textContent = "La contraseña debe tener mínimo 6 caracteres.";
+        return;
+      }
+      try {
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        await setDoc(doc(db, "users", cred.user.uid), {
+          email,
+          createdAt: serverTimestamp(),
+          trialEnd: addDaysAsTimestamp(new Date(), 7),
+          subscription: { active: false }
+        });
+      } catch (e) {
+        errorDiv.textContent = e.message;
       }
     }
-  });
-</script>
+
+    async function handleLogin() {
+      errorDiv.textContent = "";
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+      } catch (e) {
+        errorDiv.textContent = e.message;
+      }
+    }
+
+    document.getElementById("btn-signup").addEventListener("click", handleSignup);
+    document.getElementById("btn-login").addEventListener("click", handleLogin);
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const ref = doc(db, "users", user.uid);
+        const snap = await getDoc(ref);
+        if (snap.exists()) {
+          const data = snap.data();
+          const now = new Date();
+          const trialEnd = data.trialEnd.toDate();
+          if (data.subscription?.active) {
+            window.location.href = "index.html";
+          } else if (now < trialEnd) {
+            window.location.href = "index.html";
+          } else {
+            window.location.href = "pago.html";
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
