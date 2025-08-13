@@ -1,69 +1,104 @@
 body {
-    background-color: #fcfcfc;
-    padding-top: 80px; /* Ajuste para que el contenido no quede oculto por la barra */
+    background: linear-gradient(160deg, #fff5e4, #ffe5ec);
+    padding-top: 100px;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    transition: background 0.5s ease;
 }
 
+/* Navbar */
 .navbar-container {
     max-width: 85%;
-    background-color: #f1d4c0;
-    border-radius: 10px;
+    background: linear-gradient(135deg, #f1d4c0, #fcd5ce);
+    border-radius: 15px;
     padding: 20px 50px;
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    z-index: 1000; /* Para que siempre esté sobre el contenido */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-container:hover {
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
 }
 
 .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 26px;
+    font-weight: 900;
+    color: #961b21;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .navbar-nav .nav-link {
     font-size: 18px;
     padding: 10px 20px;
+    color: #6c4c4c;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    color: #f89cab;
+    transform: scale(1.05);
 }
 
+/* Main content */
 .main-content {
-    background-color: #f1d4c0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f1d4c0, #fff5e4);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.main-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* Titles and subtitles */
 .title {
     color: #961b21;
-    font-family: 'Raleway', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
+    font-size: 50px;
+    font-weight: 900;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    animation: fadeInDown 1s ease;
 }
-
 .subtitle {
     color: #b36b71;
-}
-
-h3 {
-    color: #1c2125;
+    font-size: 22px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
 }
 
 h2 {
     color: #6c757d;
 }
+h3 {
+    color: #1c2125;
+}
 
+/* Cards */
 .card {
-    background-color: #e9ecef;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
+    background: linear-gradient(145deg, #e9ecef, #fffdfb);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .card-title {
     color: #343a40;
+    font-weight: 700;
 }
-
 .card-text {
     color: #495057;
 }
@@ -71,28 +106,50 @@ h2 {
 .card img {
     object-fit: cover;
     height: 270px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.3s ease;
+}
+.card img:hover {
+    transform: scale(1.05);
 }
 
+/* Text highlights */
 strong {
     font-size: 1.1em;
+    color: #961b21;
 }
-
 .objetivo {
     color: #458fdf;
+    font-weight: 600;
 }
-
 .mision {
     color: #28a745;
+    font-weight: 600;
 }
-
 .vision {
     color: #e9862a;
+    font-weight: 600;
 }
 
+/* Footer */
 footer {
-    background-color: #7e7e7e59;
+    background-color: rgba(126, 126, 126, 0.35);
     color: #1d0f0f;
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 15px;
+    margin-top: 30px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
