@@ -1,187 +1,229 @@
-/* ===== Body y tipografía ===== */
-body {
-    background-color: #fde4ec;
-    font-family: 'Poppins', sans-serif;
+/* ===== Estilos generales ===== */
+body, html {
     margin: 0;
     padding: 0;
-    color: #4a154b;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    position: relative;
 }
 
-header {
-    background: linear-gradient(135deg, #f48fb1, #f8bbd0);
-    padding: 25px 15px; /* menos padding */
-    text-align: center;
-    color: #fff;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+/* ===== Video de fondo y overlay ===== */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
 }
 
-header h1 {
-    font-size: 1.5em; /* un tamaño más pequeño */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 245, 228, 0.55); /* Semi-transparente para destacar texto */
+    z-index: -1;
+}
+
+/* ===== Navbar ===== */
+.navbar-container {
+    background-color: #fcd5ce; /* Pastel rosa suave */
+    border-radius: 12px;
+    padding: 15px 30px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 8px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+    color: #961b21 !important;
+    letter-spacing: 1px;
 }
 
-header p {
-    max-width: 650px; /* limita ancho */
-    margin: 6px auto; /* centrado y más compacto */
-    font-size: 0.95em; /* un poquito más pequeño */
-    line-height: 1.4; /* menos alto */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    color: #6c4c4c !important;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
     color: #fff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-}
-
-
-/* ===== Menú de navegación refinado y sticky ===== */
-nav.menu {
-    background: linear-gradient(90deg, #f48fb1, #f8bbd0);
-    padding: 10px 0;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    border-radius: 25px;
-    margin: 20px auto;
-    max-width: 800px;
-
-    /* Menú fijo */
-    position: sticky;
-    top: 10px;
-    z-index: 999;
-}
-
-nav.menu a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: 600;
-    font-size: 0.95em;
-    letter-spacing: 0.5px;
-    transition: background-color 0.3s, transform 0.2s;
-    padding: 8px 12px;
+    background-color: #f89cab;
     border-radius: 8px;
+    padding: 5px 10px;
 }
 
-nav.menu a:hover {
-    background-color: rgba(255,255,255,0.2);
-    transform: scale(1.05);
-}
-
-/* ===== Galería de tarjetas ===== */
-.galeria {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 30px 15px;
-    max-width: 1200px;
+/* ===== Contenido principal ===== */
+.main-content {
+    position: relative;
+    z-index: 1;
+    padding: 120px 15px 50px 15px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.tarjeta {
-    flex: 1 1 260px;
-    max-width: 280px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(244, 143, 177, 0.25);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tarjeta:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(244, 143, 177, 0.35);
-}
-
-.tarjeta img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.descripcion {
-    padding: 18px;
-    color: #6a1b9a;
-    font-size: 0.95em;
-    font-weight: 500;
-    line-height: 1.5;
-}
-
-/* ===== Secciones informativas ===== */
-section.cuidados {
-    background-color: rgba(255, 227, 237, 0.95);
-    margin: 25px auto;
-    padding: 22px 25px;
-    width: 90%;
-    max-width: 900px;
-    border-radius: 20px;
-    border-left: 6px solid #c7597e;
-    box-shadow: 0 6px 18px rgba(244, 143, 177, 0.2);
-}
-
-section.cuidados h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #d63384;
-    margin-bottom: 15px;
+/* ===== Títulos ===== */
+.title {
+    font-size: 4rem;
+    font-weight: 800;
     text-align: center;
+    color: #961b21;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
 
-section.cuidados h3 {
-    color: #a3155b;
-    margin-top: 12px;
+/* ===== Subtítulos ===== */
+.subtitle {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #000;;
+    margin-bottom: 50px;
+    font-weight: 600;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.25);
 }
 
-section.cuidados p {
-    font-size: 0.95rem;
-    line-height: 1.5;
+/* ===== Secciones ===== */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #6c4c4c;
+    text-align: center;
+    margin-bottom: 30px;
+     text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
+}
+
+/* ===== Historia ===== */
+section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #1c2125;
+    text-align: justify;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Equipo: Cards equilibradas ===== */
+.team-row {
+    display: flex;
+    align-items: stretch;
+    gap: 25px;
+    margin-bottom: 40px;
+    background-color: rgba(255, 245, 228, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.team-row:hover {
+    transform: translateY(-5px);
+}
+
+.team-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.team-img-container {
+    flex: 0 0 250px;
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.team-text {
+    flex: 1;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-text h3 {
+    font-size: 1.8rem;
+    color: #961b21;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.team-text p {
+    font-size: 1.2rem;
+    color: #1c2125;
+    line-height: 1.8;
     text-align: justify;
 }
 
-/* ===== Botones ===== */
-.btn {
-    display: inline-block;
-    margin: 20px auto;
-    padding: 12px 28px;
-    background: linear-gradient(90deg, #f48fb1, #e996b2);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
+/* ===== Objetivo, Misión y Visión ===== */
+.objetivo {
+    color: #458fdf;
     font-weight: 600;
-    font-size: 0.95em;
-    transition: background 0.3s, transform 0.3s;
-    box-shadow: 0 5px 12px rgba(244, 143, 177, 0.25);
 }
 
-.btn:hover {
-    background: linear-gradient(90deg, #e996b2, #f48fb1);
-    transform: scale(1.05);
+.mision {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.vision {
+    color: #e9862a;
+    font-weight: 600;
+}
+
+/* ===== Responsividad para móviles ===== */
+@media (max-width: 768px) {
+    .team-row {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .team-img-container {
+        flex: 0 0 70%;
+        margin: 0 auto 15px auto;
+    }
+    .team-text {
+        padding: 0;
+    }
+    .team-text h3 {
+        font-size: 1.5rem;
+    }
+    .team-text p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    .title {
+        font-size: 2.2rem;
+    }
+    .subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== Fade-in animation ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ===== Footer ===== */
 footer {
-    background-color: #f8bbd0;
     text-align: center;
-    padding: 12px;
-    color: #fff;
-    font-size: 0.9em;
-    letter-spacing: 0.4px;
-    box-shadow: 0 -3px 8px rgba(0,0,0,0.05);
-    font-weight: 500;
+    padding: 20px;
+    color: #1d0f0f;
+    background-color: rgba(126,126,126,0.35);
+    margin-top: 50px;
+    font-size: 0.95rem;
 }
-
-/* ===== Animación Fade-in ===== */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
