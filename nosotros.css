@@ -66,15 +66,29 @@ body, html {
     margin: 0 auto;
 }
 
-/* ===== Títulos en card transparente solo con CSS ===== */
+/* ===== Títulos ===== */
 .title, .subtitle {
-    display: inline-block;          /* Para que actúe como una card */
+    display: inline-block;          
     background-color: rgba(255, 245, 228, 0.6); /* Fondo transparente */
     padding: 20px 30px;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     margin: 0 auto 30px auto;
+    font-weight: 700;
+}
+
+.title {
+    font-size: 3rem;
+    color: #961b21;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    color: #b36b71;
+    font-weight: 600;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
 }
 
 /* ===== Secciones ===== */
@@ -84,18 +98,6 @@ body, html {
     text-align: center;
     margin-bottom: 30px;
     text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
-    /* Card transparente para títulos de sección */
-    display: inline-block;
-    background-color: rgba(255, 245, 228, 0.7);
-    padding: 15px 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-}
-
-.section-title:hover {
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transform: translateY(-2px);
 }
 
 /* ===== Historia ===== */
@@ -156,17 +158,6 @@ section p {
     color: #961b21;
     margin-bottom: 15px;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-    display: inline-block;
-    background-color: rgba(255, 245, 228, 0.7);
-    padding: 10px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-}
-
-.team-text h3:hover {
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transform: translateY(-2px);
 }
 
 .team-text p {
@@ -217,11 +208,6 @@ section p {
     }
     .subtitle {
         font-size: 1.2rem;
-        padding: 12px 18px;
-    }
-    .section-title {
-        font-size: 1.6rem;
-        padding: 12px 18px;
     }
 }
 
@@ -246,4 +232,3 @@ footer {
     margin-top: 50px;
     font-size: 0.95rem;
 }
-
