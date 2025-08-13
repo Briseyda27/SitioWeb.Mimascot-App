@@ -103,14 +103,13 @@ section p {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* ===== Equipo ===== */
+/* ===== Equipo: Cards equilibradas ===== */
 .team-row {
     display: flex;
-    align-items: center;
+    align-items: stretch; /* Hace que foto y texto tengan la misma altura */
     gap: 25px;
     margin-bottom: 40px;
-    flex-wrap: wrap;
-    background-color: rgba(255, 245, 228, 0.9);
+    background-color: rgba(255, 245, 228, 0.95); /* Fondo sutil */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
@@ -126,53 +125,61 @@ section p {
 }
 
 .team-img-container {
-    flex: 0 0 200px;
+    flex: 0 0 250px; /* Mantiene ancho fijo para la foto */
 }
 
 .team-img {
     width: 100%;
-    border-radius: 12px;
+    height: 100%; /* Ocupa toda la altura del bloque */
     object-fit: cover;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .team-text {
     flex: 1;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el texto */
 }
 
 .team-text h3 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: #961b21;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 .team-text p {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: #1c2125;
-    line-height: 1.6;
+    line-height: 1.8;
+    text-align: justify;
 }
 
-/* ===== Objetivo, Misión y Visión ===== */
-.objetivo {
-    color: #458fdf;
-    font-weight: 600;
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .team-row {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .team-img-container {
+        flex: 0 0 70%;
+        margin: 0 auto 15px auto;
+    }
+    .team-text {
+        padding: 0;
+    }
+    .team-text h3 {
+        font-size: 1.5rem;
+    }
+    .team-text p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
 }
 
-.mision {
-    color: #28a745;
-    font-weight: 600;
-}
-
-.vision {
-    color: #e9862a;
-    font-weight: 600;
-}
-
-section p strong {
-    display: inline-block;
-    margin-bottom: 10px;
-}
 
 /* ===== Fade-in animation ===== */
 .fade-in {
@@ -219,3 +226,4 @@ footer {
         font-size: 1.2rem;
     }
 }
+
