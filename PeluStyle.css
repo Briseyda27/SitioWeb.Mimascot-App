@@ -1,70 +1,98 @@
+/* ===== Estilos generales ===== */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #fff8f0;
     margin: 0;
     padding: 0;
 }
 
-/* Menú fijado */
+/* ===== Menú fijo ===== */
 .navbar {
     background-color: #f2c7d1;
     position: fixed; /* Fija el menú en la parte superior */
     top: 0;
     left: 0;
-    width: 100%; /* Hace que el menú ocupe todo el ancho */
-    z-index: 1000; /* Asegura que el menú se quede encima de otros elementos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-    padding: 10px 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* Ajuste de los enlaces en el menú */
 .navbar a {
     color: #5a3e3b !important;
     text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 5px;
 }
 
-/* Espacio extra para el contenido después del menú fijo */
+.navbar a:hover {
+    background-color: #ffb3b3;
+    color: white;
+}
+
+/* ===== Ajuste para contenido debajo del menú ===== */
 body {
-    padding-top: 60px; /* Ajusta este valor según el alto de tu menú */
+    padding-top: 70px; /* Ajusta según el alto del menú */
 }
 
-/* Encabezado */
+/* ===== Encabezado ===== */
 header {
     background-color: #ffb3b3;
     color: #5a3e3b;
     text-align: center;
-    padding: 40px;
+    padding: 50px 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* Estilos de las tarjetas de servicio */
+/* ===== Tarjetas de servicio ===== */
 .service-card {
-    margin-bottom: 20px;
+    background-color: #ffeaea;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 15px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background-color: #f2e0e0;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .service-card img {
+    width: 100%;
     max-height: 200px;
     object-fit: cover;
 }
 
 .service-card h3 {
     color: #d68d8d;
+    margin: 15px 10px 5px 10px;
 }
 
 .service-card p {
     color: #5a3e3b;
-}
-
-.service-card:hover {
-    background-color: #f2e0e0;
-    cursor: pointer;
+    margin: 0 10px 15px 10px;
 }
 
 .service-card .btn {
+    display: block;
+    margin: 10px auto 15px auto;
     background-color: #ffb3b3;
     border: none;
     color: #5a3e3b;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .service-card .btn:hover {
@@ -72,28 +100,43 @@ header {
     color: white;
 }
 
-/* Sección de reserva */
+/* ===== Sección de reserva ===== */
 .booking-section {
     background-color: #ffe0e0;
-    padding: 40px;
-    border-radius: 8px;
-    display: none;
+    padding: 40px 20px;
+    border-radius: 12px;
+    display: none; /* Puedes activarlo con JS */
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .booking-section h2 {
     color: #ff6f61;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Sección de contacto */
+/* ===== Sección de contacto ===== */
 .contact-section {
     background-color: #f2c7d1;
-    padding: 40px;
+    padding: 40px 20px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Pie de página */
+/* ===== Pie de página ===== */
 footer {
-    background-color:  #7e7e7e59;
-    color: white;
-    padding: 20px 0;
+    background: linear-gradient(135deg, #f2c7d1, #ffb3b3);
+    color: #5a3e3b;
+    padding: 25px 0;
     text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
