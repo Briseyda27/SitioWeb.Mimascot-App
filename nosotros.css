@@ -8,32 +8,32 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Header modernizado ===== */
 header {
     background: linear-gradient(135deg, #f48fb1, #f8bbd0);
-    padding: 40px 20px;
+    padding: 25px 15px; /* menos padding */
     text-align: center;
     color: #fff;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 header h1 {
-    font-size: 1.8em;
-    font-weight: 800;
-    margin-bottom: 12px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    font-size: 1.5em; /* un tamaño más pequeño */
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
 }
 
 header p {
-    max-width: 700px;
-    margin: 10px auto;
-    font-size: 1em;
-    line-height: 1.5;
+    max-width: 650px; /* limita ancho */
+    margin: 6px auto; /* centrado y más compacto */
+    font-size: 0.95em; /* un poquito más pequeño */
+    line-height: 1.4; /* menos alto */
     color: #fff;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
+
 
 /* ===== Menú de navegación refinado y sticky ===== */
 nav.menu {
@@ -184,3 +184,4 @@ footer {
         transform: translateY(0);
     }
 }
+
