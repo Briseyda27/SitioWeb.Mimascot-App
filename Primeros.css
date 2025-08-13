@@ -1,10 +1,11 @@
 /* ===== Body y tipografía ===== */
 body {
     background-color: #fde4ec;
-    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     color: #4a154b;
+    line-height: 1.6;
 }
 
 /* ===== Header ===== */
@@ -13,9 +14,11 @@ header {
     padding: 25px 20px;
     text-align: center;
     color: #fff;
-    font-size: 2em;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 2.2em;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    border-bottom: 4px solid rgba(255,255,255,0.3);
 }
 
 /* ===== Menú de navegación ===== */
@@ -23,7 +26,8 @@ nav.menu {
     background-color: #f48fb1;
     padding: 12px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    border-radius: 0 0 12px 12px;
 }
 
 nav.menu a {
@@ -31,7 +35,7 @@ nav.menu a {
     text-decoration: none;
     margin: 0 15px;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1.15em;
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -43,27 +47,27 @@ nav.menu a:hover {
 /* ===== Galería de tarjetas ===== */
 .galeria {
     display: flex;
-    flex-wrap: wrap;       /* Permite que las cards pasen a la siguiente fila */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    padding: 30px 20px;
-    max-width: 1200px;     /* Limita el ancho total de la galería */
-    margin: 0 auto;        /* Centra la galería */
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tarjeta {
-    flex: 1 1 45%;          /* Cada card ocupa aproximadamente 45% del ancho */
-    max-width: 300px;       /* No se expande demasiado en pantallas grandes */
+    flex: 1 1 45%;
+    max-width: 300px;
     background-color: #fff;
     border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(244, 143, 177, 0.2);
+    box-shadow: 0 10px 25px rgba(244, 143, 177, 0.25);
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjeta:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 15px 25px rgba(244, 143, 177, 0.3);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(244, 143, 177, 0.35);
 }
 
 .tarjeta img {
@@ -76,20 +80,21 @@ nav.menu a:hover {
 .descripcion {
     padding: 18px;
     color: #6a1b9a;
-    font-size: 1em;
-    line-height: 1.5em;
+    font-size: 1.05em;
+    font-weight: 500;
+    line-height: 1.6em;
 }
 
 /* ===== Secciones informativas ===== */
 section.cuidados {
-    background-color: #ffe3ed;
+    background-color: rgba(255, 227, 237, 0.9);
     margin: 25px auto;
     padding: 25px;
     width: 90%;
     max-width: 850px;
     border-radius: 15px;
     border-left: 6px solid #c7597e;
-    box-shadow: 0 5px 15px rgba(244, 143, 177, 0.2);
+    box-shadow: 0 5px 18px rgba(244, 143, 177, 0.25);
 }
 
 /* ===== Botones ===== */
@@ -101,15 +106,16 @@ section.cuidados {
     color: #fff;
     text-decoration: none;
     border-radius: 30px;
-    font-weight: 600;
-    font-size: 1em;
+    font-weight: 700;
+    font-size: 1.05em;
     transition: background 0.3s, transform 0.3s;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(244, 143, 177, 0.3);
 }
 
 .btn:hover {
     background: linear-gradient(90deg, #e996b2, #f48fb1);
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
 /* ===== Footer ===== */
@@ -120,5 +126,20 @@ footer {
     color: #fff;
     font-size: 0.95em;
     letter-spacing: 0.5px;
-    box-shadow: 0 -4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+    font-weight: 500;
+}
+
+/* ===== Animación Fade-in ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
