@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Registro / Inicio de sesión</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -52,15 +50,13 @@
       color: #6c4c4c;
       box-shadow: 0 4px 25px rgba(0,0,0,0.15);
       animation: fadeIn 0.8s ease;
+      display: none; /* Oculto al cargar */
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    h2 {
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
+    h2 { margin-bottom: 20px; font-weight: 600; }
     input {
       width: 90%;
       padding: 12px;
@@ -72,9 +68,7 @@
       background-color: #fffdfb;
       transition: box-shadow 0.2s ease;
     }
-    input:focus {
-      box-shadow: 0 0 8px rgba(248, 156, 171, 0.5);
-    }
+    input:focus { box-shadow: 0 0 8px rgba(248, 156, 171, 0.5); }
     button {
       width: 45%;
       margin: 10px 5%;
@@ -94,17 +88,12 @@
       background-color: #fbb1bd;
       color: white;
     }
-    #btn-signup:hover {
-      background-color: #f89cab;
-    }
+    #btn-signup:hover { background-color: #f89cab; }
     #btn-login {
       background-color: #fcd5ce;
       color: #6c4c4c;
     }
-    #btn-login:hover {
-      background-color: #f8b4a0;
-      color: white;
-    }
+    #btn-login:hover { background-color: #f8b4a0; color: white; }
     #auth-error {
       color: #d9534f;
       font-size: 14px;
@@ -115,14 +104,13 @@
 </head>
 <body>
 
-   <video autoplay muted loop>
+  <video autoplay muted loop>
     <source src="Video.mp4" type="video/mp4">
     Tu navegador no soporta videos en HTML5.
   </video>
   <div class="overlay"></div>
 
-  
-  <div class="container">
+  <div class="container" id="formContainer">
     <h2>Registro / Inicio de sesión</h2>
     <input type="email" id="email" placeholder="Correo electrónico" />
     <input type="password" id="password" placeholder="Contraseña (mínimo 6 caracteres)" />
@@ -162,14 +150,14 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
+    const formContainer = document.getElementById("formContainer");
+    const errorDiv = document.getElementById("auth-error");
 
     function addDaysAsTimestamp(date, days) {
       const d = new Date(date);
       d.setDate(d.getDate() + days);
       return Timestamp.fromDate(d);
     }
-
-    const errorDiv = document.getElementById("auth-error");
 
     async function handleSignup() {
       errorDiv.textContent = "";
@@ -214,6 +202,7 @@
           const data = snap.data();
           const now = new Date();
           const trialEnd = data.trialEnd.toDate();
+
           if (data.subscription?.active) {
             window.location.href = "nosotros.html";
           } else if (now < trialEnd) {
@@ -222,12 +211,11 @@
             window.location.href = "pago.html";
           }
         }
+      } else {
+        // Usuario no logueado → mostramos el formulario
+        formContainer.style.display = "block";
       }
     });
   </script>
 </body>
 </html>
-
-
-
-
