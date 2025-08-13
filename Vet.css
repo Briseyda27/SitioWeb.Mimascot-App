@@ -1,76 +1,180 @@
+/* ===== Estilos Generales ===== */
 body {
-    background-color: #f8f9fa; /* Color de fondo de la página */
-    margin: 0; /* Elimina el margen por defecto del body */
-    padding: 0; /* Elimina el padding por defecto del body */
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fde4ec, #f8bbd0);
+    margin: 0;
+    padding-top: 70px; /* espacio para menú fijo */
+    color: #4a154b;
+    line-height: 1.6;
 }
 
-/* Menú fijado */
+/* ===== Menú Fijo ===== */
 .navbar {
-    background-color: #ea9ab2; /* Color de fondo del menú */
-    position: fixed; /* Fija el menú en la parte superior de la página */
-    top: 0; /* Posiciona el menú en la parte superior */
-    left: 0; /* Posiciona el menú a la izquierda */
-    width: 100%; /* El menú ocupa todo el ancho de la página */
-    z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra opcional para darle profundidad al menú */
+    background: linear-gradient(90deg, #f48fb1, #f06292);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 12px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
 }
 
-/* Espacio extra para el contenido después del menú fijo */
-body {
-    padding-top: 60px; /* Ajusta este valor si el menú tiene un tamaño diferente */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar-brand, .nav-link {
-    color: #fff !important; /* Color del texto de la marca y los enlaces del menú, forzando el color blanco */
+.navbar li {
+    display: inline;
 }
 
-/* Estilos para las tarjetas */
+.navbar a {
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+/* ===== Tarjetas ===== */
 .card {
-    margin-bottom: 20px; /* Espacio inferior entre las tarjetas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas */
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(244, 143, 177, 0.25);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(244, 143, 177, 0.35);
 }
 
 .card img {
-    object-fit: cover; /* Asegura que la imagen cubra el área de la tarjeta */
-    height: 270px; /* Altura fija para las imágenes de las tarjetas */
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
 }
 
-/* Botón para la cita */
+/* ===== Botones ===== */
+.btn, .btn-appointment, .btn-confirm {
+    display: inline-block;
+    text-align: center;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 15px rgba(244,143,177,0.3);
+}
+
+/* Botón general */
+.btn {
+    background: linear-gradient(90deg, #f48fb1, #f06292);
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #f06292, #f48fb1);
+    transform: scale(1.08);
+}
+
+/* Botón de cita */
 .btn-appointment {
-    margin-top: 10px; /* Espacio superior para el botón de cita */
-    background-color: #007bff; /* Color de fondo del botón de cita */
-    color: white; /* Color del texto del botón de cita */
+    background: linear-gradient(90deg, #ff9a76, #ff6f61);
 }
 
-/* Formulario de cita (inicialmente oculto) */
-.appointment-form {
-    display: none; /* Oculta el formulario de cita por defecto */
-    margin-top: 20px; /* Espacio superior para el formulario cuando se muestre */
+.btn-appointment:hover {
+    background: linear-gradient(90deg, #ff6f61, #ff9a76);
+    transform: scale(1.08);
 }
 
 /* Botón de confirmación */
 .btn-confirm {
-    margin-top: 10px; /* Espacio superior para el botón de confirmación */
-    background-color: #28a745; /* Color de fondo del botón de confirmación */
-    color: white; /* Color del texto del botón de confirmación */
+    background: linear-gradient(90deg, #28a745, #20c997);
 }
 
-/* Botones generales */
-.btn {
-    display: inline-block; /* Permite que el botón se comporte como un bloque en línea */
-    padding: 10px 20px; /* Espaciado interno del botón */
-    background-color: #f3aad7; /* Color de fondo general de los botones */
-    color: white; /* Color del texto de los botones */
-    text-align: center; /* Centra el texto dentro del botón */
-    text-decoration: none; /* Elimina el subrayado del texto */
-    border-radius: 5px; /* Bordes redondeados para los botones */
-    font-size: 16px; /* Tamaño de fuente del texto en los botones */
+.btn-confirm:hover {
+    background: linear-gradient(90deg, #20c997, #28a745);
+    transform: scale(1.08);
 }
 
+/* ===== Formulario ===== */
+.appointment-form {
+    display: none;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(244,143,177,0.25);
+    margin-top: 20px;
+}
+
+/* ===== Footer ===== */
 footer {
-    background-color:  #7e7e7e59; /* Color de fondo del pie de página */
-    color: #dae9b8(29, 15, 15); /* Color del texto del pie de página (parece un error, ya que debería ser un color hexadecimal o rgb) */
-    text-align: center; /* Centra el texto en el pie de página */
-    padding: 10px; /* Espaciado interno del pie de página */
-    margin-top: 20px; /* Espacio superior para el pie de página */
+    background: linear-gradient(135deg, #f48fb1, #f06292);
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+/* ===== Animaciones ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card img {
+        height: 200px;
+    }
 }
