@@ -21,28 +21,32 @@ header {
     border-bottom: 4px solid rgba(255,255,255,0.3);
 }
 
-/* ===== Menú de navegación ===== */
+/* ===== Menú de navegación refinado ===== */
 nav.menu {
-    background-color: #f48fb1;
-    padding: 12px 0;
+    background: linear-gradient(90deg, #f48fb1, #f8bbd0);
+    padding: 8px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-bottom: 2px solid rgba(255,255,255,0.2);
 }
 
 nav.menu a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: 600;
-    font-size: 1.15em;
-    transition: color 0.3s, transform 0.3s;
+    margin: 0 12px;
+    font-weight: 500;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    transition: color 0.3s, transform 0.2s;
+    padding: 6px 10px;
+    border-radius: 5px;
 }
 
 nav.menu a:hover {
-    color: #fff0f5;
-    transform: scale(1.1);
+    background-color: rgba(255,255,255,0.15);
+    transform: scale(1.05);
 }
+
 
 /* ===== Galería de tarjetas ===== */
 .galeria {
@@ -143,3 +147,4 @@ footer {
         transform: translateY(0);
     }
 }
+
