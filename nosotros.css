@@ -68,7 +68,7 @@ body, html {
 
 /* ===== Títulos ===== */
 .title {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 800;
     text-align: center;
     color: #961b21;
@@ -227,4 +227,5 @@ footer {
     margin-top: 50px;
     font-size: 0.95rem;
 }
+
 
