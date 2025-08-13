@@ -75,14 +75,17 @@ body, html {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
 
+/* ===== Subtítulos ===== */
 .subtitle {
     font-size: 1.6rem;
     text-align: center;
     color: #b36b71;
     margin-bottom: 50px;
+    font-weight: 600;
     text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
 }
 
+/* ===== Secciones ===== */
 .section-title {
     font-size: 2.2rem;
     color: #6c4c4c;
@@ -106,10 +109,10 @@ section p {
 /* ===== Equipo: Cards equilibradas ===== */
 .team-row {
     display: flex;
-    align-items: stretch; /* Hace que foto y texto tengan la misma altura */
+    align-items: stretch;
     gap: 25px;
     margin-bottom: 40px;
-    background-color: rgba(255, 245, 228, 0.95); /* Fondo sutil */
+    background-color: rgba(255, 245, 228, 0.95);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
@@ -125,12 +128,12 @@ section p {
 }
 
 .team-img-container {
-    flex: 0 0 250px; /* Mantiene ancho fijo para la foto */
+    flex: 0 0 250px;
 }
 
 .team-img {
     width: 100%;
-    height: 100%; /* Ocupa toda la altura del bloque */
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -141,7 +144,7 @@ section p {
     padding: 15px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente el texto */
+    justify-content: center;
 }
 
 .team-text h3 {
@@ -158,7 +161,23 @@ section p {
     text-align: justify;
 }
 
-/* Responsividad para móviles */
+/* ===== Objetivo, Misión y Visión ===== */
+.objetivo {
+    color: #458fdf;
+    font-weight: 600;
+}
+
+.mision {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.vision {
+    color: #e9862a;
+    font-weight: 600;
+}
+
+/* ===== Responsividad para móviles ===== */
 @media (max-width: 768px) {
     .team-row {
         flex-direction: column !important;
@@ -178,8 +197,13 @@ section p {
         font-size: 1.1rem;
         line-height: 1.6;
     }
+    .title {
+        font-size: 2.2rem;
+    }
+    .subtitle {
+        font-size: 1.2rem;
+    }
 }
-
 
 /* ===== Fade-in animation ===== */
 .fade-in {
@@ -202,28 +226,3 @@ footer {
     margin-top: 50px;
     font-size: 0.95rem;
 }
-
-/* ===== Responsividad ===== */
-@media (max-width: 768px) {
-    .team-row {
-        flex-direction: column !important;
-        text-align: center;
-    }
-    .team-img-container {
-        flex: 0 0 70%;
-        margin: 0 auto 15px auto;
-    }
-    .team-text h3 {
-        font-size: 1.4rem;
-    }
-    .team-text p {
-        font-size: 1rem;
-    }
-    .title {
-        font-size: 2.2rem;
-    }
-    .subtitle {
-        font-size: 1.2rem;
-    }
-}
-
