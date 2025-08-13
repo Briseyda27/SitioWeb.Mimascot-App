@@ -66,35 +66,15 @@ body, html {
     margin: 0 auto;
 }
 
-/* ===== Títulos ===== */
-.title {
-    font-size: 3rem;
-    font-weight: 800;
-    text-align: center;
-    color: #961b21;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-}
-
-/* ===== Subtítulos ===== */
-.subtitle {
-    font-size: 1.6rem;
-    text-align: center;
-    color: #b36b71;
-    margin-bottom: 50px;
-    font-weight: 600;
-    text-shadow: 1px 1px 6px rgba(0,0,0,0.25);
-    /* Card transparente para subtítulos */
-    display: inline-block;
-    background-color: rgba(255, 245, 228, 0.7);
-    padding: 15px 25px;
+/* ===== Títulos en card transparente solo con CSS ===== */
+.title, .subtitle {
+    display: inline-block;          /* Para que actúe como una card */
+    background-color: rgba(255, 245, 228, 0.6); /* Fondo transparente */
+    padding: 20px 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-}
-
-.subtitle:hover {
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-    transform: translateY(-2px);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin: 0 auto 30px auto;
 }
 
 /* ===== Secciones ===== */
@@ -266,3 +246,4 @@ footer {
     margin-top: 50px;
     font-size: 0.95rem;
 }
+
