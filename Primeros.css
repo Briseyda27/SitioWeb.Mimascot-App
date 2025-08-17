@@ -35,6 +35,7 @@ nav.menu {
     position: relative;
 }
 
+/* Enlaces normales */
 nav.menu a {
     color: white;
     text-decoration: none;
@@ -214,7 +215,8 @@ footer {
         background-color: #f27d95;
     }
 
-    #menu-toggle:checked + .menu-links {
+    /* ¡LA CLAVE! Seleccionamos cualquier hermano después del checkbox */
+    #menu-toggle:checked ~ .menu-links {
         display: flex;
     }
 
