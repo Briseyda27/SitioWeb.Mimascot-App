@@ -78,7 +78,7 @@ body, html {
   text-align: center; 
   color: #961b21; 
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3); 
-  margin-top: 60px;   /* Separa del navbar */
+  margin-top: 45px;   /* Separa del navbar */
 }
 
 /* ===== Subtítulos ===== */ 
@@ -227,3 +227,4 @@ footer {
   margin-top: 50px; 
   font-size: 0.95rem; 
 }
+
