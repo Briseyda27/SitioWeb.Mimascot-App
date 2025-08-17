@@ -111,13 +111,13 @@ body {
     transform: scale(1.08);
 }
 
-/* Botón de cita - verde */
+/* Botón de cita - verde (forzado) */
 .btn-appointment {
-    background: linear-gradient(90deg, #6fcf97, #27ae60);
+    background: linear-gradient(90deg, #6fcf97, #27ae60) !important;
 }
 
 .btn-appointment:hover {
-    background: linear-gradient(90deg, #27ae60, #6fcf97);
+    background: linear-gradient(90deg, #27ae60, #6fcf97) !important;
     transform: scale(1.08);
 }
 
