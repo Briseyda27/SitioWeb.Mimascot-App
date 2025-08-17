@@ -111,13 +111,13 @@ body {
     transform: scale(1.08);
 }
 
-/* Botón de cita */
+/* Botón de cita - piel pastel */
 .btn-appointment {
-    background: linear-gradient(90deg, #ff9a76, #ff6f61);
+    background: linear-gradient(90deg, #fcd5b4, #fbc9a9);
 }
 
 .btn-appointment:hover {
-    background: linear-gradient(90deg, #ff6f61, #ff9a76);
+    background: linear-gradient(90deg, #fbc9a9, #fcd5b4);
     transform: scale(1.08);
 }
 
