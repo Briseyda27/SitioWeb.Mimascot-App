@@ -1,4 +1,6 @@
-/* ===== Estilos generales ===== */
+
+
+  /* ===== Estilos generales ===== */
 body, html {
     margin: 0;
     padding: 0;
@@ -24,25 +26,23 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 245, 228, 0.55); /* Semi-transparente */
+    background: rgba(255, 245, 228, 0.55);
     z-index: -1;
 }
 
 /* ===== Navbar ===== */
 .navbar-container {
     background-color: #fcd5ce;
-    border-radius: 0 0 40px 40px; 
+    border-radius: 0 0 40px 40px;
+    padding: 15px 0;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;  
+    width: 100%;         /* ancho completo */
+    max-width: 100%;     /* evita limitación por bootstrap container */
     z-index: 10;
-
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    height: 65px; /* altura fija para evitar huecos */
+    text-align: center;
 }
 
 .navbar-brand {
@@ -50,21 +50,12 @@ body, html {
     font-weight: 700;
     color: #961b21 !important;
     letter-spacing: 1px;
-    margin-right: 20px;
-}
-
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 .navbar-nav .nav-link {
     font-size: 1.1rem;
     color: #6c4c4c !important;
-    margin: 0 8px;
-    padding: 8px 12px;
+    margin: 0 10px;
     transition: 0.3s;
 }
 
@@ -72,35 +63,44 @@ body, html {
     color: #fff;
     background-color: #f89cab;
     border-radius: 8px;
+    padding: 5px 10px;
 }
 
 /* ===== Contenido principal ===== */
 .main-content {
     position: relative;
     z-index: 1;
-    padding: 180px 15px 50px 15px; 
+    padding: 0;       /* quitar padding superior para pantalla completa */
     max-width: 1100px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* altura completa de pantalla para hero */
 }
 
 /* ===== Títulos ===== */
 .title {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 800;
     text-align: center;
     color: #961b21;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    width: 100vw;
+    max-width: 100%;
+    margin: 0;
 }
 
-/* ===== Subtítulos ===== */
 .subtitle {
     display: block;
-    width: 100vw; 
+    width: 100vw;
+    max-width: 100%;
     background-color: rgba(255, 245, 228, 0.7);
-    padding: 10px 0;
-    font-size: 1.3rem; 
+    padding: 15px 0;
+    font-size: 1.5rem;
     text-align: center;
-    margin: 0; 
+    margin: 0;
     font-weight: 600;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -127,7 +127,7 @@ section p {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* ===== Equipo ===== */
+/* ===== Equipo: Cards equilibradas ===== */
 .team-row {
     display: flex;
     align-items: stretch;
@@ -198,35 +198,48 @@ section p {
     font-weight: 600;
 }
 
-/* ===== Responsividad ===== */
+/* ===== Responsividad para móviles ===== */
 @media (max-width: 768px) {
+    .main-content {
+        min-height: auto; /* permite ajustar altura en móvil */
+        padding-top: 100px; /* espacio para navbar */
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+
     .team-row {
         flex-direction: column !important;
         text-align: center;
     }
+
     .team-img-container {
         flex: 0 0 70%;
         margin: 0 auto 15px auto;
     }
+
     .team-text {
         padding: 0;
     }
+
     .team-text h3 {
         font-size: 1.5rem;
     }
+
     .team-text p {
         font-size: 1.1rem;
         line-height: 1.6;
     }
-    .title {
-        font-size: 2.2rem;
-    }
-    .subtitle {
-        font-size: 1.1rem; 
-    }
+
     .background-video {
-        object-fit: contain; 
-        background: #000; 
+        object-fit: cover;
+        background: #000;
     }
 }
 
