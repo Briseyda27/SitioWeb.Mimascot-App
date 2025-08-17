@@ -6,6 +6,7 @@ body, html {
     color: #000;
     background-color: #fde4ec;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* ===== Header ===== */
@@ -14,6 +15,10 @@ header {
     padding: 20px;
     text-align: center;
     color: #000;
+    position: fixed;  /* fijo */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 header h1 {
@@ -31,24 +36,32 @@ header p {
 nav.menu {
     background-color: #f48fb1;
     padding: 10px;
-    text-align: center;
-    position: relative;
+    position: fixed;   /* FIJO en pantalla */
+    top: 70px;         /* debajo del header */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Enlaces normales */
-nav.menu a {
+nav.menu .menu-links {
+    display: flex;
+    gap: 15px;
+}
+
+nav.menu .menu-links a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
     font-weight: bold;
     padding: 8px 12px;
     border-radius: 5px;
     transition: 0.3s;
-    font-size: 1.1rem;
 }
 
-nav.menu a:hover {
-    text-decoration: none;
+nav.menu .menu-links a:hover {
     background-color: #f8bbd0;
     color: #000;
 }
@@ -63,6 +76,10 @@ nav.menu a:hover {
     border-radius: 50%;
     cursor: pointer;
     transition: 0.3s ease;
+    position: fixed;
+    top: 85px;       /* debajo del header */
+    right: 20px;
+    z-index: 1100;
 }
 
 .menu-icon:hover {
@@ -78,7 +95,7 @@ nav.menu a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 1.5rem;
-    padding: 20px;
+    padding: 150px 20px 20px; /* padding top para header fijo */
 }
 
 .tarjeta {
@@ -188,47 +205,38 @@ footer {
     }
 }
 
-/* ===== Menú hamburguesa solo con CSS ===== */
+/* ===== Menú hamburguesa responsive ===== */
 @media (max-width: 768px) {
-    .menu-links {
-        display: none;
+    nav.menu .menu-links {
+        display: none;           /* oculto inicialmente */
         flex-direction: column;
-        text-align: center;
-        margin-top: 10px;
+        position: fixed;         /* fijo */
+        top: 120px;              /* debajo del header */
+        right: 0;
+        width: 200px;
+        height: calc(100vh - 120px);
+        background-color: #f48fb1;
+        padding-top: 20px;
+        gap: 10px;
+        z-index: 999;
     }
 
     .menu-icon {
-        display: inline-block;
-        font-size: 2rem;
-        color: white;
-        padding: 0.5rem;
-        background-color: #f497ad;
-        border-radius: 50%;
-        cursor: pointer;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        transition: 0.3s ease;
+        display: inline-block;   /* visible en móvil */
     }
 
-    .menu-icon:hover {
-        background-color: #f27d95;
-    }
-
-    /* ¡LA CLAVE! Seleccionamos cualquier hermano después del checkbox */
+    /* Mostrar menú al activar checkbox */
     #menu-toggle:checked ~ .menu-links {
         display: flex;
     }
 
     .menu-links a {
         display: block;
-        margin: 10px 0;
         font-size: 1.2rem;
+        padding: 10px;
         color: white;
         text-decoration: none;
-        padding: 8px 12px;
         border-radius: 5px;
-        transition: 0.3s;
     }
 
     .menu-links a:hover {
