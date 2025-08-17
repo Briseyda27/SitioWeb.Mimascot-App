@@ -49,7 +49,7 @@ nav.menu {
     padding: 12px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+       justify-content: flex-start;
 }
 
 nav.menu .logo {
@@ -215,3 +215,4 @@ footer {
     .tarjeta { flex: 1 1 90%; }
     header h1 { font-size: 1.6rem; }
 }
+
