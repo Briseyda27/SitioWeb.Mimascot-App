@@ -4,13 +4,13 @@ body, html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     color: #333;
-    background: #fdfdfd;
+    background: #fffaf9; /* fondo pastel muy suave */
 }
 
 /* ===== Header ===== */
 header {
-    background: #4CAF50;
-    color: white;
+    background: #f7c6d9; /* rosado pastel */
+    color: #4a2c2a; /* marrón suave para contraste */
     text-align: center;
     padding: 2rem 1rem;
 }
@@ -23,11 +23,12 @@ header h1 {
 header p {
     margin-top: 0.5rem;
     font-size: 1rem;
+    color: #5a3d3b;
 }
 
 /* ===== Navbar ===== */
 .menu {
-    background: #333;
+    background: #f2b8c6; /* rosado pastel más fuerte */
     position: relative;
 }
 
@@ -41,8 +42,8 @@ header p {
 
 .menu-links a {
     text-decoration: none;
-    color: white;
-    background: #4CAF50;
+    color: #4a2c2a;
+    background: #fddde6; /* rosa claro */
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
     transition: 0.3s;
@@ -50,16 +51,16 @@ header p {
 }
 
 .menu-links a:hover {
-    background: #45a049;
+    background: #f7c6d9; /* hover pastel */
 }
 
 /* Botón hamburguesa */
 .menu-icon {
     display: none;
     font-size: 2rem;
-    color: white;
+    color: #fff;
     padding: 0.6rem;
-    background: #4CAF50;
+    background: #f497ad; /* rosado pastel fuerte */
     border-radius: 50%;
     margin: 0.5rem;
     cursor: pointer;
@@ -67,7 +68,7 @@ header p {
 }
 
 .menu-icon:hover {
-    background: #45a049;
+    background: #f27d95;
 }
 
 #menu-toggle {
@@ -79,7 +80,7 @@ header p {
     .menu-links {
         display: none;
         flex-direction: column;
-        background: #333;
+        background: #f2b8c6;
         padding: 1rem;
     }
 
@@ -124,17 +125,23 @@ header p {
 .descripcion {
     padding: 1rem;
     flex: 1;
+    text-align: center;
 }
 
 .descripcion h3 {
     margin: 0 0 0.5rem;
     font-size: 1.3rem;
-    color: #4CAF50;
+    color: #f27d95; /* título rosado llamativo */
+    font-weight: bold;
 }
 
+/* Texto de cuidados */
 .descripcion p {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #a64d6b; /* rosado/piel más oscuro para resaltar */
+    font-weight: 500; /* semi-grueso */
+    text-align: justify; /* para lectura ordenada */
 }
 
 /* ===== Ajustes responsivos ===== */
