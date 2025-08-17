@@ -48,15 +48,8 @@ nav.menu {
     background: linear-gradient(90deg, #f48fb1, #f06292);
     padding: 12px 20px;
     display: flex;
+    justify-content: center; /* 🔥 centra el menú */
     align-items: center;
-       justify-content: flex-start;
-}
-
-nav.menu .logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 1px;
 }
 
 /* Ocultar checkbox */
@@ -75,25 +68,25 @@ nav.menu .logo {
 /* Links menú */
 .menu-links {
     display: flex;
-    gap: 15px;
+    gap: 25px; /* más espacio entre links */
 }
 .menu-links a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95em;
-    padding: 6px 10px;
-    border-radius: 6px;
+    font-size: 1em;
+    padding: 8px 14px;
+    border-radius: 20px;
     transition: all 0.3s ease;
 }
 .menu-links a:hover {
-    background-color: rgba(255,255,255,0.15);
-    transform: scale(1.05);
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.1);
 }
 
 /* ===== Responsive navbar ===== */
 @media (max-width: 768px) {
-    .menu-icon { display: block; }
+    .menu-icon { display: block; position: absolute; left: 20px; }
     .menu-links {
         display: none;
         position: absolute;
@@ -121,35 +114,49 @@ nav.menu .logo {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    padding: 25px 15px;
+    gap: 30px;
+    padding: 30px 15px;
     max-width: 1200px;
     margin: 0 auto;
 }
 .tarjeta {
-    flex: 1 1 45%;
+    flex: 1 1 250px;
     max-width: 300px;
-    background-color: #fff;
+    background: rgba(255,255,255,0.85); /* efecto glass */
+    backdrop-filter: blur(10px);
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(244, 143, 177, 0.25);
+    box-shadow: 0 10px 25px rgba(244, 143, 177, 0.3);
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 2px solid rgba(244,143,177,0.3);
 }
 .tarjeta:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 16px 30px rgba(244, 143, 177, 0.35);
+    transform: translateY(-12px) scale(1.07);
+    box-shadow: 0 15px 35px rgba(240, 98, 146, 0.4);
+    border-color: #f06292;
 }
 .tarjeta img {
     width: 100%;
-    height: 180px;
+    height: 190px;
     object-fit: cover;
+    border-bottom: 3px solid #f48fb1;
+    transition: transform 0.4s ease;
+}
+.tarjeta:hover img {
+    transform: scale(1.08);
 }
 .descripcion {
-    padding: 18px;
+    padding: 20px;
     color: #6a1b9a;
     font-size: 0.95em;
     font-weight: 500;
     line-height: 1.5em;
+    text-align: justify;
+}
+.descripcion h3 {
+    font-size: 1.2rem;
+    color: #d63384;
+    margin-bottom: 10px;
 }
 
 /* ===== Secciones informativas ===== */
