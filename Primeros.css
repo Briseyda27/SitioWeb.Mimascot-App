@@ -1,4 +1,4 @@
- /* ===== Estilos generales ===== */
+  /* ===== Estilos generales ===== */
 body, html {
     margin: 0;
     padding: 0;
@@ -35,6 +35,7 @@ nav.menu {
     position: relative;
 }
 
+/* Ajuste letra un poco más grande */
 nav.menu a {
     color: white;
     text-decoration: none;
@@ -43,6 +44,7 @@ nav.menu a {
     padding: 8px 12px;
     border-radius: 5px;
     transition: 0.3s;
+    font-size: 1.1rem;
 }
 
 nav.menu a:hover {
@@ -51,7 +53,7 @@ nav.menu a:hover {
     color: #000;
 }
 
-/* ===== Botón hamburguesa (responsivo) ===== */
+/* ===== Botón hamburguesa (responsivo CSS puro) ===== */
 .menu-icon {
     display: none;
     font-size: 2rem;
@@ -69,18 +71,6 @@ nav.menu a:hover {
 
 #menu-toggle {
     display: none;
-}
-
-/* ===== Responsive menú ===== */
-@media (max-width: 768px) {
-    nav.menu a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .menu-icon {
-        display: inline-block;
-    }
 }
 
 /* ===== Galería de cards (principales) ===== */
@@ -178,7 +168,7 @@ footer {
     font-size: 0.9em;
 }
 
-/* ===== Responsivo ===== */
+/* ===== Responsivo general ===== */
 @media (max-width: 1024px) {
     .galeria {
         grid-template-columns: repeat(2, 1fr);
@@ -195,5 +185,24 @@ footer {
 
     .tarjeta img {
         height: 180px;
+    }
+}
+
+/* ===== Menú hamburguesa solo con CSS ===== */
+@media (max-width: 768px) {
+    nav.menu a {
+        display: none; /* ocultamos enlaces por defecto */
+        margin: 10px 0;
+    }
+
+    #menu-toggle:checked + nav.menu a {
+        display: block; /* se muestran al activar el checkbox */
+    }
+
+    .menu-icon {
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
     }
 }
