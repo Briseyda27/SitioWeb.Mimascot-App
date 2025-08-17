@@ -1,9 +1,9 @@
-  /* ===== Estilos generales ===== */
+/* ===== Estilos generales ===== */
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    color: #000;           /* texto negro */
+    color: #000;
     background-color: #fde4ec;
     box-sizing: border-box;
 }
@@ -35,7 +35,6 @@ nav.menu {
     position: relative;
 }
 
-/* Ajuste letra un poco más grande */
 nav.menu a {
     color: white;
     text-decoration: none;
@@ -53,7 +52,7 @@ nav.menu a:hover {
     color: #000;
 }
 
-/* ===== Botón hamburguesa (responsivo CSS puro) ===== */
+/* ===== Botón hamburguesa ===== */
 .menu-icon {
     display: none;
     font-size: 2rem;
@@ -73,7 +72,7 @@ nav.menu a:hover {
     display: none;
 }
 
-/* ===== Galería de cards (principales) ===== */
+/* ===== Galería de cards ===== */
 .galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -133,8 +132,8 @@ nav.menu a:hover {
 }
 
 .cuidados p {
-    margin: 0 0 10px 0;  /* espacio pequeño entre párrafos */
-    line-height: 1.4;    /* más compacto */
+    margin: 0 0 10px 0;
+    line-height: 1.4;
     color: #000;
     text-align: justify;
 }
@@ -190,19 +189,48 @@ footer {
 
 /* ===== Menú hamburguesa solo con CSS ===== */
 @media (max-width: 768px) {
-    nav.menu a {
-        display: none; /* ocultamos enlaces por defecto */
-        margin: 10px 0;
-    }
-
-    #menu-toggle:checked + nav.menu a {
-        display: block; /* se muestran al activar el checkbox */
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 10px;
     }
 
     .menu-icon {
         display: inline-block;
+        font-size: 2rem;
+        color: white;
+        padding: 0.5rem;
+        background-color: #f497ad;
+        border-radius: 50%;
+        cursor: pointer;
         position: absolute;
         top: 15px;
         right: 20px;
+        transition: 0.3s ease;
+    }
+
+    .menu-icon:hover {
+        background-color: #f27d95;
+    }
+
+    #menu-toggle:checked + .menu-links {
+        display: flex;
+    }
+
+    .menu-links a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .menu-links a:hover {
+        background-color: #f8bbd0;
+        color: #000;
     }
 }
