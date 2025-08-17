@@ -15,17 +15,20 @@
       justify-content: center;
       align-items: center;
     }
-    /* Video de fondo */
+    /* 🎥 Video de fondo */
     video {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
       object-fit: cover;
+      transform: translate(-50%, -50%);
       z-index: -2;
     }
-    /* Capa de color pastel encima del video */
+    /* 🌈 Capa de color pastel encima del video */
     .overlay {
       position: fixed;
       top: 0;
@@ -38,7 +41,7 @@
       );
       z-index: -1;
     }
-    /* Tarjeta del formulario */
+    /* 📝 Tarjeta del formulario */
     .container {
       background: rgba(255, 253, 251, 0.7);
       backdrop-filter: blur(12px);
@@ -100,16 +103,31 @@
       margin-top: 10px;
       min-height: 20px;
     }
+
+    /* 📱 Ajustes responsivos para móviles */
+    @media (max-width: 768px) {
+      video {
+        object-fit: cover;
+        min-width: 100%;
+        min-height: 100%;
+      }
+      .container {
+        max-width: 95%;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <video autoplay muted loop>
+  <!-- 🎥 Video de fondo -->
+  <video autoplay muted loop playsinline>
     <source src="Video.mp4" type="video/mp4">
     Tu navegador no soporta videos en HTML5.
   </video>
   <div class="overlay"></div>
 
+  <!-- 📝 Formulario de Auth -->
   <div class="container" id="formContainer">
     <h2>Registro / Inicio de sesión</h2>
     <input type="email" id="email" placeholder="Correo electrónico" />
@@ -138,11 +156,12 @@
       Timestamp
     } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 
+    // 🔑 Configuración de Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyDeF0B1wEupn4icVvAbdkhxl8pji53gfuY",
       authDomain: "premium-34ee0.firebaseapp.com",
       projectId: "premium-34ee0",
-      storageBucket: "premium-34ee0.firebasestorage.app",
+      storageBucket: "premium-34ee0.appspot.com", // ✅ corregido
       messagingSenderId: "707778949824",
       appId: "1:707778949824:web:7af4e01cba5d5021647325"
     };
@@ -159,6 +178,7 @@
       return Timestamp.fromDate(d);
     }
 
+    // 🆕 Registro de usuario
     async function handleSignup() {
       errorDiv.textContent = "";
       const email = document.getElementById("email").value.trim();
@@ -176,24 +196,55 @@
           subscription: { active: false }
         });
       } catch (e) {
-        errorDiv.textContent = e.message;
+        showAuthError(e);
       }
     }
 
+    // 🔑 Inicio de sesión
     async function handleLogin() {
       errorDiv.textContent = "";
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value.trim();
+
+      if (auth.currentUser) {
+        console.log("Ya hay sesión iniciada:", auth.currentUser.email);
+        return;
+      }
+
       try {
         await signInWithEmailAndPassword(auth, email, password);
       } catch (e) {
-        errorDiv.textContent = e.message;
+        showAuthError(e);
+      }
+    }
+
+    // ⚠️ Mensajes de error más claros
+    function showAuthError(e) {
+      switch (e.code) {
+        case "auth/user-not-found":
+          errorDiv.textContent = "No existe una cuenta con este correo.";
+          break;
+        case "auth/wrong-password":
+          errorDiv.textContent = "La contraseña no es correcta.";
+          break;
+        case "auth/invalid-email":
+          errorDiv.textContent = "El correo no es válido.";
+          break;
+        case "auth/invalid-credential":
+          errorDiv.textContent = "Credenciales inválidas. Intenta iniciar sesión de nuevo.";
+          break;
+        case "auth/email-already-in-use":
+          errorDiv.textContent = "Este correo ya está registrado.";
+          break;
+        default:
+          errorDiv.textContent = "Error: " + e.message;
       }
     }
 
     document.getElementById("btn-signup").addEventListener("click", handleSignup);
     document.getElementById("btn-login").addEventListener("click", handleLogin);
 
+    // 👀 Observa cambios de sesión
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const ref = doc(db, "users", user.uid);
