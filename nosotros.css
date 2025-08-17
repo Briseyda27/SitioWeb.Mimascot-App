@@ -15,7 +15,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* mantiene proporciones */
+    object-fit: cover; /* Ajusta el video sin deformar */
     z-index: -2;
 }
 
@@ -29,7 +29,7 @@ body, html {
     z-index: -1;
 }
 
-/* ===== Navbar fijo ===== */
+/* ===== Navbar ===== */
 .navbar-container {
     background-color: #fcd5ce;
     border-radius: 12px;
@@ -37,9 +37,8 @@ body, html {
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 10;
 }
 
 .navbar-brand {
@@ -67,7 +66,7 @@ body, html {
 .main-content {
     position: relative;
     z-index: 1;
-    padding: 180px 15px 50px 15px; /* mayor espacio para evitar que navbar tape */
+    padding: 150px 15px 50px 15px; /* padding-top suficiente para que no tape el navbar */
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -79,7 +78,6 @@ body, html {
     text-align: center;
     color: #961b21;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
 }
 
 .subtitle {
@@ -172,7 +170,7 @@ section p {
 .mision   { color: #28a745; font-weight: 600; }
 .vision   { color: #e9862a; font-weight: 600; }
 
-/* ===== Animación ===== */
+/* ===== Fade-in animation ===== */
 .fade-in {
     opacity: 0;
     transform: translateY(50px);
@@ -220,20 +218,12 @@ footer {
     }
 
     .title {
-        font-size: 2.5rem;
-        margin-top: 30px;
+        font-size: 2.2rem;
     }
 
     .subtitle {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
-    .main-content {
-        padding: 200px 15px 40px 15px; /* más espacio arriba */
-    }
-
-    .background-video {
-        object-fit: contain; /* no se corta en móvil */
-        background: #000;
-    }
-}
+    /* Ajuste de "Visita nuestros servicios" */
+    .section-titl
