@@ -6,8 +6,8 @@ body, html { margin: 0; padding: 0; font-family: 'Arial', sans-serif; color: #33
 /* Semi-transparente para destacar texto */ z-index: -1; } /* 
 ===== Navbar ===== */
 .navbar-container { background-color: #fcd5ce; /* Pastel rosa suave */
-                   border-radius: 12px; padding: 15px 30px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); } 
-.navbar-brand { font-size: 1.8rem; font-weight: 700; color: #961b21 !important; letter-spacing: 1px; }
+                   border-radius: 12px; padding: 25px 30px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); } 
+.navbar-brand { font-size: 1.5rem; font-weight: 700; color: #961b21 !important; letter-spacing: 1px; }
 .navbar-nav .nav-link { font-size: 1.1rem; color: #6c4c4c !important; margin: 0 10px; transition: 0.3s; } 
 .navbar-nav .nav-link:hover { color: #fff; background-color: #f89cab; border-radius: 8px; padding: 5px 10px; }
 /* ===== Contenido principal ===== */ 
@@ -42,3 +42,4 @@ section p { font-size: 1.1rem; line-height: 1.7; color: #1c2125; text-align: jus
 .fade-in.show { opacity: 1; transform: translateY(0); } 
 /* ===== Footer ===== */ 
 footer { text-align: center; padding: 20px; color: #1d0f0f; background-color: rgba(126,126,126,0.35); margin-top: 50px; font-size: 0.95rem; }
+
