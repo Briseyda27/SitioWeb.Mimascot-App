@@ -14,7 +14,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* cubre toda la pantalla */
+    object-fit: cover;
     z-index: -2;
 }
 
@@ -24,19 +24,23 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(255, 245, 228, 0.55); /* Semi-transparente para destacar texto */
     background: rgba(255, 245, 228, 0.55);
     z-index: -1;
 }
 
-/* ===== Navbar recto ===== */
+/* ===== Navbar ===== */
 .navbar-container {
+    background-color: #fcd5ce; /* Pastel rosa suave */
     background-color: #fcd5ce;
-    border-radius: 0; /* sin esquinas redondeadas */
-    padding: 15px 0;
+    border-radius: 12px;
+    padding: 15px 30px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    position: fixed;   /* Fijo arriba */
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 100%;
-    text-align: center;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -60,41 +64,34 @@ body, html {
     padding: 5px 10px;
 }
 
-/* ===== Contenido principal (hero) ===== */
+/* ===== Contenido principal ===== */
 .main-content {
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* ocupa toda la pantalla */
-    padding-top: 120px; /* espacio suficiente para navbar en PC */
+    padding: 120px 15px 50px 15px;
     max-width: 1100px;
     margin: 0 auto;
-    text-align: center;
+    margin-top: 100px; /* ⬅ espacio extra para que no lo tape el navbar */
 }
 
 /* ===== Títulos ===== */
 .title {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 800;
+    text-align: center;
     color: #961b21;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    margin: 0 10px;
-    width: 100%;
 }
 
+/* ===== Subtítulos ===== */
 .subtitle {
-    display: block;
-    width: 100%;
-    background-color: rgba(255, 245, 228, 0.7);
-    padding: 10px 0;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     text-align: center;
-    margin: 15px 0 0 0;
+    color: #000;;
+    color: #000;
+    margin-bottom: 50px;
     font-weight: 600;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.25);
 }
 
 /* ===== Secciones ===== */
@@ -104,9 +101,11 @@ body, html {
     color: #6c4c4c;
     text-align: center;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+     text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
 }
 
+/* ===== Historia ===== */
 section p {
     font-size: 1.1rem;
     line-height: 1.7;
@@ -126,7 +125,7 @@ section p {
     margin-bottom: 40px;
     background-color: rgba(255, 245, 228, 0.95);
     padding: 20px;
-    border-radius: 0; /* sin bordes redondeados */
+    border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     transition: transform 0.3s;
 }
@@ -188,6 +187,9 @@ section p {
     color: #e9862a;
     font-weight: 600;
 }
+.objetivo { color: #458fdf; font-weight: 600; }
+.mision   { color: #28a745; font-weight: 600; }
+.vision   { color: #e9862a; font-weight: 600; }
 
 /* ===== Responsividad para móviles ===== */
 @media (max-width: 768px) {
@@ -204,6 +206,17 @@ section p {
     }
     .team-text h3 {
         font-size: 1.5rem;
+    .team-text { padding: 0; }
+    .team-text h3 { font-size: 1.5rem; }
+    .team-text p { font-size: 1.1rem; line-height: 1.6; }
+
+    .title { font-size: 2.2rem; margin-top: 20px; }
+    .subtitle { font-size: 1.2rem; }
+    
+    /* Ajustar video en pantallas pequeñas */
+    .background-video {
+        height: 100%;
+        object-fit: cover;
     }
     .team-text p {
         font-size: 1.1rem;
@@ -213,14 +226,10 @@ section p {
         font-size: 2.2rem;
     }
     .subtitle {
-        font-size: 1.1rem;
-    }
-    .background-video {
-        object-fit: cover;
-        background: #000;
-    }
+        font-size: 1.2rem;
+
     .main-content {
-        padding-top: 100px; /* suficiente espacio para navbar en móvil */
+        padding-top: 140px; /* extra espacio en móviles */
     }
 }
 
