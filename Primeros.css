@@ -4,13 +4,13 @@ body, html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     color: #333;
-    background: #fffaf9; /* fondo pastel muy suave */
+    background: #fffaf9; /* fondo suave */
 }
 
 /* ===== Header ===== */
 header {
     background: #f7c6d9; /* rosado pastel */
-    color: #4a2c2a; /* marrón suave para contraste */
+    color: #4a2c2a; /* contraste suave */
     text-align: center;
     padding: 2rem 1rem;
 }
@@ -51,7 +51,7 @@ header p {
 }
 
 .menu-links a:hover {
-    background: #f7c6d9; /* hover pastel */
+    background: #f7c6d9;
 }
 
 /* Botón hamburguesa */
@@ -60,7 +60,7 @@ header p {
     font-size: 2rem;
     color: #fff;
     padding: 0.6rem;
-    background: #f497ad; /* rosado pastel fuerte */
+    background: #f497ad;
     border-radius: 50%;
     margin: 0.5rem;
     cursor: pointer;
@@ -90,20 +90,20 @@ header p {
 
     .menu-icon {
         display: inline-block;
-        font-size: 2.2rem; /* más grande */
+        font-size: 2.2rem;
     }
 }
 
 /* ===== Galería de tarjetas ===== */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+    grid-template-columns: repeat(3, 1fr); /* 3 arriba desktop */
     gap: 1.5rem;
     padding: 2rem;
 }
 
 .tarjeta {
-    background: #fff;
+    background: #fff; /* fondo de la card */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -131,29 +131,29 @@ header p {
 .descripcion h3 {
     margin: 0 0 0.5rem;
     font-size: 1.3rem;
-    color: #f27d95; /* título rosado llamativo */
+    color: #f27d95; /* título rosado pastel */
     font-weight: bold;
 }
 
-/* Texto de cuidados */
+/* Texto de cuidados o pie de card */
 .descripcion p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #a64d6b; /* rosado/piel más oscuro para resaltar */
     font-weight: 500; /* semi-grueso */
-    text-align: justify; /* para lectura ordenada */
+    text-align: justify;
+    color: inherit; /* respeta colores originales de tu página */
 }
 
 /* ===== Ajustes responsivos ===== */
 @media (max-width: 1024px) {
     .galeria {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas tablet */
     }
 }
 
 @media (max-width: 600px) {
     .galeria {
-        grid-template-columns: 1fr; /* 1 columna en móviles */
+        grid-template-columns: 1fr; /* 1 columna móvil */
     }
 
     .tarjeta img {
