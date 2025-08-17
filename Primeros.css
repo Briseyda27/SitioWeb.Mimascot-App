@@ -19,6 +19,7 @@ header {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     animation: gradientShift 6s ease infinite;
     border-radius: 0 0 20px 20px;
+    background-size: 200% 200%;
 }
 
 header h1 {
@@ -33,14 +34,10 @@ header p {
     margin: 8px 0;
 }
 
-/* Animación de degradado del header */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-header {
-    background-size: 200% 200%;
 }
 
 /* ===== Menú fijo y moderno ===== */
@@ -49,43 +46,74 @@ nav.menu {
     top: 0;
     z-index: 1000;
     background: linear-gradient(90deg, #f48fb1, #f06292);
-    padding: 10px 0;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-nav.menu a {
+nav.menu .logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Ocultar checkbox */
+#menu-toggle { display: none; }
+
+/* Icono hamburguesa */
+.menu-icon {
+    display: none;
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.menu-icon:hover { transform: scale(1.1); }
+
+/* Links menú */
+.menu-links {
+    display: flex;
+    gap: 15px;
+}
+.menu-links a {
     color: #fff;
     text-decoration: none;
-    margin: 0 12px;
     font-weight: 600;
     font-size: 0.95em;
-    letter-spacing: 0.5px;
     padding: 6px 10px;
     border-radius: 6px;
     transition: all 0.3s ease;
-    position: relative;
 }
-
-nav.menu a::after {
-    content: '';
-    display: block;
-    height: 2px;
-    width: 0;
-    background: #fff;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-nav.menu a:hover::after {
-    width: 100%;
-}
-
-nav.menu a:hover {
+.menu-links a:hover {
     background-color: rgba(255,255,255,0.15);
     transform: scale(1.05);
+}
+
+/* ===== Responsive navbar ===== */
+@media (max-width: 768px) {
+    .menu-icon { display: block; }
+    .menu-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #f48fb1, #f06292);
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        gap: 12px;
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        animation: slideDown 0.4s ease;
+    }
+    #menu-toggle:checked ~ .menu-links { display: flex; }
+}
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== Galería de tarjetas ===== */
@@ -98,7 +126,6 @@ nav.menu a:hover {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .tarjeta {
     flex: 1 1 45%;
     max-width: 300px;
@@ -108,18 +135,15 @@ nav.menu a:hover {
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-
 .tarjeta:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 16px 30px rgba(244, 143, 177, 0.35);
 }
-
 .tarjeta img {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
-
 .descripcion {
     padding: 18px;
     color: #6a1b9a;
@@ -140,7 +164,6 @@ section.emergencias {
     border-left: 6px solid #d63384;
     box-shadow: 0 6px 18px rgba(244, 143, 177, 0.25);
 }
-
 section.cuidados h2, 
 section.emergencias h2 {
     font-size: 1.5rem;
@@ -148,7 +171,6 @@ section.emergencias h2 {
     color: #d63384;
     margin-bottom: 12px;
 }
-
 section.cuidados p, 
 section.emergencias p {
     font-size: 0.95rem;
@@ -170,7 +192,6 @@ section.emergencias p {
     transition: all 0.4s;
     box-shadow: 0 5px 12px rgba(244, 143, 177, 0.25);
 }
-
 .btn:hover {
     background: linear-gradient(90deg, #f06292, #f48fb1);
     transform: scale(1.08);
@@ -189,26 +210,8 @@ footer {
     border-radius: 10px 10px 0 0;
 }
 
-/* ===== Animación Fade-in ===== */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===== Responsive para móviles ===== */
+/* ===== Responsive tarjetas ===== */
 @media (max-width: 768px) {
-    .tarjeta {
-        flex: 1 1 90%;
-    }
-    header h1 {
-        font-size: 1.6rem;
-    }
+    .tarjeta { flex: 1 1 90%; }
+    header h1 { font-size: 1.6rem; }
 }
