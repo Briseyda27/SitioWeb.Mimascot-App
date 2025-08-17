@@ -97,7 +97,7 @@ header p {
 /* ===== Primera sección de cards ===== */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 arriba desktop */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas desktop */
     gap: 1.5rem;
     padding: 2rem;
 }
@@ -135,29 +135,29 @@ header p {
     font-weight: bold;
 }
 
-/* Texto de pie de card (respetando colores originales) */
 .descripcion p {
     font-size: 1rem;
     line-height: 1.6;
-    font-weight: 500; /* semi-grueso */
+    font-weight: 500;
     text-align: justify;
-    color: inherit; /* respeta color original de cada card */
+    color: inherit;
 }
 
-/* ===== Segunda sección: cards de cuidados individuales ===== */
+/* ===== Segunda sección: cards alargadas ===== */
 .cuidados {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 arriba desktop */
-    gap: 1.5rem;
+    grid-template-columns: 1fr; /* 1 columna por defecto */
+    gap: 1.8rem;
     padding: 2rem;
 }
 
 .cuidados .tarjeta-cuidado {
-    background: #fff; /* o color original de la card */
+    display: flex;
+    flex-direction: row; /* horizontal */
+    background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
-    padding: 1rem;
     transition: transform 0.3s ease;
 }
 
@@ -165,35 +165,58 @@ header p {
     transform: translateY(-6px);
 }
 
+.cuidados .tarjeta-cuidado img {
+    width: 35%; /* imagen horizontal */
+    object-fit: cover;
+    height: auto;
+}
+
+.cuidados .tarjeta-cuidado .contenido-cuidado {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .cuidados .tarjeta-cuidado h4 {
     margin: 0 0 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    color: #f27d95; /* título rosado pastel */
-    text-align: center;
+    color: #f27d95;
+    text-align: left;
 }
 
 .cuidados .tarjeta-cuidado p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    font-weight: 500; /* semi-grueso */
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
     text-align: justify;
-    color: inherit; /* mantiene color original de tu card */
+    color: #4a2c2a;
 }
 
 /* ===== Ajustes responsivos ===== */
 @media (max-width: 1024px) {
-    .galeria, .cuidados {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas tablet */
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cuidados .tarjeta-cuidado {
+        flex-direction: column;
+    }
+
+    .cuidados .tarjeta-cuidado img {
+        width: 100%;
+        height: 200px;
     }
 }
 
 @media (max-width: 600px) {
     .galeria, .cuidados {
-        grid-template-columns: 1fr; /* 1 columna móvil */
+        grid-template-columns: 1fr;
     }
 
-    .tarjeta img {
+    .tarjeta img,
+    .cuidados .tarjeta-cuidado img {
         height: 180px;
     }
 }
