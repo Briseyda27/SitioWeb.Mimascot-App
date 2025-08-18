@@ -40,7 +40,9 @@ nav.menu .menu-links {
     display: flex;
     flex-wrap: wrap; /* enlaces bajan si no caben */
     gap: 5px; /* espacio entre botones */
-    justify-content: flex-end;
+     justify-content: space-between;
+     padding-right: 10px; /* agrega espacio a la derecha */
+    box-sizing: border-box; /* evita overflow */
 }
 
 nav.menu .menu-links a {
@@ -191,9 +193,12 @@ footer {
 
 /* ===== Menú hamburguesa responsive en pantallas muy pequeñas ===== */
 @media (max-width: 500px) {
-    .menu-icon {
-        display: inline-block;
+    nav.menu .menu-links {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
+}
 
     nav.menu .menu-links {
         flex-direction: column;
@@ -222,4 +227,5 @@ footer {
         padding: 8px 10px;
     }
 }
+
 
