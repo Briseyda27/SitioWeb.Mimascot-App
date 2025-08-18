@@ -1,140 +1,251 @@
-/* ===== Estilos Generales ===== */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff8f0;
+/* ===== Estilos generales ===== */
+body, html {
     margin: 0;
-    padding-top: 70px; /* espacio para menú fijo */
-    color: #5a3e3b;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #000;
+    background-color: #fde4ec;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding-top: 140px; /* espacio para header + menú fijo */
 }
 
-/* ===== Menú Fijo ===== */
-.navbar {
-    background: linear-gradient(135deg, #f2c7d1, #ffb3b3); /* degradado rosa */
+/* ===== Header ===== */
+header {
+    background-color: #f8bbd0;
+    padding: 20px;
+    text-align: center;
+    color: #000;
     position: fixed;
     top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* ===== Navbar ===== */
+nav.menu {
+    background-color: #f48fb1;
+    padding: 10px;
+    position: fixed;
+    top: 70px; /* debajo del header */
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    padding: 12px 0;
     display: flex;
-    justify-content: center;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+    justify-content: center; /* centrado */
+    align-items: center;
 }
 
-.navbar a {
-    color: #5a3e3b;
+/* Enlaces normales */
+nav.menu .menu-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* centrado de los enlaces */
+}
+
+nav.menu .menu-links a {
+    color: white;
     text-decoration: none;
-    padding: 10px 20px;
-    font-weight: 600;
+    font-weight: bold;
+    padding: 8px 12px;
     border-radius: 5px;
-    transition: color 0.3s, background 0.3s;
+    transition: 0.3s;
 }
 
-.navbar a:hover {
-    background-color: #ffb3b3;
-    color: white;
+nav.menu .menu-links a:hover {
+    background-color: #f8bbd0;
+    color: #000;
 }
 
-/* ===== Encabezado ===== */
-header {
-    background-color: #ffb3b3;
-    color: #5a3e3b;
-    text-align: center;
-    padding: 50px 20px;
+/* ===== Botón hamburguesa ===== */
+.menu-icon {
+    display: none;
     font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-/* ===== Tarjetas de Servicio ===== */
-.service-card {
-    margin: 15px;
-    background-color: #ffeaea;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    background-color: #f2e0e0;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    cursor: pointer;
-}
-
-.service-card img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-}
-
-.service-card h3 {
-    color: #d68d8d;
-    margin: 15px 10px 5px 10px;
-}
-
-.service-card p {
-    color: #5a3e3b;
-    margin: 0 10px 15px 10px;
-}
-
-.service-card .btn {
-    display: block;
-    margin: 10px auto 15px auto;
-    background-color: #ffb3b3;
-    border: none;
-    color: #5a3e3b;
-    padding: 10px 25px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.service-card .btn:hover {
-    background-color: #f2c7d1;
     color: white;
+    padding: 0.5rem;
+    background-color: #f497ad;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: fixed;
+    top: 85px;  /* debajo del header */
+    left: 20px; /* móvil: botón a la izquierda */
+    z-index: 1100;
 }
 
-/* ===== Sección de Reserva ===== */
-.booking-section {
-    background-color: #ffe0e0;
-    padding: 40px 20px;
-    border-radius: 12px;
+.menu-icon:hover {
+    background-color: #f27d95;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* ===== Galería de cards ===== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem;
+    padding: 0 20px 20px;
+}
+
+.tarjeta {
+    background-color: #fff0f5;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(244, 143, 177, 0.3);
+    overflow: hidden;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta:hover {
+    transform: scale(1.02);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.descripcion {
+    padding: 15px;
+    color: #000;
+}
+
+.descripcion h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* ===== Sección de cuidados ===== */
+.cuidados {
+    background-color: #ffe3ed;
     margin: 20px auto;
-    max-width: 900px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    display: none; /* activarlo con JS */
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    border-left: 5px solid #c7597e;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
-.booking-section h2 {
-    color: #ff6f61;
+.cuidados h2, .cuidados h3 {
+    margin: 10px 0;
+    color: #c7597e;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-/* ===== Sección de Contacto ===== */
-.contact-section {
-    background-color: #f2c7d1;
-    padding: 40px 20px;
-    border-radius: 12px;
-    max-width: 900px;
+.cuidados p {
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    color: #000;
+    text-align: justify;
+}
+
+/* ===== Botón ===== */
+.btn {
+    display: block;
+    width: fit-content;
     margin: 20px auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    background-color: #e996b2;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-align: center;
 }
 
-/* ===== Pie de Página ===== */
+.btn:hover {
+    background-color: #cc97aa;
+}
+
+/* ===== Footer ===== */
 footer {
-    background: linear-gradient(135deg, #f2c7d1, #ffb3b3);
-    color: #5a3e3b;
-    padding: 25px 0;
+    background-color: #f8bbd0;
     text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    padding: 10px;
+    color: #e081c9;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* ===== Responsivo general ===== */
+@media (max-width: 1024px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cuidados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria, .cuidados {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta img {
+        height: 180px;
+    }
+}
+
+/* ===== Menú hamburguesa responsive ===== */
+@media (max-width: 768px) {
+    nav.menu .menu-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 120px; /* debajo del header */
+        left: 50%;   /* centrado */
+        transform: translateX(-50%);
+        width: 200px;
+        height: auto;
+        background-color: #f48fb1;
+        padding: 20px;
+        gap: 10px;
+        z-index: 999;
+        border-radius: 10px;
+    }
+
+    /* Mostrar menú al activar checkbox */
+    #menu-toggle:checked ~ .menu-links {
+        display: flex;
+    }
+
+    .menu-links a {
+        display: block;
+        font-size: 1.2rem;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center; /* enlaces centrados */
+    }
+
+    .menu-links a:hover {
+        background-color: #f8bbd0;
+        color: #000;
+    }
+
+    .menu-icon {
+        display: inline-block;
+    }
 }
