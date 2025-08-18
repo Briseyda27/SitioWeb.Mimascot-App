@@ -9,46 +9,30 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* ===== Header ===== */
-header {
-    background-color: #f8bbd0;
+/* ===== Header + Navbar ===== */
+header.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f48fb1;
     padding: 10px 20px;
-    text-align: center;
-    color: #000;
-    position: sticky;  /* sticky, no fixed */
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
-header h1 {
+/* Título */
+header.header h1 {
     margin: 0;
-    font-size: 2rem;
-    line-height: 1.2;
+    color: white;
+    font-size: 1.8rem;
 }
 
-header p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #000000;
-}
-
-/* ===== Navbar ===== */
-nav.menu {
-    background-color: #f48fb1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;   /* se queda pegado justo debajo del header */
-    width: 100%;
-    z-index: 999;
-}
-
+/* Menú normal */
 nav.menu .menu-links {
     display: flex;
     gap: 15px;
-    justify-content: center;
 }
 
 nav.menu .menu-links a {
@@ -65,26 +49,15 @@ nav.menu .menu-links a:hover {
     color: #000;
 }
 
-/* ===== Botón hamburguesa ===== */
+/* Botón hamburguesa */
 .menu-icon {
     display: none;
     font-size: 2rem;
     color: white;
-    padding: 0.5rem;
-    background-color: #f497ad;
-    border-radius: 50%;
     cursor: pointer;
-    transition: 0.3s ease;
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 1100;
 }
 
-.menu-icon:hover {
-    background-color: #f27d95;
-}
-
+/* Checkbox oculto */
 #menu-toggle {
     display: none;
 }
@@ -95,7 +68,7 @@ nav.menu .menu-links a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     padding: 20px;
-    margin-top: 20px; /* ya no es 140px */
+    margin-top: 20px;
 }
 
 .tarjeta {
@@ -207,22 +180,16 @@ footer {
 
 /* ===== Menú hamburguesa responsive ===== */
 @media (max-width: 768px) {
-    nav.menu {
-        background: none;
-    }
-
     nav.menu .menu-links {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 70px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 200px;
+        top: 60px; /* justo debajo del header */
+        right: 20px;
         background-color: #f48fb1;
         padding: 20px;
-        gap: 10px;
         border-radius: 10px;
+        gap: 10px;
         z-index: 999;
     }
 
@@ -230,49 +197,18 @@ footer {
         display: flex;
     }
 
-    .menu-links a {
-        display: block;
-        font-size: 1.2rem;
-        padding: 10px;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        text-align: center;
-    }
-
-    .menu-links a:hover {
-        background-color: #f8bbd0;
-        color: #000;
-    }
-
     .menu-icon {
         display: inline-block;
     }
 
-    header {
-        padding: 15px 10px;
-        text-align: center;
-    }
-
-    header h1 {
+    header.header h1 {
         font-size: 1.4rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
-    }
-
-    .galeria {
-        margin-top: 20px; /* ajustado en móvil */
     }
 }
 
+/* ===== Muy pequeño ===== */
 @media (max-width: 480px) {
-    header h1 {
+    header.header h1 {
         font-size: 1.2rem;
-    }
-
-    header p {
-        font-size: 0.8rem;
     }
 }
