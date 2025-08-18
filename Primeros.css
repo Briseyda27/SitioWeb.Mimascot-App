@@ -8,14 +8,13 @@ body, html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 
-    /* Ajuste de espacio superior: header + nav */
     padding-top: 130px; /* header 70px + nav 60px */
 }
 
 /* ===== Header ===== */
 header {
-    height: 70px;  /* altura fija del header */
-    line-height: 70px; /* centra el texto verticalmente */
+    height: 70px;
+    line-height: 70px;
     background-color: #f8bbd0;
     padding: 0 20px;
     text-align: center;
@@ -39,8 +38,8 @@ header p {
 
 /* ===== Navbar ===== */
 nav.menu {
-    height: 60px; /* altura fija del nav */
-    top: 70px; /* justo debajo del header */
+    height: 60px;
+    top: 70px;
     background-color: #f48fb1;
     display: flex;
     justify-content: center;
@@ -51,11 +50,10 @@ nav.menu {
     z-index: 1000;
 }
 
-/* Enlaces normales */
 nav.menu .menu-links {
     display: flex;
     gap: 15px;
-    justify-content: center; /* centrado de los enlaces */
+    justify-content: center;
 }
 
 nav.menu .menu-links a {
@@ -83,8 +81,8 @@ nav.menu .menu-links a:hover {
     cursor: pointer;
     transition: 0.3s ease;
     position: fixed;
-    top: 85px;  /* debajo del header */
-    left: 20px; /* botón a la izquierda en móvil */
+    top: 85px;
+    left: 20px;
     z-index: 1100;
 }
 
@@ -99,7 +97,7 @@ nav.menu .menu-links a:hover {
 /* ===== Galería de cards ===== */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     padding: 0 20px 20px;
 }
@@ -217,7 +215,7 @@ footer {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 130px; /* debajo de header + nav */
+        top: 130px;
         left: 50%;
         transform: translateX(-50%);
         width: 200px;
@@ -228,7 +226,6 @@ footer {
         z-index: 999;
     }
 
-    /* Mostrar menú al activar checkbox */
     #menu-toggle:checked ~ .menu-links {
         display: flex;
     }
@@ -250,5 +247,30 @@ footer {
 
     .menu-icon {
         display: inline-block;
+    }
+
+    /* ===== Header responsive ===== */
+    header {
+        height: auto;
+        line-height: normal;
+        padding: 10px 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
     }
 }
