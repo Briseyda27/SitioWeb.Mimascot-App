@@ -18,7 +18,7 @@ header.header {
     justify-content: space-between;
     align-items: center;
     background-color: #f48fb1;
-    padding: 10px 15px; /* mayor altura del header */
+    padding: 18px 16px; /* mayor altura del header */
     position: sticky;
     top: 0;
     width: 100%;
@@ -39,7 +39,7 @@ header.header h1 {
 nav.menu .menu-links {
     display: flex;
     flex-wrap: wrap; /* enlaces bajan si no caben */
-    gap: 8px; /* espacio entre botones */
+    gap: 5px; /* espacio entre botones */
     justify-content: flex-end;
 }
 
@@ -222,3 +222,4 @@ footer {
         padding: 8px 10px;
     }
 }
+
