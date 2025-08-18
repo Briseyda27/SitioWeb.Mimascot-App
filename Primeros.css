@@ -14,25 +14,25 @@ body, html {
 /* ===== Header + Navbar compacto y flexible ===== */
 header.header {
     display: flex;
-    flex-wrap: wrap; /* permite que el menú baje si no cabe en la misma línea */
+    flex-wrap: wrap; /* permite que el menú baje si no cabe */
     justify-content: space-between;
     align-items: center;
     background-color: #f48fb1;
-    padding: 5px 10px; /* pequeño espacio arriba y abajo */
+    padding: 10px 15px; /* mayor altura del header */
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-    gap: 5px; /* espacio pequeño entre título y menú */
+    gap: 8px; /* espacio entre título y menú */
 }
 
 header.header h1 {
     margin: 0;
     color: white;
-    font-size: 1.4rem;  /* más grande */
-    white-space: nowrap; /* evita que el título se divida */
-    flex: 1 1 auto;      /* título ocupa más ancho */
-    margin-right: 5px;   /* más cerca del menú */
+    font-size: 1.6rem;  /* título más grande */
+    white-space: nowrap; 
+    flex: 1 1 auto;      /* ocupa más ancho */
+    margin-right: 8px;   /* más cerca del menú */
 }
 
 /* Menú flexible y ajustable */
@@ -47,10 +47,11 @@ nav.menu .menu-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 8px 12px;   /* botones más grandes */
     border-radius: 5px;
     transition: 0.3s;
     white-space: nowrap;
+    font-size: 1.1rem;   /* letra más grande */
 }
 
 nav.menu .menu-links a:hover {
@@ -211,8 +212,13 @@ footer {
     }
 
     header.header h1 {
-        font-size: 1.2rem;
-        flex: 1 1 100%; /* título ocupa toda la línea si es necesario */
-        margin-right: 0; /* casi pegado al menú */
+        font-size: 1.3rem; /* ajustado a tamaño móvil */
+        flex: 1 1 100%;
+        margin-right: 0;
+    }
+
+    nav.menu .menu-links a {
+        font-size: 1rem; /* ajusta tamaño en menú hamburguesa */
+        padding: 8px 10px;
     }
 }
