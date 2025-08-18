@@ -7,13 +7,17 @@ body, html {
     background-color: #fde4ec;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    padding-top: 140px; /* espacio para header + menú fijo */
+
+    /* Ajuste de espacio superior: header + nav */
+    padding-top: 130px; /* header 70px + nav 60px */
 }
 
 /* ===== Header ===== */
 header {
+    height: 70px;  /* altura fija del header */
+    line-height: 70px; /* centra el texto verticalmente */
     background-color: #f8bbd0;
-    padding: 20px;
+    padding: 0 20px;
     text-align: center;
     color: #000;
     position: fixed;
@@ -35,16 +39,16 @@ header p {
 
 /* ===== Navbar ===== */
 nav.menu {
+    height: 60px; /* altura fija del nav */
+    top: 70px; /* justo debajo del header */
     background-color: #f48fb1;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    top: 70px; /* debajo del header */
     left: 0;
     width: 100%;
     z-index: 1000;
-    display: flex;
-    justify-content: center; /* centrado */
-    align-items: center;
 }
 
 /* Enlaces normales */
@@ -80,7 +84,7 @@ nav.menu .menu-links a:hover {
     transition: 0.3s ease;
     position: fixed;
     top: 85px;  /* debajo del header */
-    left: 20px; /* móvil: botón a la izquierda */
+    left: 20px; /* botón a la izquierda en móvil */
     z-index: 1100;
 }
 
@@ -213,16 +217,15 @@ footer {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 120px; /* debajo del header */
-        left: 50%;   /* centrado */
+        top: 130px; /* debajo de header + nav */
+        left: 50%;
         transform: translateX(-50%);
         width: 200px;
-        height: auto;
         background-color: #f48fb1;
         padding: 20px;
         gap: 10px;
-        z-index: 999;
         border-radius: 10px;
+        z-index: 999;
     }
 
     /* Mostrar menú al activar checkbox */
@@ -237,7 +240,7 @@ footer {
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        text-align: center; /* enlaces centrados */
+        text-align: center;
     }
 
     .menu-links a:hover {
