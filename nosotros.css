@@ -1,231 +1,98 @@
-@@ -1,230 +1,231 @@
-/* ===== Estilos generales ===== */
-body, html { 
-  margin: 0; 
-  padding: 0; 
-  font-family: 'Arial', sans-serif; 
-  color: #333; 
-  position: relative; 
+/* ===== Estilos Generales ===== */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fde4ec, #f8bbd0);
+    color: #4a154b;
+    line-height: 1.6;
 }
 
-/* ===== Video de fondo y overlay ===== */ 
-.background-video { 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  z-index: -2; 
-}
-.overlay { 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  background: rgba(255, 245, 228, 0.55); 
-  z-index: -1; 
-}
-
-/* ===== Navbar ===== */
-.navbar-container { 
-  background-color: #fcd5ce; /* Pastel rosa suave */
-  border-radius: 12px; 
-  padding: 25px 30px; 
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.navbar-brand { 
-  font-size: 1.5rem; 
-  font-weight: 700; 
-  color: #961b21 !important; 
-  letter-spacing: 1px; 
-}
-.navbar-nav { 
-  display: flex; 
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.navbar-nav .nav-link { 
-  font-size: 1.1rem; 
-  color: #6c4c4c !important; 
-  margin: 0 10px; 
-  transition: 0.3s; 
-} 
-.navbar-nav .nav-link:hover { 
-  color: #fff; 
-  background-color: #f89cab; 
-  border-radius: 8px; 
-  padding: 5px 10px; 
-}
-
-/* ===== Contenido principal ===== */ 
-.main-content { 
-  position: relative; 
-  z-index: 1; 
-  padding: 120px 15px 50px 15px; 
-  max-width: 1100px; 
-  margin: 0 auto; 
-}
-
-/* ===== Títulos ===== */ 
-.title { 
-  font-size: 4rem; 
-  font-weight: 800; 
-  text-align: center; 
-  color: #961b21; 
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3); 
-  margin-top: 45px;   /* Separa del navbar */
-  margin-top: 35px;   /* Separa del navbar */
-}
-
-/* ===== Subtítulos ===== */ 
-.subtitle { 
-  font-size: 1.6rem; 
-  text-align: center; 
-  color: #000; 
-  margin-bottom: 50px; 
-  font-weight: 600; 
-  text-shadow: 3px 3px 6px rgba(0,0,0,0.25); 
-} 
-
-/* ===== Secciones ===== */
-.section-title { 
-  font-size: 2.2rem; 
-  font-weight: 900; 
-  color: #6c4c4c; 
-  text-align: center; 
-  margin-bottom: 30px; 
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
-}
-
-/* ===== Historia ===== */ 
-section p { 
-  font-size: 1.1rem; 
-  line-height: 1.7; 
-  color: #1c2125; 
-  text-align: justify; 
-  background-color: rgba(255, 255, 255, 0.85); 
-  padding: 20px; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-}
-
-/* ===== Equipo: Cards equilibradas ===== */ 
-.team-row { 
-  display: flex; 
-  align-items: stretch; 
-  gap: 25px; 
-  margin-bottom: 40px; 
-  background-color: rgba(255, 245, 228, 0.95); 
-  padding: 20px; 
-  border-radius: 12px; 
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
-  transition: transform 0.3s; 
-}
-.team-row:hover { 
-  transform: translateY(-5px); 
-} 
-.team-row.reverse { 
-  flex-direction: row-reverse; 
-} 
-.team-img-container { 
-  flex: 0 0 250px; 
-} 
-.team-img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  border-radius: 12px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
-} 
-.team-text { 
-  flex: 1; 
-  padding: 15px 20px; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-} 
-.team-text h3 { 
-  font-size: 1.8rem; 
-  color: #961b21; 
-  margin-bottom: 15px; 
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.3); 
-} 
-.team-text p { 
-  font-size: 1.2rem; 
-  color: #1c2125; 
-  line-height: 1.8; 
-  text-align: justify; 
-} 
-
-/* ===== Objetivo, Misión y Visión ===== */
-.objetivo { color: #458fdf; font-weight: 600; } 
-.mision { color: #28a745; font-weight: 600; } 
-.vision { color: #e9862a; font-weight: 600; } 
-
-/* ===== Responsividad para móviles ===== */
-@media (max-width: 768px) {
-  /* Navbar en columna */
-  .navbar-container {
-    flex-direction: column;
+/* ===== Header ===== */
+header {
+    background-color: #f7c6d9; /* rosa pastel */
+    color: #4a2c2a;
+    padding: 20px 15px;
     text-align: center;
-    padding: 15px;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar-nav .nav-link {
-    margin: 5px 0;
-    padding: 8px;
-    width: 100%;
-    border-radius: 6px;
-  }
-
-  /* Ajuste título */
-  .title {
-    font-size: 2.2rem;
-    margin-top: 80px;
-  }
-
-  .team-row { 
-    flex-direction: column !important; 
-    text-align: center; 
-  } 
-  .team-img-container { 
-    flex: 0 0 70%; 
-    margin: 0 auto 15px auto; 
-  } 
-  .team-text { padding: 0; } 
-  .team-text h3 { font-size: 1.5rem; } 
-  .team-text p { font-size: 1.1rem; line-height: 1.6; } 
-  .subtitle { font-size: 1.2rem; } 
+    font-size: 2rem;
+    line-height: 1.2;
 }
 
-/* ===== Fade-in animation ===== */ 
-.fade-in { 
-  opacity: 0; 
-  transform: translateY(50px); 
-  transition: opacity 1s ease-out, transform 1s ease-out; 
-} 
-.fade-in.show { 
-  opacity: 1; 
-  transform: translateY(0); 
-} 
+/* ===== Navbar fijo ===== */
+nav.menu {
+    background-color: #f2c7d1;
+    position: fixed;
+    top: 70px; /* altura header */
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
 
-/* ===== Footer ===== */ 
-footer { 
-  text-align: center; 
-  padding: 20px; 
-  color: #1d0f0f; 
-  background-color: rgba(126,126,126,0.35); 
-  margin-top: 50px; 
-  font-size: 0.95rem; 
+/* Links del navbar */
+nav.menu a {
+    color: #4a154b;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ===== Contenido principal ===== */
+main {
+    margin-top: 130px; /* espacio para header + navbar */
+    padding: 20px;
+}
+
+/* ===== Header responsive ===== */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px;
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: normal;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        margin: 5px 0;
+    }
+
+    header p {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    /* Navbar pegado al header */
+    nav.menu {
+        position: relative;
+        top: auto;
+        left: 0;
+        width: 100%;
+    }
+
+    /* Ajustar margen del main */
+    main {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    nav.menu a {
+        font-size: 0.9rem;
+    }
 }
