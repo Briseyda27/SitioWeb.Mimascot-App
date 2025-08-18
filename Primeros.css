@@ -23,15 +23,16 @@ header.header {
     top: 0;
     width: 100%;
     z-index: 1000;
+    gap: 5px; /* espacio pequeño entre título y menú */
 }
 
 header.header h1 {
     margin: 0;
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.4rem;  /* más grande */
     white-space: nowrap; /* evita que el título se divida */
-    flex: 0 1 auto;
-    margin-right: 10px; /* espacio entre título y menú */
+    flex: 1 1 auto;      /* título ocupa más ancho */
+    margin-right: 5px;   /* más cerca del menú */
 }
 
 /* Menú flexible y ajustable */
@@ -210,7 +211,8 @@ footer {
     }
 
     header.header h1 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         flex: 1 1 100%; /* título ocupa toda la línea si es necesario */
+        margin-right: 0; /* casi pegado al menú */
     }
 }
