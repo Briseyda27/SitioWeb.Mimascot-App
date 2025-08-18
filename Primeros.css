@@ -7,6 +7,7 @@ body, html {
     background-color: #fde4ec;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    padding-top: 140px; /* espacio para header + menú fijo */
 }
 
 /* ===== Header ===== */
@@ -15,7 +16,7 @@ header {
     padding: 20px;
     text-align: center;
     color: #000;
-    position: fixed;  /* fijo */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -36,13 +37,13 @@ header p {
 nav.menu {
     background-color: #f48fb1;
     padding: 10px;
-    position: fixed;   /* FIJO en pantalla */
-    top: 70px;         /* debajo del header */
+    position: fixed;
+    top: 70px; /* debajo del header */
     left: 0;
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* centrado */
     align-items: center;
 }
 
@@ -50,6 +51,7 @@ nav.menu {
 nav.menu .menu-links {
     display: flex;
     gap: 15px;
+    justify-content: center; /* centrado de los enlaces */
 }
 
 nav.menu .menu-links a {
@@ -77,8 +79,8 @@ nav.menu .menu-links a:hover {
     cursor: pointer;
     transition: 0.3s ease;
     position: fixed;
-    top: 85px;       /* debajo del header */
-    right: 20px;
+    top: 85px;  /* debajo del header */
+    left: 20px; /* móvil: botón a la izquierda */
     z-index: 1100;
 }
 
@@ -95,7 +97,7 @@ nav.menu .menu-links a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 1.5rem;
-    padding: 150px 20px 20px; /* padding top para header fijo */
+    padding: 0 20px 20px;
 }
 
 .tarjeta {
@@ -208,21 +210,19 @@ footer {
 /* ===== Menú hamburguesa responsive ===== */
 @media (max-width: 768px) {
     nav.menu .menu-links {
-        display: none;           /* oculto inicialmente */
+        display: none;
         flex-direction: column;
-        position: fixed;         /* fijo */
-        top: 120px;              /* debajo del header */
-        right: 0;
+        position: fixed;
+        top: 120px; /* debajo del header */
+        left: 50%;   /* centrado */
+        transform: translateX(-50%);
         width: 200px;
-        height: calc(100vh - 120px);
+        height: auto;
         background-color: #f48fb1;
-        padding-top: 20px;
+        padding: 20px;
         gap: 10px;
         z-index: 999;
-    }
-
-    .menu-icon {
-        display: inline-block;   /* visible en móvil */
+        border-radius: 10px;
     }
 
     /* Mostrar menú al activar checkbox */
@@ -237,10 +237,15 @@ footer {
         color: white;
         text-decoration: none;
         border-radius: 5px;
+        text-align: center; /* enlaces centrados */
     }
 
     .menu-links a:hover {
         background-color: #f8bbd0;
         color: #000;
+    }
+
+    .menu-icon {
+        display: inline-block;
     }
 }
