@@ -1,251 +1,231 @@
+@@ -1,230 +1,231 @@
 /* ===== Estilos generales ===== */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    color: #000;
-    background-color: #fde4ec;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    padding-top: 140px; /* espacio para header + menú fijo */
+body, html { 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Arial', sans-serif; 
+  color: #333; 
+  position: relative; 
 }
 
-/* ===== Header ===== */
-header {
-    background-color: #f8bbd0;
-    padding: 20px;
-    text-align: center;
-    color: #000;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+/* ===== Video de fondo y overlay ===== */ 
+.background-video { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  z-index: -2; 
 }
-
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-header p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #000000;
+.overlay { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(255, 245, 228, 0.55); 
+  z-index: -1; 
 }
 
 /* ===== Navbar ===== */
-nav.menu {
-    background-color: #f48fb1;
-    padding: 10px;
-    position: fixed;
-    top: 70px; /* debajo del header */
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: center; /* centrado */
-    align-items: center;
+.navbar-container { 
+  background-color: #fcd5ce; /* Pastel rosa suave */
+  border-radius: 12px; 
+  padding: 25px 30px; 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-brand { 
+  font-size: 1.5rem; 
+  font-weight: 700; 
+  color: #961b21 !important; 
+  letter-spacing: 1px; 
+}
+.navbar-nav { 
+  display: flex; 
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.navbar-nav .nav-link { 
+  font-size: 1.1rem; 
+  color: #6c4c4c !important; 
+  margin: 0 10px; 
+  transition: 0.3s; 
+} 
+.navbar-nav .nav-link:hover { 
+  color: #fff; 
+  background-color: #f89cab; 
+  border-radius: 8px; 
+  padding: 5px 10px; 
 }
 
-/* Enlaces normales */
-nav.menu .menu-links {
-    display: flex;
-    gap: 15px;
-    justify-content: center; /* centrado de los enlaces */
+/* ===== Contenido principal ===== */ 
+.main-content { 
+  position: relative; 
+  z-index: 1; 
+  padding: 120px 15px 50px 15px; 
+  max-width: 1100px; 
+  margin: 0 auto; 
 }
 
-nav.menu .menu-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: 0.3s;
+/* ===== Títulos ===== */ 
+.title { 
+  font-size: 4rem; 
+  font-weight: 800; 
+  text-align: center; 
+  color: #961b21; 
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3); 
+  margin-top: 45px;   /* Separa del navbar */
+  margin-top: 35px;   /* Separa del navbar */
 }
 
-nav.menu .menu-links a:hover {
-    background-color: #f8bbd0;
-    color: #000;
+/* ===== Subtítulos ===== */ 
+.subtitle { 
+  font-size: 1.6rem; 
+  text-align: center; 
+  color: #000; 
+  margin-bottom: 50px; 
+  font-weight: 600; 
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.25); 
+} 
+
+/* ===== Secciones ===== */
+.section-title { 
+  font-size: 2.2rem; 
+  font-weight: 900; 
+  color: #6c4c4c; 
+  text-align: center; 
+  margin-bottom: 30px; 
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
 }
 
-/* ===== Botón hamburguesa ===== */
-.menu-icon {
-    display: none;
-    font-size: 2rem;
-    color: white;
-    padding: 0.5rem;
-    background-color: #f497ad;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s ease;
-    position: fixed;
-    top: 85px;  /* debajo del header */
-    left: 20px; /* móvil: botón a la izquierda */
-    z-index: 1100;
+/* ===== Historia ===== */ 
+section p { 
+  font-size: 1.1rem; 
+  line-height: 1.7; 
+  color: #1c2125; 
+  text-align: justify; 
+  background-color: rgba(255, 255, 255, 0.85); 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
 }
 
-.menu-icon:hover {
-    background-color: #f27d95;
+/* ===== Equipo: Cards equilibradas ===== */ 
+.team-row { 
+  display: flex; 
+  align-items: stretch; 
+  gap: 25px; 
+  margin-bottom: 40px; 
+  background-color: rgba(255, 245, 228, 0.95); 
+  padding: 20px; 
+  border-radius: 12px; 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+  transition: transform 0.3s; 
 }
+.team-row:hover { 
+  transform: translateY(-5px); 
+} 
+.team-row.reverse { 
+  flex-direction: row-reverse; 
+} 
+.team-img-container { 
+  flex: 0 0 250px; 
+} 
+.team-img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+} 
+.team-text { 
+  flex: 1; 
+  padding: 15px 20px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+} 
+.team-text h3 { 
+  font-size: 1.8rem; 
+  color: #961b21; 
+  margin-bottom: 15px; 
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3); 
+} 
+.team-text p { 
+  font-size: 1.2rem; 
+  color: #1c2125; 
+  line-height: 1.8; 
+  text-align: justify; 
+} 
 
-#menu-toggle {
-    display: none;
-}
+/* ===== Objetivo, Misión y Visión ===== */
+.objetivo { color: #458fdf; font-weight: 600; } 
+.mision { color: #28a745; font-weight: 600; } 
+.vision { color: #e9862a; font-weight: 600; } 
 
-/* ===== Galería de cards ===== */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1.5rem;
-    padding: 0 20px 20px;
-}
-
-.tarjeta {
-    background-color: #fff0f5;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(244, 143, 177, 0.3);
-    overflow: hidden;
-    transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
-}
-
-.tarjeta:hover {
-    transform: scale(1.02);
-}
-
-.tarjeta img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-}
-
-.descripcion {
-    padding: 15px;
-    color: #000;
-}
-
-.descripcion h3 {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-/* ===== Sección de cuidados ===== */
-.cuidados {
-    background-color: #ffe3ed;
-    margin: 20px auto;
-    padding: 20px;
-    width: 90%;
-    max-width: 800px;
-    border-radius: 10px;
-    border-left: 5px solid #c7597e;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.cuidados h2, .cuidados h3 {
-    margin: 10px 0;
-    color: #c7597e;
-    text-align: center;
-}
-
-.cuidados p {
-    margin: 0 0 10px 0;
-    line-height: 1.4;
-    color: #000;
-    text-align: justify;
-}
-
-/* ===== Botón ===== */
-.btn {
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #e996b2;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    text-align: center;
-}
-
-.btn:hover {
-    background-color: #cc97aa;
-}
-
-/* ===== Footer ===== */
-footer {
-    background-color: #f8bbd0;
-    text-align: center;
-    padding: 10px;
-    color: #e081c9;
-    margin-top: 30px;
-    font-size: 0.9em;
-}
-
-/* ===== Responsivo general ===== */
-@media (max-width: 1024px) {
-    .galeria {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .cuidados {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .galeria, .cuidados {
-        grid-template-columns: 1fr;
-    }
-
-    .tarjeta img {
-        height: 180px;
-    }
-}
-
-/* ===== Menú hamburguesa responsive ===== */
+/* ===== Responsividad para móviles ===== */
 @media (max-width: 768px) {
-    nav.menu .menu-links {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 120px; /* debajo del header */
-        left: 50%;   /* centrado */
-        transform: translateX(-50%);
-        width: 200px;
-        height: auto;
-        background-color: #f48fb1;
-        padding: 20px;
-        gap: 10px;
-        z-index: 999;
-        border-radius: 10px;
-    }
+  /* Navbar en columna */
+  .navbar-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
 
-    /* Mostrar menú al activar checkbox */
-    #menu-toggle:checked ~ .menu-links {
-        display: flex;
-    }
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .menu-links a {
-        display: block;
-        font-size: 1.2rem;
-        padding: 10px;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        text-align: center; /* enlaces centrados */
-    }
+  .navbar-nav .nav-link {
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+    border-radius: 6px;
+  }
 
-    .menu-links a:hover {
-        background-color: #f8bbd0;
-        color: #000;
-    }
+  /* Ajuste título */
+  .title {
+    font-size: 2.2rem;
+    margin-top: 80px;
+  }
 
-    .menu-icon {
-        display: inline-block;
-    }
+  .team-row { 
+    flex-direction: column !important; 
+    text-align: center; 
+  } 
+  .team-img-container { 
+    flex: 0 0 70%; 
+    margin: 0 auto 15px auto; 
+  } 
+  .team-text { padding: 0; } 
+  .team-text h3 { font-size: 1.5rem; } 
+  .team-text p { font-size: 1.1rem; line-height: 1.6; } 
+  .subtitle { font-size: 1.2rem; } 
+}
+
+/* ===== Fade-in animation ===== */ 
+.fade-in { 
+  opacity: 0; 
+  transform: translateY(50px); 
+  transition: opacity 1s ease-out, transform 1s ease-out; 
+} 
+.fade-in.show { 
+  opacity: 1; 
+  transform: translateY(0); 
+} 
+
+/* ===== Footer ===== */ 
+footer { 
+  text-align: center; 
+  padding: 20px; 
+  color: #1d0f0f; 
+  background-color: rgba(126,126,126,0.35); 
+  margin-top: 50px; 
+  font-size: 0.95rem; 
 }
