@@ -7,7 +7,6 @@ body, html {
     background-color: #fde4ec;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    padding-top: 130px; /* header + nav */
 }
 
 /* ===== Header ===== */
@@ -41,8 +40,8 @@ nav.menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;   /* ahora se pega al header */
-    top: 0;             /* se mantiene justo debajo */
+    position: sticky;
+    top: 0;
     width: 100%;
     z-index: 1000;
 }
@@ -97,6 +96,7 @@ nav.menu .menu-links a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     padding: 0 20px 20px;
+    margin-top: 140px; /* espacio dinámico después de header + nav */
 }
 
 .tarjeta {
@@ -209,8 +209,8 @@ footer {
 /* ===== Menú hamburguesa responsive ===== */
 @media (max-width: 768px) {
     nav.menu {
-        background: none;   /* 👈 sin barra rosada vacía */
-        height: auto;       /* 👈 se ajusta solo al botón */
+        background: none;   /* sin barra rosada vacía */
+        height: auto;       /* solo ocupa el botón */
     }
 
     nav.menu .menu-links {
@@ -271,7 +271,11 @@ footer {
 
     nav.menu {
         position: sticky;
-        top: 0; /* siempre pegado al header */
+        top: 0;
+    }
+
+    .galeria {
+        margin-top: 100px; /* menos espacio en móvil */
     }
 }
 
