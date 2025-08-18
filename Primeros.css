@@ -208,6 +208,11 @@ footer {
 
 /* ===== Menú hamburguesa responsive ===== */
 @media (max-width: 768px) {
+    nav.menu {
+        background: none;   /* 👈 sin barra rosada vacía */
+        height: auto;       /* 👈 se ajusta solo al botón */
+    }
+
     nav.menu .menu-links {
         display: none;
         flex-direction: column;
