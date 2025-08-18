@@ -101,9 +101,7 @@ nav.menu .menu-links a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 1.5rem;
-
-    padding: 10px 20px 20px; /* reduce espacio arriba *
-
+    padding: 0 20px 20px;
 }
 
 .tarjeta {
@@ -254,4 +252,3 @@ footer {
         display: inline-block;
     }
 }
-
