@@ -9,9 +9,10 @@ body, html {
     scroll-behavior: smooth;
 }
 
-/* ===== Header + Navbar compacto y en línea ===== */
+/* ===== Header + Navbar compacto y flexible ===== */
 header.header {
     display: flex;
+    flex-wrap: wrap; /* permite que el menú baje si no cabe en la misma línea */
     justify-content: space-between;
     align-items: center;
     background-color: #f48fb1;
@@ -28,13 +29,15 @@ header.header h1 {
     color: white;
     font-size: 1.3rem;
     white-space: nowrap; /* evita que el título se divida */
+    flex: 0 1 auto;
 }
 
-/* Menú en línea siempre visible */
+/* Menú flexible y ajustable */
 nav.menu .menu-links {
     display: flex;
+    flex-wrap: wrap; /* enlaces bajan si no caben */
     gap: 8px; /* espacio entre botones */
-    flex-wrap: wrap; /* ajusta botones al ancho */
+    justify-content: flex-end;
 }
 
 nav.menu .menu-links a {
@@ -44,7 +47,7 @@ nav.menu .menu-links a {
     padding: 5px 10px;
     border-radius: 5px;
     transition: 0.3s;
-    white-space: nowrap; /* evita que cada link se divida */
+    white-space: nowrap;
 }
 
 nav.menu .menu-links a:hover {
@@ -183,35 +186,29 @@ footer {
 
 /* ===== Menú hamburguesa responsive en pantallas muy pequeñas ===== */
 @media (max-width: 500px) {
+    .menu-icon {
+        display: inline-block;
+    }
+
     nav.menu .menu-links {
-        display: none;
         flex-direction: column;
-        position: fixed;
-        top: 50px;
-        right: 10px;
+        width: 100%;
+        position: relative;
+        top: 0;
+        right: 0;
         background-color: #f48fb1;
-        padding: 10px;
-        border-radius: 10px;
-        gap: 5px;
-        z-index: 999;
+        padding: 5px 0;
+        display: none;
     }
 
     #menu-toggle:checked ~ .menu-links {
         display: flex;
     }
 
-    .menu-icon {
-        display: inline-block;
-    }
-
     header.header h1 {
         font-size: 1.1rem;
+        flex: 1 1 100%; /* título ocupa toda la línea si es necesario */
     }
 }
 
-/* ===== Muy pequeño ===== */
-@media (max-width: 380px) {
-    header.header h1 {
-        font-size: 1rem;
-    }
-}
+
