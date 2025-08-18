@@ -7,15 +7,13 @@ body, html {
     background-color: #fde4ec;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    padding-top: 130px; /* header 70px + nav 60px */
+    padding-top: 130px; /* header + nav */
 }
 
 /* ===== Header ===== */
 header {
-    height: 70px;
-    line-height: 70px;
     background-color: #f8bbd0;
-    padding: 0 20px;
+    padding: 10px 20px;
     text-align: center;
     color: #000;
     position: fixed;
@@ -27,6 +25,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
+    line-height: 1.2;
 }
 
 header p {
@@ -38,13 +37,12 @@ header p {
 /* ===== Navbar ===== */
 nav.menu {
     height: 60px;
-    top: 70px;
     background-color: #f48fb1;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    left: 0;
+    position: sticky;   /* ahora se pega al header */
+    top: 0;             /* se mantiene justo debajo */
     width: 100%;
     z-index: 1000;
 }
@@ -264,6 +262,11 @@ footer {
 
     header p {
         font-size: 0.9rem;
+    }
+
+    nav.menu {
+        position: sticky;
+        top: 0; /* siempre pegado al header */
     }
 }
 
