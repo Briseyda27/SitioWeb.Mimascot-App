@@ -1,12 +1,14 @@
 /* ===== Estilos Generales ===== */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #fff8f0;
   margin: 0;
   padding: 0;
-  padding-top: 70px; /* espacio para menú fijo */
+  padding-top: 70px;
   color: #5a3e3b;
+
+  background: linear-gradient(135deg, #ffeaea, #ffd6e0, #fff5f8);
 }
+
 
 /* ===== Menú Fijo ===== */
 .navbar {
@@ -128,3 +130,4 @@ footer {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
