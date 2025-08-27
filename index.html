@@ -15,7 +15,6 @@
       justify-content: center;
       align-items: center;
     }
-    /* 🎥 Video de fondo */
     video {
       position: fixed;
       top: 50%;
@@ -28,7 +27,6 @@
       transform: translate(-50%, -50%);
       z-index: -2;
     }
-    /* 🌈 Capa de color pastel encima del video */
     .overlay {
       position: fixed;
       top: 0;
@@ -41,7 +39,6 @@
       );
       z-index: -1;
     }
-    /* 📝 Tarjeta del formulario */
     .container {
       background: rgba(255, 253, 251, 0.7);
       backdrop-filter: blur(12px);
@@ -53,7 +50,7 @@
       color: #6c4c4c;
       box-shadow: 0 4px 25px rgba(0,0,0,0.15);
       animation: fadeIn 0.8s ease;
-      display: none; /* Oculto al cargar */
+      display: none;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -103,8 +100,6 @@
       margin-top: 10px;
       min-height: 20px;
     }
-
-    /* 📱 Ajustes responsivos para móviles */
     @media (max-width: 768px) {
       video {
         object-fit: cover;
@@ -120,14 +115,12 @@
 </head>
 <body>
 
-  <!-- 🎥 Video de fondo -->
   <video autoplay muted loop playsinline>
     <source src="Video.mp4" type="video/mp4">
     Tu navegador no soporta videos en HTML5.
   </video>
   <div class="overlay"></div>
 
-  <!-- 📝 Formulario de Auth -->
   <div class="container" id="formContainer">
     <h2>Registro / Inicio de sesión</h2>
     <input type="email" id="email" placeholder="Correo electrónico" />
@@ -156,14 +149,13 @@
       Timestamp
     } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 
-    // 🔑 Configuración de Firebase
     const firebaseConfig = {
-      apiKey: "AIzaSyDeF0B1wEupn4icVvAbdkhxl8pji53gfuY",
-      authDomain: "premium-34ee0.firebaseapp.com",
-      projectId: "premium-34ee0",
-      storageBucket: "premium-34ee0.appspot.com", // ✅ corregido
-      messagingSenderId: "707778949824",
-      appId: "1:707778949824:web:7af4e01cba5d5021647325"
+      apiKey: "AIzaSyAtpyfAylr8nSfkWorMLNyMwSR6FkHk9KQ",
+      authDomain: "premium-7a1a1.firebaseapp.com",
+      projectId: "premium-7a1a1",
+      storageBucket: "premium-7a1a1.firebasestorage.app",
+      messagingSenderId: "99417726351",
+      appId: "1:99417726351:web:2275d2193506493448bffa"
     };
 
     const app = initializeApp(firebaseConfig);
@@ -178,7 +170,6 @@
       return Timestamp.fromDate(d);
     }
 
-    // 🆕 Registro de usuario
     async function handleSignup() {
       errorDiv.textContent = "";
       const email = document.getElementById("email").value.trim();
@@ -200,16 +191,12 @@
       }
     }
 
-    // 🔑 Inicio de sesión
     async function handleLogin() {
       errorDiv.textContent = "";
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value.trim();
 
-      if (auth.currentUser) {
-        console.log("Ya hay sesión iniciada:", auth.currentUser.email);
-        return;
-      }
+      if (auth.currentUser) return;
 
       try {
         await signInWithEmailAndPassword(auth, email, password);
@@ -218,7 +205,6 @@
       }
     }
 
-    // ⚠️ Mensajes de error más claros
     function showAuthError(e) {
       switch (e.code) {
         case "auth/user-not-found":
@@ -244,7 +230,6 @@
     document.getElementById("btn-signup").addEventListener("click", handleSignup);
     document.getElementById("btn-login").addEventListener("click", handleLogin);
 
-    // 👀 Observa cambios de sesión
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const ref = doc(db, "users", user.uid);
@@ -254,16 +239,13 @@
           const now = new Date();
           const trialEnd = data.trialEnd.toDate();
 
-          if (data.subscription?.active) {
-            window.location.href = "nosotros.html";
-          } else if (now < trialEnd) {
+          if (data.subscription?.active || now < trialEnd) {
             window.location.href = "nosotros.html";
           } else {
             window.location.href = "pago.html";
           }
         }
       } else {
-        // Usuario no logueado → mostramos el formulario
         formContainer.style.display = "block";
       }
     });
