@@ -110,48 +110,142 @@
     <!-- LISTA DE VETERINARIAS -->
     <div class="container mt-4" id="veterinarias">
         <div class="row">
-            
-            //Agroservicio
-            <div class="col-md-4" id="agroservicio">
+       
+           <div class="col-md-4" id="agroservicio">
     <div class="card">
         <img src="Agroservicio.jpg" class="card-img-top" alt="Agroservicio El Rancho">
         <div class="card-body">
             <h5 class="card-title">Agroservicio El Rancho</h5>
-            <p class="card-text">Dirección: Calle Jose Mariano Mendez Pte, Santa Ana 2201</p>
+            <p class="card-text">Dirección: Calle Jose Mariano Mendez Pte, Santa Ana 2201</p>
             <p class="card-text">Teléfono: 7807 1135</p>
-            <button type="button" class="btn btn-appointment" onclick="showAppointmentForm('appointmentFormID')">Hacer Cita</button>
+            <button type="button" class="btn btn-appointment" onclick="showAppointmentForm('appointmentFormAgroservicioElRancho')">Hacer Cita</button>
 
             <form class="appointment-form" id="appointmentFormAgroservicioElRancho" style="display:none;">
-               <label for="nameAgroservicioElRancho">Nombre del usuario</label>
-                            <input type="text" id="nameAgroservicioElRancho" class="form-control" placeholder="Ej. Briseyda Martínez" required>
+                <label for="nameAgroservicioElRancho">Nombre del usuario</label>
+                <input type="text" id="nameAgroservicioElRancho" class="form-control" placeholder="Ej. Briseyda Martínez" required>
 
-                            <label for="petAgroservicioElRancho">Tipo de mascota</label>
-                            <select id="petAgroservicioElRancho" class="form-control" required>
-                                <option value="" disabled selected>Selecciona</option>
-                                <option>Perro</option>
-                                <option>Gato</option>
-                                <option>Conejo</option>
-                                <option>Ave</option>
-                            </select>
-                
+                <label for="petAgroservicioElRancho">Tipo de mascota</label>
+                <select id="petAgroservicioElRancho" class="form-control" required>
+                    <option value="" disabled selected>Selecciona</option>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                    <option>Conejo</option>
+                    <option>Ave</option>
+                </select>
+
                 <label for="serviceAgroservicioElRancho">Servicio requerido</label>
-                            <select id="serviceSanMartin" class="form-control" required>
-                                <option value="" disabled selected>Selecciona</option>
-                                <option>Consulta veterinaria</option>
-                                <option>Peluquería</option>
-                                <option>Vacunación</option>
-                                <option>Emergencia</option>
-                                <option>Otro</option>
-                            </select>
+                <select id="serviceAgroservicioElRancho" class="form-control" required>
+                    <option value="" disabled selected>Selecciona</option>
+                    <option>Consulta veterinaria</option>
+                    <option>Peluquería</option>
+                    <option>Vacunación</option>
+                    <option>Emergencia</option>
+                    <option>Otro</option>
+                </select>
 
-                            <label for="dateAgroservicioElRancho">Seleccionar Fecha</label>
-                            <input type="date" id="dateSanMartin" class="form-control" required>
+                <label for="dateAgroservicioElRancho">Seleccionar Fecha</label>
+                <input type="date" id="dateAgroservicioElRancho" class="form-control" required>
 
-                            <label for="timeAgroservicioElRancho">Seleccionar Hora</label>
-                            <input type="time" id="timeSanMartin" class="form-control" required>
+                <label for="timeAgroservicioElRancho">Seleccionar Hora</label>
+                <input type="time" id="timeAgroservicioElRancho" class="form-control" required>
 
                 <button type="button" class="btn btn-confirm mt-2"
                         onclick="confirmAppointment('appointmentFormAgroservicioElRancho','dateAgroservicioElRancho','timeAgroservicioElRancho')">
+                    Confirmar Cita
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+            <div class="col-md-4" id="cathome">
+    <div class="card">
+        <img src="cathome.jpg" class="card-img-top" alt="Cat Home">
+        <div class="card-body">
+            <h5 class="card-title">Peluquería Cat Home</h5>
+            <p class="card-text">Dirección: Avenida Maria Auxiliadora y 25 Calle Pte. a 5, Santa Ana</p>
+            <p class="card-text">Teléfono: 6825 1915</p>
+            <button type="button" class="btn btn-appointment" onclick="showAppointmentForm('appointmentFormCatHome')">Hacer Cita</button>
+
+            <form class="appointment-form" id="appointmentFormCatHome" style="display:none;">
+                <label for="nameCatHome">Nombre del usuario</label>
+                <input type="text" id="nameCatHome" class="form-control" placeholder="Ej. Briseyda Martínez" required>
+
+                <label for="petCatHome">Tipo de mascota</label>
+                <select id="petCatHome" class="form-control" required>
+                    <option value="" disabled selected>Selecciona</option>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                    <option>Conejo</option>
+                    <option>Ave</option>
+                </select>
+
+                <label for="serviceCatHome">Servicio requerido</label>
+                <select id="serviceCatHome" class="form-control" required>
+                    <option value="" disabled selected>Selecciona</option>
+                    <option>Consulta veterinaria</option>
+                    <option>Peluquería</option>
+                    <option>Vacunación</option>
+                    <option>Emergencia</option>
+                    <option>Otro</option>
+                </select>
+
+                <label for="dateCatHome">Seleccionar Fecha</label>
+                <input type="date" id="dateCatHome" class="form-control" required>
+
+                <label for="timeCatHome">Seleccionar Hora</label>
+                <input type="time" id="timeCatHome" class="form-control" required>
+
+                <button type="button" class="btn btn-confirm mt-2"
+                        onclick="confirmAppointment('appointmentFormCatHome','dateCatHome','timeCatHome')">
+                    Confirmar Cita
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+            <div class="col-md-4" id="lacampina">
+    <div class="card">
+        <img src="lacampiña.png" class="card-img-top" alt="Agroservicios La Campiña">
+        <div class="card-body">
+            <h5 class="card-title">Agroservicios La Campiña</h5>
+            <p class="card-text">Dirección: Santa Ana</p>
+            <p class="card-text">Teléfono: 7554 6110</p>
+            <button type="button" class="btn btn-appointment" onclick="showAppointmentForm('appointmentFormLaCampina')">Hacer Cita</button>
+
+            <form class="appointment-form" id="appointmentFormLaCampina" style="display:none;">
+                <label for="nameLaCampina">Nombre del usuario</label>
+                <input type="text" id="nameLaCampina" class="form-control" placeholder="Ej. Briseyda Martínez" required>
+
+                <label for="petLaCampina">Tipo de mascota</label>
+                <select id="petLaCampina" class="form-control" required>
+                    <option value="" disabled selected>Selecciona</option>
+                    <option>Perro</option>
+                    <option>Gato</option>
+                    <option>Conejo</option>
+                    <option>Ave</option>
+                </select>
+
+                <label for="serviceLaCampina">Servicio requerido</label>
+                <select id="serviceLaCampina" class="form-control" required>
+                    <option value="" disabled selected>Selecciona</option>
+                    <option>Consulta veterinaria</option>
+                    <option>Peluquería</option>
+                    <option>Vacunación</option>
+                    <option>Emergencia</option>
+                    <option>Otro</option>
+                </select>
+
+                <label for="dateLaCampina">Seleccionar Fecha</label>
+                <input type="date" id="dateLaCampina" class="form-control" required>
+
+                <label for="timeLaCampina">Seleccionar Hora</label>
+                <input type="time" id="timeLaCampina" class="form-control" required>
+
+                <button type="button" class="btn btn-confirm mt-2"
+                        onclick="confirmAppointment('appointmentFormLaCampina','dateLaCampina','timeLaCampina')">
                     Confirmar Cita
                 </button>
             </form>
@@ -562,6 +656,7 @@
 </body>
 
 </html>
+
 
 
 
