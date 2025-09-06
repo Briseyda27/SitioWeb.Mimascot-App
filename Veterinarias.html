@@ -110,6 +110,55 @@
     <!-- LISTA DE VETERINARIAS -->
     <div class="container mt-4" id="veterinarias">
         <div class="row">
+            
+            //Agroservicio
+            <div class="col-md-4" id="agroservicio">
+    <div class="card">
+        <img src="Agroservicio.jpg" class="card-img-top" alt="Agroservicio El Rancho">
+        <div class="card-body">
+            <h5 class="card-title">Agroservicio El Rancho</h5>
+            <p class="card-text">Dirección: Calle Jose Mariano Mendez Pte, Santa Ana 2201</p>
+            <p class="card-text">Teléfono: 7807 1135</p>
+            <button type="button" class="btn btn-appointment" onclick="showAppointmentForm('appointmentFormID')">Hacer Cita</button>
+
+            <form class="appointment-form" id="appointmentFormAgroservicioElRancho" style="display:none;">
+               <label for="nameAgroservicioElRancho">Nombre del usuario</label>
+                            <input type="text" id="nameAgroservicioElRancho" class="form-control" placeholder="Ej. Briseyda Martínez" required>
+
+                            <label for="petAgroservicioElRancho">Tipo de mascota</label>
+                            <select id="petAgroservicioElRancho" class="form-control" required>
+                                <option value="" disabled selected>Selecciona</option>
+                                <option>Perro</option>
+                                <option>Gato</option>
+                                <option>Conejo</option>
+                                <option>Ave</option>
+                            </select>
+                
+                <label for="serviceAgroservicioElRancho">Servicio requerido</label>
+                            <select id="serviceSanMartin" class="form-control" required>
+                                <option value="" disabled selected>Selecciona</option>
+                                <option>Consulta veterinaria</option>
+                                <option>Peluquería</option>
+                                <option>Vacunación</option>
+                                <option>Emergencia</option>
+                                <option>Otro</option>
+                            </select>
+
+                            <label for="dateAgroservicioElRancho">Seleccionar Fecha</label>
+                            <input type="date" id="dateSanMartin" class="form-control" required>
+
+                            <label for="timeAgroservicioElRancho">Seleccionar Hora</label>
+                            <input type="time" id="timeSanMartin" class="form-control" required>
+
+                <button type="button" class="btn btn-confirm mt-2"
+                        onclick="confirmAppointment('appointmentFormAgroservicioElRancho','dateAgroservicioElRancho','timeAgroservicioElRancho')">
+                    Confirmar Cita
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
 
             <!-- === SAN MARTÍN === -->
             <div class="col-md-4" id="sanmartin">
@@ -513,5 +562,6 @@
 </body>
 
 </html>
+
 
 
