@@ -272,13 +272,12 @@
             input.value = "";
 
             try {
-                const response = await fetch("https://chatbot-hno9.onrender.com/chat", {
+const response = await fetch("https://chatbot-hno9.onrender.com/api/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message })
 });
-
-                const data = await response.json();
+     const data = await response.json();
                 chat.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
                 chat.scrollTop = chat.scrollHeight;
             } catch (error) {
@@ -289,4 +288,5 @@
     </script>
 </body>
 </html>
+
 
