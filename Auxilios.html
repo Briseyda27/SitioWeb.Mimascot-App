@@ -8,30 +8,60 @@
     <link rel="icon" href="WhatsApp Image 2025-06-07 at 7.07.07 PM.jpeg">
     <style>
         /* Estilos para el chatbot */
-        #chatbot {
-            border: 2px solid #4CAF50;
-            padding: 15px;
-            width: 100%;
-            max-width: 500px;
-            margin: 20px auto;
-            border-radius: 10px;
-            background-color: #f9f9f9;
+        #chatbot-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
+
+        #chatbot {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 300px;
+            max-width: 90%;
+            background-color: #f9f9f9;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: none; /* Se muestra al abrir */
+            z-index: 1000;
+        }
+
+        .visible {
+            display: block !important;
+        }
+
         #chat-messages {
             border: 1px solid #ccc;
             padding: 10px;
-            height: 300px;
+            height: 250px;
             overflow-y: auto;
             margin-bottom: 10px;
             background-color: #fff;
             border-radius: 5px;
         }
+
         #chatbot input[type="text"] {
-            width: 75%;
+            width: 70%;
             padding: 8px;
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+
         #chatbot button {
             padding: 8px 12px;
             border-radius: 5px;
@@ -40,6 +70,7 @@
             color: white;
             cursor: pointer;
         }
+
         #chatbot button:hover {
             background-color: #45a049;
         }
@@ -245,6 +276,9 @@
         <p>Si no expulsa el huevo, acude al veterinario urgentemente.</p>
     </section>
 
+    <!-- Botón de burbuja del chatbot -->
+    <div id="chatbot-bubble" onclick="toggleChat()">💬</div>
+
     <!-- Chatbot -->
     <div id="chatbot">
         <div id="chat-messages">
@@ -262,6 +296,11 @@
 
     <!-- Script para el chatbot -->
     <script>
+        function toggleChat() {
+            const chat = document.getElementById('chatbot');
+            chat.classList.toggle('visible');
+        }
+
         async function sendMessage() {
             const input = document.getElementById("userInput");
             const message = input.value.trim();
@@ -270,25 +309,23 @@
             const chat = document.getElementById("chat-messages");
             chat.innerHTML += `<p><strong>Tú:</strong> ${message}</p>`;
             input.value = "";
+            chat.scrollTop = chat.scrollHeight;
 
             try {
-const response = await fetch("https://chatbot-1-3g9j.onrender.com/api/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message })
-});
-     const data = await response.json();
+                const response = await fetch("https://chatbot-1-3g9j.onrender.com/api/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
                 chat.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
                 chat.scrollTop = chat.scrollHeight;
             } catch (error) {
                 console.error(error);
                 chat.innerHTML += `<p><strong>Bot:</strong> ⚠️ Error al conectar con el servidor</p>`;
+                chat.scrollTop = chat.scrollHeight;
             }
         }
     </script>
 </body>
 </html>
-
-
-
-
