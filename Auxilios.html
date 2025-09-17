@@ -3,30 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consejos para Mascotas</title>
+    <title>Primeros Auxilios para Mascotas</title>
     <link rel="stylesheet" href="Primeros.css" />
     <link rel="icon" href="WhatsApp Image 2025-06-07 at 7.07.07 PM.jpeg">
+    <style>
+        /* Estilos para el chatbot */
+        #chatbot {
+            border: 2px solid #4CAF50;
+            padding: 15px;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        #chat-messages {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        #chatbot input[type="text"] {
+            width: 75%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        #chatbot button {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        #chatbot button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 
 <body>
     <header class="header">
-    <h1>Emergencias para cada Mascota</h1>
+        <h1>Emergencias para cada Mascota</h1>
 
-    <!-- Menú -->
-    <nav class="menu">
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="menu-icon">☰</label>
+        <!-- Menú -->
+        <nav class="menu">
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">☰</label>
 
-        <div class="menu-links">
-            <a href="#perros">Perros</a>
-            <a href="#gatos">Gatos</a>
-            <a href="#conejos">Conejos</a>
-            <a href="#Loros">Loros</a>
-            <a href="#Gallinas">Gallinas</a>
-            <a href="./index.html">Volver al Inicio</a>
-        </div>
-    </nav>
-</header>
+            <div class="menu-links">
+                <a href="#perros">Perros</a>
+                <a href="#gatos">Gatos</a>
+                <a href="#conejos">Conejos</a>
+                <a href="#Loros">Loros</a>
+                <a href="#Gallinas">Gallinas</a>
+                <a href="./index.html">Volver al Inicio</a>
+            </div>
+        </nav>
+    </header>
 
     <div class="galeria">
         <div class="tarjeta">
@@ -38,8 +76,7 @@
                     del olfato y el oído, lo que los hace ideales para tareas como 
                     búsqueda y rescate, detección de sustancias y asistencia a
                     personas con discapacidad.</p>
-
-                    <p>Son animales sociales que requieren cuidado, ejercicio y atención
+                <p>Son animales sociales que requieren cuidado, ejercicio y atención
                      para mantenerse sanos y felices. Su capacidad de formar vínculos
                       con los humanos los ha convertido en una de las especies más 
                       queridas y cercanas al hombre.</p>
@@ -55,9 +92,7 @@
                      por su agilidad, independencia y sentidos altamente desarrollados.
                       Poseen cuerpos flexibles, garras retráctiles y una excelente visión 
                       nocturna, lo que los convierte en cazadores eficaces. </p>
-
-                <p>
-                    A lo largo de la historia, los gatos han sido valorados por su capacidad
+                <p>A lo largo de la historia, los gatos han sido valorados por su capacidad
                      para controlar plagas y por su compañía. Su comportamiento varía, pero en general
                       son animales curiosos, juguetones y, aunque pueden parecer distantes, 
                       crean fuertes lazos con sus dueños.</p>
@@ -72,9 +107,7 @@
                     Leporidae, conocidos por sus largas orejas, patas traseras poderosas y 
                     dientes en constante crecimiento. Son animales ágiles y veloces, capaces de 
                     dar grandes saltos gracias a su musculatura adaptada para la huida.</p>
-
-                <p>
-                    Existen muchas razas de conejos, desde los pequeños conejos enanos hasta 
+                <p>Existen muchas razas de conejos, desde los pequeños conejos enanos hasta 
                     los grandes conejos gigantes de Flandes. Son animales sociales que pueden 
                     vivir en grupos y comunicarse mediante movimientos corporales y sonidos 
                     sutiles. En la naturaleza, suelen cavar madrigueras para refugiarse de 
@@ -102,8 +135,7 @@
     <!-- Secciones de cuidados -->
     <section id="perros" class="cuidados">
         <h2 style="text-align: center;">Cuidados Básicos para Perros</h2> 
-        <!-- contenido reducido por brevedad -->
-         <p>Mantén la calma y evita que el perro entre en pánico.</p>
+        <p>Mantén la calma y evita que el perro entre en pánico.</p>
         <p>Usa una voz tranquila y movimientos suaves.</p>
         <p>Si es necesario, coloca un bozal (excepto si tiene dificultad para respirar o está vomitando).</p>
         
@@ -123,8 +155,8 @@
     </section>
 
     <section id="gatos" class="cuidados">
-        <h2 style="text-align: center;"> Cuidados Básicos para Gatos</h2>
-         <p>Mantén la calma y evita movimientos bruscos.</p>
+        <h2 style="text-align: center;">Cuidados Básicos para Gatos</h2>
+        <p>Mantén la calma y evita movimientos bruscos.</p>
         <p>Usa una toalla o manta para manejar al gato si está agresivo o asustado.</p>
         <p>Si es necesario, coloca un bozal (nunca si tiene problemas respiratorios).</p>
 
@@ -145,7 +177,7 @@
     </section>
 
     <section id="conejos" class="cuidados">
-        <h2 style="text-align: center;"> Cuidados Básicos para Conejos</h2>
+        <h2 style="text-align: center;">Cuidados Básicos para Conejos</h2>
         <p>Mantén la calma y maneja a tu conejo con suavidad.</p>
         <p>Si está asustado, envuélvelo en una manta sin apretar demasiado.</p>
         <p>Revisa signos vitales: frecuencia respiratoria, temperatura y pulso.</p>
@@ -169,12 +201,12 @@
 
     <section id="Loros" class="cuidados">
         <h2 style="text-align: center;">Cuidados Básicos para Loros</h2>
-         <p>Jaula adecuada</p>
+        <p>Jaula adecuada</p>
         <p>Debe ser amplia, segura y fácil de limpiar.</p>
         <p>Colócala en un lugar con buena iluminación, sin corrientes de aire ni humo.</p>
         <p>Incluye perchas de distintos grosores y materiales.</p>
 
-        <h3> Estimulación y ejercicio</h3>
+        <h3>Estimulación y ejercicio</h3>
         <p>Proporciónale juguetes variados para evitar el aburrimiento.</p>
         <p>Permite que salga de la jaula diariamente para volar y explorar</p>
         <p>Interactúa con él para reforzar el vínculo y estimular su inteligencia.</p>
@@ -213,18 +245,47 @@
         <p>Si no expulsa el huevo, acude al veterinario urgentemente.</p>
     </section>
 
+    <!-- Chatbot -->
+    <div id="chatbot">
+        <div id="chat-messages">
+            <p><strong>Bot:</strong> Hola 👋, escribe tu duda sobre primeros auxilios para mascotas.</p>
+        </div>
+        <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+
     <a href="./index.html" class="btn">Volver al inicio</a>
 
     <footer>
         © 2025 Emergencias Mascotas - Todos los derechos reservados.
     </footer>
+
+    <!-- Script para el chatbot -->
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById("userInput");
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chat = document.getElementById("chat-messages");
+            chat.innerHTML += `<p><strong>Tú:</strong> ${message}</p>`;
+            input.value = "";
+
+            try {
+                const response = await fetch("https://chatbot-hno9.onrender.com/api/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message })
+                });
+
+                const data = await response.json();
+                chat.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
+                chat.scrollTop = chat.scrollHeight;
+            } catch (error) {
+                console.error(error);
+                chat.innerHTML += `<p><strong>Bot:</strong> ⚠️ Error al conectar con el servidor</p>`;
+            }
+        }
+    </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
