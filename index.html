@@ -133,23 +133,23 @@
   </div>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-    import {
-      getAuth,
-      createUserWithEmailAndPassword,
-      signInWithEmailAndPassword,
-      onAuthStateChanged
-    } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
-    import {
-      getFirestore,
-      doc,
-      setDoc,
-      getDoc,
-      serverTimestamp,
-      Timestamp
-    } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+  import {
+    getFirestore,
+    doc,
+    setDoc,
+    getDoc,
+    serverTimestamp,
+    Timestamp
+  } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-     const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyCBuqWPlOs6rW7bHenhDXSatHiimSI_JQI",
     authDomain: "acceso-a-clientes-3d5c8.firebaseapp.com",
     projectId: "acceso-a-clientes-3d5c8",
@@ -158,100 +158,102 @@
     appId: "1:313567830869:web:7299d327b4b8cfa7a945dc"
   };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-    const formContainer = document.getElementById("formContainer");
-    const errorDiv = document.getElementById("auth-error");
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const formContainer = document.getElementById("formContainer");
+  const errorDiv = document.getElementById("auth-error");
 
-    function addDaysAsTimestamp(date, days) {
-      const d = new Date(date);
-      d.setDate(d.getDate() + days);
-      return Timestamp.fromDate(d);
+  function addDaysAsTimestamp(date, days) {
+    const d = new Date(date);
+    d.setDate(d.getDate() + days);
+    return Timestamp.fromDate(d);
+  }
+
+  async function handleSignup() {
+    errorDiv.textContent = "";
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    if (password.length < 6) {
+      errorDiv.textContent = "La contraseña debe tener mínimo 6 caracteres.";
+      return;
     }
-
-    async function handleSignup() {
-      errorDiv.textContent = "";
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
-      if (password.length < 6) {
-        errorDiv.textContent = "La contraseña debe tener mínimo 6 caracteres.";
-        return;
-      }
-      try {
-        const cred = await createUserWithEmailAndPassword(auth, email, password);
-        await setDoc(doc(db, "users", cred.user.uid), {
-          email,
-          createdAt: serverTimestamp(),
-          trialEnd: addDaysAsTimestamp(new Date(), 7),
-          subscription: { active: false }
-        });
-      } catch (e) {
-        showAuthError(e);
-      }
+    try {
+      const cred = await createUserWithEmailAndPassword(auth, email, password);
+      await setDoc(doc(db, "users", cred.user.uid), {
+        email,
+        createdAt: serverTimestamp(),
+        trialEnd: addDaysAsTimestamp(new Date(), 7),
+        subscription: { active: false }
+      });
+    } catch (e) {
+      showAuthError(e);
     }
+  }
 
-    async function handleLogin() {
-      errorDiv.textContent = "";
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
+  async function handleLogin() {
+    errorDiv.textContent = "";
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-      if (auth.currentUser) return;
+    if (auth.currentUser) return;
 
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-      } catch (e) {
-        showAuthError(e);
-      }
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (e) {
+      showAuthError(e);
     }
+  }
 
-    function showAuthError(e) {
-      switch (e.code) {
-        case "auth/user-not-found":
-          errorDiv.textContent = "No existe una cuenta con este correo.";
-          break;
-        case "auth/wrong-password":
-          errorDiv.textContent = "La contraseña no es correcta.";
-          break;
-        case "auth/invalid-email":
-          errorDiv.textContent = "El correo no es válido.";
-          break;
-        case "auth/invalid-credential":
-          errorDiv.textContent = "Credenciales inválidas. Intenta iniciar sesión de nuevo.";
-          break;
-        case "auth/email-already-in-use":
-          errorDiv.textContent = "Este correo ya está registrado.";
-          break;
-        default:
-          errorDiv.textContent = "Error: " + e.message;
-      }
+  function showAuthError(e) {
+    switch (e.code) {
+      case "auth/user-not-found":
+        errorDiv.textContent = "No existe una cuenta con este correo.";
+        break;
+      case "auth/wrong-password":
+        errorDiv.textContent = "La contraseña no es correcta.";
+        break;
+      case "auth/invalid-email":
+        errorDiv.textContent = "El correo no es válido.";
+        break;
+      case "auth/invalid-credential":
+        errorDiv.textContent = "Credenciales inválidas. Intenta iniciar sesión de nuevo.";
+        break;
+      case "auth/email-already-in-use":
+        errorDiv.textContent = "Este correo ya está registrado.";
+        break;
+      default:
+        errorDiv.textContent = "Error: " + e.message;
     }
+  }
 
-    document.getElementById("btn-signup").addEventListener("click", handleSignup);
-    document.getElementById("btn-login").addEventListener("click", handleLogin);
+  document.getElementById("btn-signup").addEventListener("click", handleSignup);
+  document.getElementById("btn-login").addEventListener("click", handleLogin);
 
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const ref = doc(db, "users", user.uid);
-        const snap = await getDoc(ref);
-        if (snap.exists()) {
-          const data = snap.data();
-          const now = new Date();
-          const trialEnd = data.trialEnd.toDate();
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const ref = doc(db, "users", user.uid);
+      const snap = await getDoc(ref);
+      if (snap.exists()) {
+        const data = snap.data();
+        const now = new Date();
+        const trialEnd = data.trialEnd.toDate();
 
-          if (data.subscription?.active || now < trialEnd) {
-            window.location.href = "nosotros.html";
-          } else {
-            window.location.href = "Pago.html";
-          }
+        if (data.subscription?.active || now < trialEnd) {
+          window.location.href = "nosotros.html";
+        } else {
+          window.location.href = "Pago.html";
         }
-      } else {
-        formContainer.style.display = "block";
       }
-    });
-  </script>
+    } else {
+      formContainer.style.display = "block";
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
