@@ -4,196 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Consejos y Recomendaciones</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="Consejostyle.css" />
   <link rel="icon" href="WhatsApp Image 2025-06-07 at 7.07.07 PM.jpeg" />
-  <style>
-    /* ======= CHATBOT BURBUJA ======= */
-    #chatbot-bubble {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #FF69B4;
-      color: white;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 40px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: transform 0.2s;
-    }
-
-    #chatbot-bubble:hover {
-      transform: scale(1.1);
-    }
-
-    /* ======= CHATBOT CUADRO ======= */
-    #chatbot {
-      position: fixed;
-      bottom: 110px;
-      right: 20px;
-      width: 350px;
-      max-width: 90%;
-      background-color: #fff0f5;
-      border: 2px solid #FF69B4;
-      border-radius: 15px;
-      padding: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-      display: none;
-      z-index: 1000;
-      animation: slideUp 0.3s ease-out;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .visible {
-      display: block !important;
-    }
-
-    /* ======= MENSAJES ======= */
-    #chat-messages {
-      border: 1px solid #FF69B4;
-      padding: 10px;
-      height: 300px;
-      overflow-y: auto;
-      margin-bottom: 10px;
-      background-color: #fff;
-      border-radius: 10px;
-    }
-
-    #chatbot input[type="text"] {
-      width: 70%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #FF69B4;
-    }
-
-    #chatbot button {
-      padding: 10px 15px;
-      border-radius: 8px;
-      border: none;
-      background-color: #FF69B4;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    #chatbot button:hover {
-      background-color: #FF1493;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Menú de navegación fijo -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">MiMascot App</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#Perritos">Perritos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#Gatitos">Gatitos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#Conejos">Conejos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#Loros">Loros</a></li>
-          <li class="nav-item"><a class="nav-link" href="#Gallinas">Gallinas</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html">Volver al Inicio</a></li>
-        </ul>
+  <header>
+    <h1>Consejos y Recomendaciones</h1>
+    <p>Conocer cómo prevenir enfermedades en tus mascotas es clave para su bienestar.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-btn">🐶 Perritos</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Alimentación adecuada</li>
+            <li>Ejercicio diario</li>
+            <li>Chequeos veterinarios regulares</li>
+            <li>Higiene y limpieza</li>
+            <li>Socialización con otros perros y personas</li>
+          </ul>
+          <img src="N2.jpg" alt="Perros">
+        </div>
       </div>
-    </div>
-  </nav>
 
-  <!-- Contenido principal -->
-  <div class="container" style="margin-top:100px;">
-
-    <div class="section">
-      <h2>Consejos y Recomendaciones</h2>
-      <p>Conocer cómo prevenir enfermedades en tus animales es fundamental para garantizar su bienestar, mantenerlos saludables y felices.</p>
-      <div class="img-container">
-        <img src="N1.jpg" alt="Consejos" />
+      <div class="accordion-item">
+        <button class="accordion-btn">🐱 Gatitos</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Proporcionar juguetes estimulantes</li>
+            <li>Ofrecer rascadores</li>
+            <li>Chequeos veterinarios regulares</li>
+            <li>Alimentación balanceada</li>
+          </ul>
+          <img src="N3.jpg" alt="Gatos">
+        </div>
       </div>
-    </div>
 
-    <div class="section" id="Perritos">
-      <h2>¿Cómo prevenir enfermedades en Perritos?</h2>
-      <ul>
-        <li>Alimentación adecuada</li>
-        <li>Ejercicio diario</li>
-        <li>Chequeos veterinarios regulares</li>
-        <li>Higiene y limpieza</li>
-        <li>Socialización con otros perros y personas</li>
-      </ul>
-      <div class="img-container">
-        <img src="N2.jpg" alt="Perros" />
+      <div class="accordion-item">
+        <button class="accordion-btn">🐇 Conejos</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Socialización: interactuar con ellos para fomentar un comportamiento amigable y reducir el estrés.</li>
+            <li>Ambiente seguro: espacio libre de peligros y con refugios adecuados.</li>
+            <li>Chequeos veterinarios: visitas regulares para vacunación y control.</li>
+            <li>Ejercicio: espacio para saltar y explorar.</li>
+            <li>Dieta rica en fibra: heno fresco, verduras y pellets.</li>
+          </ul>
+          <img src="N5.jpg" alt="Conejos">
+        </div>
       </div>
-    </div>
 
-    <div class="section" id="Gatitos">
-      <h2>¿Cómo prevenir enfermedades en Gatitos?</h2>
-      <ul>
-        <li>Proporcionar juguetes estimulantes</li>
-        <li>Ofrecer rascadores</li>
-        <li>Chequeos veterinarios regulares</li>
-        <li>Alimentación balanceada</li>
-      </ul>
-      <div class="img-container">
-        <img src="N3.jpg" alt="Gatos" />
+      <div class="accordion-item">
+        <button class="accordion-btn">🦜 Loros</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Dieta variada: semillas, frutas, verduras y pellets.</li>
+            <li>Enriquecimiento ambiental: juguetes y actividades mentales.</li>
+            <li>Socialización: pasar tiempo con ellos para reducir el estrés.</li>
+            <li>Chequeos veterinarios: revisiones regulares.</li>
+          </ul>
+          <img src="N6.jpg" alt="Loros">
+        </div>
       </div>
-    </div>
 
-    <div class="section" id="Conejos">
-      <h2>¿Cómo prevenir enfermedades en Conejos?</h2>
-      <ul>
-        <li><strong>Socialización:</strong> Interactuar con ellos para fomentar un comportamiento amigable y reducir el estrés.</li>
-        <li><strong>Ambiente seguro:</strong> Espacio libre de peligros y con refugios adecuados.</li>
-        <li><strong>Chequeos veterinarios:</strong> Visitas regulares para vacunación y control.</li>
-        <li><strong>Ejercicio:</strong> Espacio para saltar y explorar.</li>
-        <li><strong>Dieta rica en fibra:</strong> Heno fresco, verduras y pellets.</li>
-      </ul>
-      <div class="img-container">
-        <img src="N5.jpg" alt="Conejos" />
-      </div>
-    </div>
-
-    <div class="section" id="Loros">
-      <h2>¿Cómo prevenir enfermedades en Loros?</h2>
-      <ul>
-        <li>Dieta variada: semillas, frutas, verduras y pellets.</li>
-        <li>Enriquecimiento ambiental: juguetes y actividades mentales.</li>
-        <li>Socialización: pasar tiempo con ellos para reducir el estrés.</li>
-        <li>Chequeos veterinarios: revisiones regulares.</li>
-      </ul>
-      <div class="img-container">
-        <img src="N6.jpg" alt="Loros" />
-      </div>
-    </div>
-
-    <div class="section" id="Gallinas">
-      <h2>¿Cómo prevenir enfermedades en Gallinas?</h2>
-      <ul>
-        <li>Protección contra depredadores.</li>
-        <li>Chequeos de salud regulares.</li>
-        <li>Higiene del gallinero.</li>
-        <li>Espacio adecuado para moverse y anidar.</li>
-        <li>Alimentación balanceada: granos, verduras, suplementos.</li>
-      </ul>
-      <div class="img-container">
-        <img src="N7.jpg" alt="Gallinas" />
+      <div class="accordion-item">
+        <button class="accordion-btn">🐓 Gallinas</button>
+        <div class="accordion-content">
+          <ul>
+            <li>Protección contra depredadores.</li>
+            <li>Chequeos de salud regulares.</li>
+            <li>Higiene del gallinero.</li>
+            <li>Espacio adecuado para moverse y anidar.</li>
+            <li>Alimentación balanceada: granos, verduras, suplementos.</li>
+          </ul>
+          <img src="N7.jpg" alt="Gallinas">
+        </div>
       </div>
     </div>
 
     <!-- Botón de regreso -->
-    <a href="index.html" class="btn btn-primary mt-3" target="_self">Volver al inicio</a>
+    <a href="index.html" class="btn-back">⬅ Volver al inicio</a>
+
   </div>
 
   <!-- Burbuja del chatbot -->
@@ -208,16 +103,27 @@
     <button onclick="sendMessage()">Enviar</button>
   </div>
 
-  <!-- Pie de página -->
   <footer>
     &copy; 2025 TODOPET | Todos los derechos reservados |
     <a href="#">Política de privacidad</a>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script del chatbot -->
   <script>
+    // ===== Acordeón =====
+    const accordionBtns = document.querySelectorAll('.accordion-btn');
+    accordionBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+
+    // ===== Chatbot =====
     function toggleChat() {
       const chat = document.getElementById('chatbot');
       chat.classList.toggle('visible');
@@ -251,3 +157,4 @@
   </script>
 </body>
 </html>
+
