@@ -3,7 +3,7 @@ body, html {
   margin: 0; 
   padding: 0; 
   font-family: 'Poppins', 'Arial', sans-serif; 
-  color: #6E4B3A; /* Marrón oscuro para texto principal */
+  color: #5C4033; /* Marrón oscuro para texto principal */
   position: relative; 
   scroll-behavior: smooth;
   background-color: #FFF8F0; /* Fondo cálido */
@@ -31,7 +31,7 @@ body, html {
 
 /* ===== Navbar ===== */
 .navbar-container { 
-  background-color: #A9746E; /* Marrón cálido */
+  background-color: #8B5E3C; /* Marrón cálido real */
   border-radius: 12px; 
   padding: 20px 30px; 
   box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
@@ -58,8 +58,8 @@ body, html {
   transition: 0.3s; 
 } 
 .navbar-nav .nav-link:hover { 
-  color: #A9746E; 
-  background-color: #FFD97D; /* amarillo suave para hover */
+  color: #8B5E3C; 
+  background-color: #FFD166; /* amarillo cálido */
   border-radius: 8px; 
   padding: 5px 12px; 
   font-weight: 600;
@@ -79,14 +79,14 @@ body, html {
   font-size: 4rem; 
   font-weight: 800; 
   text-align: center; 
-  color: #A9746E; 
+  color: #8B5E3C; 
   text-shadow: 2px 2px 12px rgba(0,0,0,0.25); 
   margin-top: 40px; 
 }
 .subtitle { 
   font-size: 1.6rem; 
   text-align: center; 
-  color: #6E4B3A; 
+  color: #5C4033; 
   margin-bottom: 60px; 
   font-weight: 500; 
   text-shadow: 1px 1px 6px rgba(0,0,0,0.15); 
@@ -96,7 +96,7 @@ body, html {
 .section-title { 
   font-size: 2.4rem; 
   font-weight: 700; 
-  color: #A9746E; 
+  color: #8B5E3C; 
   text-align: center; 
   margin-bottom: 30px; 
   text-shadow: 1px 1px 5px rgba(0,0,0,0.2); 
@@ -106,9 +106,9 @@ body, html {
 section p { 
   font-size: 1.15rem; 
   line-height: 1.8; 
-  color: #6E4B3A; 
+  color: #5C4033; 
   text-align: justify; 
-  background-color: rgba(255, 245, 228, 0.95); /* cálido y legible */
+  background-color: rgba(255, 245, 220, 0.95); /* cálido y legible */
   padding: 25px; 
   border-radius: 12px; 
   box-shadow: 0 6px 18px rgba(0,0,0,0.15); 
@@ -120,7 +120,7 @@ section p {
   align-items: stretch; 
   gap: 25px; 
   margin-bottom: 40px; 
-  background-color: rgba(255, 245, 228, 0.95); 
+  background-color: rgba(255, 245, 220, 0.95); 
   padding: 25px; 
   border-radius: 15px; 
   box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
@@ -152,12 +152,12 @@ section p {
 } 
 .team-text h3 { 
   font-size: 1.8rem; 
-  color: #A9746E; 
+  color: #8B5E3C; 
   margin-bottom: 15px; 
 } 
 .team-text p { 
   font-size: 1.15rem; 
-  color: #6E4B3A; 
+  color: #5C4033; 
   line-height: 1.7; 
   text-align: justify; 
 }
@@ -168,11 +168,11 @@ section p {
   margin-bottom: 20px; 
   border-radius: 12px; 
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  background-color: rgba(255,245,228,0.95);
+  background-color: rgba(255,245,220,0.95);
 }
-.objetivo { color: #FFD97D; font-weight: 600; }
-.mision { color: #A9746E; font-weight: 600; }
-.vision { color: #6E4B3A; font-weight: 600; }
+.objetivo { color: #FFD166; font-weight: 600; }
+.mision { color: #8B5E3C; font-weight: 600; }
+.vision { color: #5C4033; font-weight: 600; }
 
 /* ===== Fade-in animation ===== */ 
 .fade-in { 
@@ -190,7 +190,7 @@ footer {
   text-align: center; 
   padding: 25px; 
   color: #FFF8F0; 
-  background-color: #A9746E; 
+  background-color: #8B5E3C; 
   font-size: 1rem; 
   margin-top: 50px; 
   border-radius: 12px 12px 0 0;
