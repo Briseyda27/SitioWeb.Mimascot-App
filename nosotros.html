@@ -11,12 +11,10 @@
 </head>
 <body>
 
-  <!-- Video de fondo -->
-  <video autoplay loop muted class="background-video">
-    <source src="Video.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de videos.
-  </video>
-  <div class="overlay"></div>
+  <!-- Mascotas animadas flotando -->
+  <div class="floating-pets">
+    <img src="perro.png" class="pet pet1" alt="Perro">
+  </div>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
@@ -36,13 +34,11 @@
     </div>
   </nav>
 
-  <!-- Hero con botones -->
-  <div class="hero-container text-center">
-    <h1 class="title">MiMascotApp</h1>
-    <h2 class="subtitle">Conoce la historia detrás de nuestro proyecto</h2>
-    <div class="hero-buttons">
-      <a href="#historia" class="btn btn-hero">Explora nuestros servicios</a>
-      <a href="#equipo" class="btn btn-hero-outline">Conócenos</a>
+  <!-- Hero -->
+
+    <div class="hero-card text-center">
+      <h1 class="title">MiMascotApp</h1>
+      <p class="subtitle">Conoce la historia detrás de nuestro proyecto y explora nuestros servicios</p>
     </div>
   </div>
 
@@ -50,7 +46,7 @@
   <div class="container main-content">
 
     <!-- Historia -->
-    <section id="historia" class="mt-5 fade-in">
+    <section id="historia">
       <h2 class="section-title">Un pedacito de nosotros</h2>
       <p>
         Nuestra empresa se enfoca en brindar a los dueños de mascotas una plataforma completa con información confiable sobre el cuidado de sus animales. 
@@ -64,8 +60,8 @@
     </section>
 
     <!-- Equipo -->
-    <section id="equipo" class="mt-5">
-      <h2 class="section-title text-center mb-4 fade-in">Nuestro equipo</h2>
+    <section id="equipo">
+      <h2 class="section-title text-center mb-4">Nuestro equipo</h2>
 
       <div class="team-row fade-in">
         <div class="team-img-container">
@@ -73,7 +69,7 @@
         </div>
         <div class="team-text">
           <h3>Briseyda Flores</h3>
-          <p>Briseyda Jeannette Flores Ortiz de El Salvador, con determinación y muchas aspiraciones. Se esfuerza por siempre dar lo mejor de ella y mostrarse de forma profesional. Posee habilidades en liderazgo, trabajo en equipo y adaptabilidad.</p>
+          <p>Briseyda Jeannette Flores Ortiz de El Salvador, con gran determinación y muchas aspiraciones. Posee habilidades en liderazgo, trabajo en equipo y adaptabilidad.</p>
         </div>
       </div>
 
@@ -83,7 +79,7 @@
         </div>
         <div class="team-text">
           <h3>Josué Ascencio</h3>
-          <p>Herberth Josué Ascencio Hernández nació el 30 de junio de 2008 y desde muy joven demostró fortaleza inquebrantable. Su resiliencia lo ha impulsado a seguir adelante frente a desafíos.</p>
+          <p>Herberth Josué Ascencio Hernández ha demostrado resiliencia y fortaleza desde muy joven, enfrentando desafíos y siempre superándolos con éxito.</p>
         </div>
       </div>
 
@@ -93,7 +89,7 @@
         </div>
         <div class="team-text">
           <h3>Roxana Vega</h3>
-          <p>Roxana Marilyn Vega Pineda nació el 27 de abril de 2008 en Santa Ana. Desde joven mostró interés por el aprendizaje y su esfuerzo constante. Fue beneficiaria de la Fundación Gloria de Kriete por tres años.</p>
+          <p>Roxana Marilyn Vega Pineda mostró interés por el aprendizaje desde pequeña y tuvo la oportunidad de ser beneficiaria de la Fundación Gloria de Kriete durante tres años.</p>
         </div>
       </div>
 
@@ -103,23 +99,23 @@
         </div>
         <div class="team-text">
           <h3>Dulce Sandoval</h3>
-          <p>Dulce María Sandoval Hernández, con habilidades como creatividad, pensamiento crítico, comunicación asertiva y resiliencia, que la convierten en una persona única y prometedora.</p>
+          <p>Dulce María Sandoval Hernández posee creatividad, pensamiento crítico, comunicación asertiva y resiliencia, lo que la convierte en una persona única.</p>
         </div>
       </div>
     </section>
 
     <!-- Objetivo, Misión y Visión -->
-    <section class="mt-5 fade-in">
+    <section>
       <h2 class="section-title text-center mb-4">Nuestro objetivo, misión y visión</h2>
 
       <div class="info-box objetivo">
         <h4>🎯 Nuestro objetivo</h4>
-        <p>Brindar a los dueños de mascotas una plataforma digital completa donde puedan acceder a información confiable sobre el cuidado de sus animales y servicios de calidad.</p>
+        <p>Brindar a los dueños de mascotas una plataforma digital completa con información confiable sobre el cuidado de sus animales y servicios de calidad.</p>
       </div>
 
       <div class="info-box mision">
         <h4>🌍 Misión</h4>
-        <p>Facilitar el acceso a información y servicios esenciales para el cuidado de las mascotas, promoviendo educación y prevención de enfermedades.</p>
+        <p>Facilitar el acceso a información y servicios esenciales para el cuidado de las mascotas, promoviendo la educación y prevención de enfermedades.</p>
       </div>
 
       <div class="info-box vision">
@@ -147,5 +143,6 @@
     }, appearOptions);
     faders.forEach(fader => appearOnScroll.observe(fader));
   </script>
+
 </body>
 </html>
