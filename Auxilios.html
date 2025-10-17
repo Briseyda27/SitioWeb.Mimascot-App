@@ -3,344 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeros Auxilios para Mascotas</title>
-    <link rel="stylesheet" href="Primeros.css" />
+    <title>Emergencias para Mascotas</title>
+    <link rel="stylesheet" href="Primeros.css">
     <link rel="icon" href="WhatsApp Image 2025-06-07 at 7.07.07 PM.jpeg">
-    <style>
-        /* Chatbot flotante llamativo */
-        #chatbot-bubble {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #FF69B4; /* Rosado llamativo */
-            color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 40px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: transform 0.2s;
-        }
-
-        #chatbot-bubble:hover {
-            transform: scale(1.1);
-        }
-
-        #chatbot {
-            position: fixed;
-            bottom: 110px;
-            right: 20px;
-            width: 350px;
-            max-width: 90%;
-            background-color: #fff0f5; /* Rosado claro */
-            border: 2px solid #FF69B4;
-            border-radius: 15px;
-            padding: 10px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-            display: none;
-            z-index: 1000;
-            animation: slideUp 0.3s ease-out;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .visible {
-            display: block !important;
-        }
-
-        #chat-messages {
-            border: 1px solid #FF69B4;
-            padding: 10px;
-            height: 300px;
-            overflow-y: auto;
-            margin-bottom: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-        }
-
-        #chatbot input[type="text"] {
-            width: 70%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #FF69B4;
-        }
-
-        #chatbot button {
-            padding: 10px 15px;
-            border-radius: 8px;
-            border: none;
-            background-color: #FF69B4;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        #chatbot button:hover {
-            background-color: #FF1493;
-        }
-    </style>
 </head>
-
 <body>
     <header class="header">
-        <h1>Emergencias para cada Mascota</h1>
-
-        <!-- Menú -->
-        <nav class="menu">
-            <input type="checkbox" id="menu-toggle" />
-            <label for="menu-toggle" class="menu-icon">☰</label>
-
-            <div class="menu-links">
-                <a href="#perros">Perros</a>
-                <a href="#gatos">Gatos</a>
-                <a href="#conejos">Conejos</a>
-                <a href="#Loros">Loros</a>
-                <a href="#Gallinas">Gallinas</a>
-                <a href="./index.html">Volver al Inicio</a>
-            </div>
-        </nav>
+        <h1>Emergencias para Mascotas</h1>
     </header>
 
-    <!-- Tu contenido de mascotas igual que antes -->
-    <div class="galeria">
-        <div class="tarjeta">
-            <img src="P.jpg" alt="Perro feliz">
-            <div class="descripcion">
-                <h3>Perros</h3>
-                <p>Existen cientos de razas con características variadas en tamaño, 
-                    temperamento y habilidades. Los perros poseen un agudo sentido
-                    del olfato y el oído, lo que los hace ideales para tareas como 
-                    búsqueda y rescate, detección de sustancias y asistencia a
-                    personas con discapacidad.</p>
-                <p>Son animales sociales que requieren cuidado, ejercicio y atención
-                     para mantenerse sanos y felices. Su capacidad de formar vínculos
-                      con los humanos los ha convertido en una de las especies más 
-                      queridas y cercanas al hombre.</p>
+    <main>
+        <section class="selector-mascotas">
+            <h2>Selecciona tu mascota</h2>
+            <div class="mascotas-grid">
+                <div class="mascota" onclick="scrollToSection('perros')">
+                    <img src="P.jpg" alt="Perros">
+                    <span>Perros</span>
+                </div>
+                <div class="mascota" onclick="scrollToSection('gatos')">
+                    <img src="G.jpg" alt="Gatos">
+                    <span>Gatos</span>
+                </div>
+                <div class="mascota" onclick="scrollToSection('conejos')">
+                    <img src="C.jpg" alt="Conejos">
+                    <span>Conejos</span>
+                </div>
+                <div class="mascota" onclick="scrollToSection('loros')">
+                    <img src="Loro.jpg" alt="Loros">
+                    <span>Loros</span>
+                </div>
+                <div class="mascota" onclick="scrollToSection('gallinas')">
+                    <img src="Gallina.jpg" alt="Gallinas">
+                    <span>Gallinas</span>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="tarjeta">
-            <img src="G.jpg" alt="Gato jugando">
-            <div class="descripcion">
-                <h3>Gatos</h3>
-                <p>Los gatos (Felis catus) son mamíferos carnívoros domesticados que 
-                    han convivido con los humanos durante miles de años. Se caracterizan
-                     por su agilidad, independencia y sentidos altamente desarrollados.
-                      Poseen cuerpos flexibles, garras retráctiles y una excelente visión 
-                      nocturna, lo que los convierte en cazadores eficaces. </p>
-                <p>A lo largo de la historia, los gatos han sido valorados por su capacidad
-                     para controlar plagas y por su compañía. Su comportamiento varía, pero en general
-                      son animales curiosos, juguetones y, aunque pueden parecer distantes, 
-                      crean fuertes lazos con sus dueños.</p>
+        <section id="perros" class="consejos">
+            <h2>Perros 🐶</h2>
+            <div class="contenido">
+                <p><strong>Control de heridas:</strong> Lava cortes con agua limpia y aplica antiséptico. Cubre con gasa estéril.</p>
+                <p><strong>RCP:</strong> Si no respira ni tiene pulso, coloca manos en el pecho y realiza compresiones torácicas a 100-120 por minuto.</p>
+                <p><strong>Intoxicaciones:</strong> Lleva el envase del producto tóxico al veterinario y sigue sus indicaciones.</p>
             </div>
-        </div>
+        </section>
 
-        <div class="tarjeta">
-            <img src="C.jpg" alt="Conejo esponjoso">
-            <div class="descripcion">
-                <h3>Conejos</h3>
-                <p>Los conejos (Oryctolagus cuniculus) son mamíferos herbívoros de la familia 
-                    Leporidae, conocidos por sus largas orejas, patas traseras poderosas y 
-                    dientes en constante crecimiento. Son animales ágiles y veloces, capaces de 
-                    dar grandes saltos gracias a su musculatura adaptada para la huida.</p>
-                <p>Existen muchas razas de conejos, desde los pequeños conejos enanos hasta 
-                    los grandes conejos gigantes de Flandes. Son animales sociales que pueden 
-                    vivir en grupos y comunicarse mediante movimientos corporales y sonidos 
-                    sutiles. En la naturaleza, suelen cavar madrigueras para refugiarse de 
-                    depredadores.</p>
+        <section id="gatos" class="consejos">
+            <h2>Gatos 🐱</h2>
+            <div class="contenido">
+                <p><strong>Heridas y hemorragias:</strong> Limpia con antiséptico y aplica presión si sangra.</p>
+                <p><strong>RCP felina:</strong> Boca a hocico, 4-5 segundos por respiración y compresiones torácicas con una mano.</p>
+                <p><strong>Asfixia:</strong> Retira objetos con cuidado o realiza maniobra de Heimlich felina si es necesario.</p>
             </div>
-        </div>
+        </section>
 
-        <div class="tarjeta">
-            <img src="Loro.jpg" alt="Loro Exclusivo">
-            <div class="descripcion">
-                <h3>Loros</h3>
-                <p>Los loros son aves pertenecientes al orden Psittaciformes, conocidos por su plumaje brillante, su pico curvo y su gran capacidad vocal. Existen más de 350 especies de loros distribuidas principalmente en zonas tropicales de América, África, Asia y Oceanía. Muchas de estas aves pueden imitar sonidos del entorno, e incluso el habla humana, lo que las hace especialmente atractivas como mascotas. Su inteligencia, capacidad de aprendizaje y comportamiento social las convierten en animales fascinantes tanto en libertad como en cautiverio.</p>
+        <section id="conejos" class="consejos">
+            <h2>Conejos 🐇</h2>
+            <div class="contenido">
+                <p><strong>Heridas:</strong> Lava y aplica antiséptico. Presiona con gasa si sangra.</p>
+                <p><strong>Respiración:</strong> Mantén al animal tranquilo, controla frecuencia respiratoria y temperatura.</p>
+                <p><strong>Golpe de calor:</strong> Lleva a lugar fresco y humedece sus orejas con agua templada.</p>
             </div>
-        </div>
+        </section>
 
-        <div class="tarjeta">
-            <img src="Gallina.jpg" alt="Gallinas lindas">
-            <div class="descripcion">
-                <h3>Gallinas</h3>
-                <p>Las gallinas son aves domésticas muy comunes en todo el mundo, criadas principalmente por sus huevos y carne. Pertenecen a la especie Gallus gallus domesticus y se cree que descienden del gallo rojo salvaje del sudeste asiático. Son animales sociables, inteligentes y capaces de establecer jerarquías dentro del grupo, conocidas como el “orden de picoteo”.</p>
+        <section id="loros" class="consejos">
+            <h2>Loros 🦜</h2>
+            <div class="contenido">
+                <p><strong>Jaula adecuada:</strong> Amplia, limpia y segura, sin corrientes de aire.</p>
+                <p><strong>Ejercicio:</strong> Permite volar diariamente y proporciona juguetes variados.</p>
+                <p><strong>Alimentación:</strong> Dieta balanceada de pellets, frutas y verduras, siempre agua fresca.</p>
             </div>
+        </section>
+
+        <section id="gallinas" class="consejos">
+            <h2>Gallinas 🐔</h2>
+            <div class="contenido">
+                <p><strong>Heridas:</strong> Limpia con desinfectante suave y aplica pomada antibiótica si es necesario.</p>
+                <p><strong>Hemorragias:</strong> Presiona con gasa hasta detener el sangrado.</p>
+                <p><strong>Huevos atascados:</strong> Baño tibio y lubricar zona de cloaca; acudir al veterinario si no se resuelve.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot flotante -->
+    <div id="chatbot-bubble" onclick="toggleChat()">🐾</div>
+    <div id="chatbot">
+        <div id="chat-messages">
+            <p><strong>Bot:</strong> Hola 👋, escribe tu duda sobre primeros auxilios para mascotas.</p>
         </div>
+        <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
+        <button onclick="sendMessage()">Enviar</button>
     </div>
 
-    <!-- Secciones de cuidados -->
-    <section id="perros" class="cuidados">
-        <h2 style="text-align: center;">Cuidados Básicos para Perros</h2> 
-        <p>Mantén la calma y evita que el perro entre en pánico.</p>
-        <p>Usa una voz tranquila y movimientos suaves.</p>
-        <p>Si es necesario, coloca un bozal (excepto si tiene dificultad para respirar o está vomitando).</p>
-        
-        <h3>Control de heridas y hemorragias</h3>
-        <p>Cortes y heridas: Lava con agua limpia y aplica un antiséptico. Cubre con una gasa estéril.</p>
-        <p>Sangrado intenso: Aplica presión directa con un paño limpio. Si es una pata, puedes hacer un vendaje compresivo sin cortar la circulación.</p>
+    <footer>
+        © 2025 Emergencias Mascotas - Todos los derechos reservados.
+    </footer>
 
-        <h3>RCP canina (si no respira y no tiene pulso)</h3>
-        <p>Comprueba signos vitales: Coloca tu mano en el pecho (detrás del codo izquierdo) para sentir el latido.</p>
-        <p>Respiración boca a hocico: Si no respira, estira su cuello, cierra la boca y sopla en sus fosas nasales cada 5 segundos.</p>
-        <p>Compresiones torácicas: Si no tiene pulso, coloca las manos en el tórax y presiona fuerte (1/3 del ancho del pecho) a un ritmo de 100-120 compresiones por minuto.</p>
+    <script>
+        function scrollToSection(id) {
+            const section = document.getElementById(id);
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
 
-        <h3>Intoxicaciones</h3>
-        <p>No induzcas el vómito sin indicaciones del veterinario.</p>
-        <p>Si ha ingerido algo tóxico (chocolate, veneno, medicamentos), lleva el envase al veterinario.</p>
-        <p>Ofrécele carbón activado si el veterinario lo aprueba.</p>
-    </section>
+        function toggleChat() {
+            document.getElementById('chatbot').classList.toggle('visible');
+        }
 
-    <section id="gatos" class="cuidados">
-        <h2 style="text-align: center;">Cuidados Básicos para Gatos</h2>
-        <p>Mantén la calma y evita movimientos bruscos.</p>
-        <p>Usa una toalla o manta para manejar al gato si está agresivo o asustado.</p>
-        <p>Si es necesario, coloca un bozal (nunca si tiene problemas respiratorios).</p>
+        async function sendMessage() {
+            const input = document.getElementById("userInput");
+            const message = input.value.trim();
+            if (!message) return;
 
-        <h3>Hemorragias y heridas</h3>
-        <p>Cortes y raspaduras: Limpia con agua y aplica un antiséptico como clorhexidina diluida.</p>
-        <p>Sangrado abundante: Presiona con una gasa estéril durante varios minutos.</p>
-        <p>Heridas profundas: No intentes suturarlas, cubre con un vendaje y ve al veterinario.</p>
+            const chat = document.getElementById("chat-messages");
+            chat.innerHTML += `<p><strong>Tú:</strong> ${message}</p>`;
+            input.value = "";
+            chat.scrollTop = chat.scrollHeight;
 
-        <h3>RCP felina (si no respira y no tiene pulso)</h3>
-        <p>Revisión de signos vitales: Observa el pecho o coloca tu mano en el lado izquierdo del tórax.</p>
-        <p>Respiración boca a hocico: Cierra su boca y sopla en su nariz cada 4-5 segundos.</p>
-        <p>Compresiones torácicas: Presiona el pecho con una mano, 100-120 compresiones por minuto.</p>
-
-        <h3>Asfixia o atragantamiento</h3>
-        <p>Si tose o intenta sacar algo, no intervengas inmediatamente.</p>
-        <p>Si está ahogándose, abre su boca y trata de retirar el objeto con unas pinzas.</p>
-        <p>Si no puedes sacarlo, realiza la maniobra de Heimlich para gatos: coloca ambas manos en su abdomen y presiona con cuidado hacia arriba.</p>
-    </section>
-
-    <section id="conejos" class="cuidados">
-        <h2 style="text-align: center;">Cuidados Básicos para Conejos</h2>
-        <p>Mantén la calma y maneja a tu conejo con suavidad.</p>
-        <p>Si está asustado, envuélvelo en una manta sin apretar demasiado.</p>
-        <p>Revisa signos vitales: frecuencia respiratoria, temperatura y pulso.</p>
-
-        <h3>Hemorragias y heridas</h3>
-        <p>Cortes y raspaduras: Limpia con agua tibia y aplica un antiséptico como clorhexidina diluida.</p>
-        <p>Sangrado abundante: Presiona con una gasa estéril hasta que deje de sangrar.</p>
-        <p>Heridas profundas: Cubre con una venda limpia y acude al veterinario.</p>
-
-        <h3>Problemas respiratorios</h3>
-        <p>Si notas jadeo excesivo o ruidos al respirar, mantén a tu conejo en un ambiente tranquilo y fresco.</p>
-        <p>Evita el estrés y no lo manipules demasiado.</p>
-        <p>Si deja de respirar, intenta estimular su nariz con suaves toques y busca ayuda veterinaria urgente.</p>
-
-        <h3>Golpe de calor</h3>
-        <p>Llévalo a un lugar fresco.</p>
-        <p>Humedece sus orejas con agua fresca (NO fría).</p>
-        <p>Ofrécele agua en pequeñas cantidades.</p>
-        <p>No lo sumerjas en agua fría, puede causar shock.</p>
-    </section>
-
-    <section id="Loros" class="cuidados">
-        <h2 style="text-align: center;">Cuidados Básicos para Loros</h2>
-        <p>Jaula adecuada</p>
-        <p>Debe ser amplia, segura y fácil de limpiar.</p>
-        <p>Colócala en un lugar con buena iluminación, sin corrientes de aire ni humo.</p>
-        <p>Incluye perchas de distintos grosores y materiales.</p>
-
-        <h3>Estimulación y ejercicio</h3>
-        <p>Proporciónale juguetes variados para evitar el aburrimiento.</p>
-        <p>Permite que salga de la jaula diariamente para volar y explorar</p>
-        <p>Interactúa con él para reforzar el vínculo y estimular su inteligencia.</p>
-
-        <h3>Alimentación</h3>
-        <p>Ofrece una dieta variada: pellets, frutas, verduras y algunas semillas.</p>
-        <p>Evita alimentos peligrosos como chocolate, aguacate, cebolla y alcohol.</p>
-        <p>Asegúrate de que tenga siempre agua fresca y limpia.</p>
-
-        <h3>Higiene y limpieza</h3>
-        <p>Limpia la jaula y los recipientes de comida/agua con regularidad.</p>
-        <p>Cambia el sustrato del fondo de la jaula con frecuencia.</p>
-        <p>Puedes darle baños o rociarlo con agua para cuidar su plumaje.</p>
-    </section>
-
-    <section id="Gallinas" class="cuidados">
-        <h2 style="text-align: center;">Cuidados Básicos para Gallinas</h2>
-        <p>Heridas leves</p>
-        <p>Limpia la zona con agua tibia y un desinfectante suave (como yodo diluido).</p>
-        <p>Aplica una pomada antibiótica si es necesario.</p>
-        <p>Aísla a la gallina herida para evitar que otras la picoteen.</p>
-
-        <h3>Hemorragias</h3>
-        <p>Presiona suavemente la zona con una gasa limpia hasta que se detenga el sangrado.</p>
-        <p>No uses algodón, ya que deja residuos.</p>
-        <p>Si la hemorragia no se detiene, consulta a un veterinario.</p>
-
-        <h3>Problemas respiratorios</h3>
-        <p>Observa si hay estornudos, secreciones o dificultad para respirar.</p>
-        <p>Aísla a la gallina afectada en un lugar cálido y ventilado.</p>
-        <p>Consulta al veterinario cuanto antes, ya que puede tratarse de una infección.</p>
-
-        <h3>Huevos atascados (retención de huevo)</h3>
-        <p>Coloca a la gallina en un baño tibio durante 15–20 minutos para relajarla.</p>
-        <p>Lubrica suavemente la zona de la cloaca con aceite vegetal.</p>
-        <p>Si no expulsa el huevo, acude al veterinario urgentemente.</p>
-    </section>
-
-    <!-- Botón de burbuja del chatbot -->
-  <div id="chatbot-bubble" onclick="toggleChat()">🐾</div>
-
-  <!-- Chatbot -->
-  <div id="chatbot">
-    <div id="chat-messages">
-      <p><strong>Bot:</strong> Hola 👋, escribe tu duda sobre primeros auxilios para mascotas.</p>
-    </div>
-    <input type="text" id="userInput" placeholder="Escribe tu mensaje...">
-    <button onclick="sendMessage()">Enviar</button>
-  </div>
-
-  <!-- Botón de regreso -->
-  <a href="./index.html" class="btn">Volver al inicio</a>
-
-  <!-- Pie -->
-  <footer>
-    © 2025 Emergencias Mascotas - Todos los derechos reservados.
-  </footer>
-
-  <!-- Script -->
-  <script>
-    function toggleChat() {
-      const chat = document.getElementById('chatbot');
-      chat.classList.toggle('visible');
-    }
-
-    async function sendMessage() {
-      const input = document.getElementById("userInput");
-      const message = input.value.trim();
-      if (!message) return;
-
-      const chat = document.getElementById("chat-messages");
-      chat.innerHTML += `<p><strong>Tú:</strong> ${message}</p>`;
-      input.value = "";
-      chat.scrollTop = chat.scrollHeight;
-
-      try {
-        const response = await fetch("https://chatbot-1-3g9j.onrender.com/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message })
-        });
-        const data = await response.json();
-        chat.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
-        chat.scrollTop = chat.scrollHeight;
-      } catch (error) {
-        console.error(error);
-        chat.innerHTML += `<p><strong>Bot:</strong> ⚠️ Error al conectar con el servidor</p>`;
-        chat.scrollTop = chat.scrollHeight;
-      }
-    }
-  </script>
+            try {
+                const response = await fetch("https://chatbot-1-3g9j.onrender.com/api/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                chat.innerHTML += `<p><strong>Bot:</strong> ${data.reply}</p>`;
+                chat.scrollTop = chat.scrollHeight;
+            } catch (error) {
+                chat.innerHTML += `<p><strong>Bot:</strong> ⚠️ Error al conectar con el servidor</p>`;
+                chat.scrollTop = chat.scrollHeight;
+            }
+        }
+    </script>
 </body>
 </html>
