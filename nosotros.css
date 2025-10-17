@@ -9,7 +9,7 @@ body, html {
   background-color: #FFF8F0; /* Fondo cálido */
 }
 
-/* ===== Video de fondo y overlay ===== */ 
+/* ===== Video de fondo y overlay ===== */
 .background-video { 
   position: fixed; 
   top: 0; 
@@ -19,15 +19,17 @@ body, html {
   object-fit: cover; 
   z-index: -2; 
 }
+
 .overlay { 
   position: fixed; 
   top: 0; 
   left: 0; 
   width: 100%; 
   height: 100%; 
-  background: rgba(245, 235, 221, 0.6); /* ligero tono cálido */
+  background: rgba(255, 245, 228, 0.3); /* Hice el overlay más transparente */
   z-index: -1; 
 }
+
 
 /* ===== Navbar ===== */
 .navbar-container { 
@@ -211,3 +213,4 @@ footer {
   .team-text h3 { font-size: 1.5rem; } 
   .team-text p { font-size: 1.1rem; line-height: 1.6; } 
 }
+
