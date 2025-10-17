@@ -1,215 +1,217 @@
-/* ===== Estilos generales ===== */
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fde4ec, #f9c0d3);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #4a154b;
-    line-height: 1.6;
-    transition: all 0.3s ease;
+/* ===== Paleta cafés y amarillos ===== */
+:root {
+  --primary-color: #b38b6d;
+  --secondary-color: #f2d398;
+  --accent-color: #e6c49f;
+  --text-color: #4a3c31;
+  --btn-color: #d9a066;
+  --btn-hover: #c78c4d;
+  --accordion-bg: #f5e4d7;
+  --accordion-hover: #ecd5b8;
 }
 
-/* ===== Encabezado (Header) ===== */
+/* ===== Estilos generales ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
 header {
-    background: linear-gradient(135deg, #f48fb1, #f06292);
-    color: #fff;
-    text-align: center;
-    padding: 50px 20px;
-    font-size: 2.2rem;
-    font-weight: 800;
-    border-bottom: 4px solid rgba(255,255,255,0.3);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    border-radius: 0 0 30px 30px;
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--primary-color);
+  color: white;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin: 10px 0 0;
-    color: #ffe5f0;
-}
-
-/* ===== Menú de navegación fijo ===== */
-nav {
-    background: linear-gradient(90deg, #f48fb1, #f06292);
-    padding: 14px 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    border-bottom: 2px solid rgba(255,255,255,0.3);
-    transition: all 0.3s ease;
-}
-
-nav ul.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-nav ul.menu li {
-    display: inline;
-}
-
-nav ul.menu a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 17px;
-    padding: 12px 18px;
-    border-radius: 12px;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-nav ul.menu a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 3px;
-    background: #fff;
-    transition: width 0.3s ease;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-}
-
-nav ul.menu a:hover::after {
-    width: 100%;
-}
-
-nav ul.menu a:hover {
-    background-color: rgba(255,255,255,0.18);
-    transform: scale(1.08);
-}
-
-/* ===== Ajuste de margen para el cuerpo ===== */
-body {
-    padding-top: 100px; /* Ajuste para menú fijo */
+  font-size: 1.2rem;
 }
 
 /* ===== Contenedor principal ===== */
 .container {
-    width: 90%;
-    max-width: 950px;
-    margin: auto;
-    padding: 25px;
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
 }
 
-/* ===== Secciones / Cards ===== */
-.section {
-    background: #fff;
-    padding: 30px 25px;
-    margin-bottom: 30px;
-    border-radius: 25px;
-    box-shadow: 0 10px 25px rgba(244, 143, 177, 0.2);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+/* ===== Acordeón estilo libro ===== */
+.accordion-item {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-.section:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(244, 143, 177, 0.35);
+.accordion-btn {
+  width: 100%;
+  background: var(--accordion-bg);
+  border: none;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
-h2 {
-    color: #d63384;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+.accordion-btn:hover {
+  background: var(--accordion-hover);
+  transform: scale(1.02);
 }
 
-/* ===== Imágenes ===== */
-.img-container {
-    text-align: center;
-    margin: 25px 0;
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #fffaf0;
+  padding: 0 20px;
 }
 
-.img-container img {
-    width: 80%;
-    max-width: 420px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(244, 143, 177, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.accordion-content ul {
+  padding: 15px 0;
+  margin: 0;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
-.img-container img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 12px 25px rgba(244, 143, 177, 0.5);
+.accordion-content img {
+  width: 100%;
+  max-width: 350px;
+  display: block;
+  margin: 15px auto 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* ===== Botones llamativos ===== */
-.btn {
-    display: block;
-    width: 230px;
-    text-align: center;
-    background: linear-gradient(90deg, #f06292, #f48fb1);
-    color: #fff;
-    text-decoration: none;
-    padding: 14px;
-    margin: 25px auto;
-    border-radius: 35px;
-    font-size: 17px;
-    font-weight: 700;
-    box-shadow: 0 8px 20px rgba(244, 143, 177, 0.4);
-    transition: all 0.4s ease;
+/* ===== Botón de regreso ===== */
+.btn-back {
+  display: block;
+  width: 180px;
+  margin: 30px auto;
+  padding: 12px;
+  text-align: center;
+  background: var(--btn-color);
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
 }
 
-.btn:hover {
-    background: linear-gradient(90deg, #f48fb1, #f06292);
-    transform: scale(1.1);
-    box-shadow: 0 12px 28px rgba(244, 143, 177, 0.5);
+.btn-back:hover {
+  background: var(--btn-hover);
+  transform: scale(1.05);
 }
 
-/* ===== Pie de página ===== */
+/* ===== Chatbot burbuja ===== */
+#chatbot-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--btn-color);
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.2s;
+}
+
+#chatbot-bubble:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Chatbot cuadro ===== */
+#chatbot {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 340px;
+  max-width: 90%;
+  background-color: var(--accordion-bg);
+  border: 2px solid var(--btn-color);
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+/* ===== Clase que hace visible el chatbot ===== */
+.visible {
+  display: block !important;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#chat-messages {
+  border: 1px solid var(--btn-color);
+  padding: 10px;
+  height: 280px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#chatbot input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--btn-color);
+}
+
+#chatbot button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--btn-color);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#chatbot button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* ===== Footer ===== */
 footer {
-    background: linear-gradient(135deg, #f48fb1, #f06292);
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.95em;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -6px 15px rgba(0,0,0,0.1);
-    margin-top: 40px;
-}
-
-/* ===== Animaciones ===== */
-.fade-in {
-    opacity: 0;
-    transform: translateY(25px);
-    animation: fadeInUp 0.9s ease forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  text-align: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  margin-top: 50px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 20px 20px 0 0;
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-    nav ul.menu {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .section {
-        padding: 22px 18px;
-    }
-    header {
-        padding: 40px 15px;
-        font-size: 1.8rem;
-    }
-    .btn {
-        width: 80%;
-        font-size: 16px;
-        padding: 12px;
-    }
+  header h1 { font-size: 2rem; }
+  .accordion-btn { font-size: 1.3rem; padding: 15px; }
+  .accordion-content img { max-width: 100%; }
+  .btn-back { width: 80%; }
 }
