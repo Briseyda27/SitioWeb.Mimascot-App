@@ -2,9 +2,11 @@
 body, html { 
   margin: 0; 
   padding: 0; 
-  font-family: 'Arial', sans-serif; 
-  color: #333; 
+  font-family: 'Poppins', 'Arial', sans-serif; 
+  color: #6E4B3A; /* Marrón oscuro para texto principal */
   position: relative; 
+  scroll-behavior: smooth;
+  background-color: #FFF8F0; /* Fondo cálido */
 }
 
 /* ===== Video de fondo y overlay ===== */ 
@@ -23,15 +25,15 @@ body, html {
   left: 0; 
   width: 100%; 
   height: 100%; 
-  background: rgba(255, 245, 228, 0.55); 
+  background: rgba(245, 235, 221, 0.6); /* ligero tono cálido */
   z-index: -1; 
 }
 
 /* ===== Navbar ===== */
 .navbar-container { 
-  background-color: #fcd5ce; /* Pastel rosa suave */
+  background-color: #A9746E; /* Marrón cálido */
   border-radius: 12px; 
-  padding: 25px 30px; 
+  padding: 20px 30px; 
   box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
   display: flex;
   flex-wrap: wrap;
@@ -39,34 +41,35 @@ body, html {
   align-items: center;
 }
 .navbar-brand { 
-  font-size: 1.5rem; 
+  font-size: 1.8rem; 
   font-weight: 700; 
-  color: #961b21 !important; 
+  color: #FFF8F0 !important; 
   letter-spacing: 1px; 
 }
 .navbar-nav { 
   display: flex; 
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 .navbar-nav .nav-link { 
   font-size: 1.1rem; 
-  color: #6c4c4c !important; 
+  color: #FFF8F0 !important; 
   margin: 0 10px; 
   transition: 0.3s; 
 } 
 .navbar-nav .nav-link:hover { 
-  color: #fff; 
-  background-color: #f89cab; 
+  color: #A9746E; 
+  background-color: #FFD97D; /* amarillo suave para hover */
   border-radius: 8px; 
-  padding: 5px 10px; 
+  padding: 5px 12px; 
+  font-weight: 600;
 }
 
 /* ===== Contenido principal ===== */ 
 .main-content { 
   position: relative; 
   z-index: 1; 
-  padding: 120px 15px 50px 15px; 
+  padding: 120px 20px 50px 20px; 
   max-width: 1100px; 
   margin: 0 auto; 
 }
@@ -76,58 +79,56 @@ body, html {
   font-size: 4rem; 
   font-weight: 800; 
   text-align: center; 
-  color: #961b21; 
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3); 
-  margin-top: 45px;   /* Separa del navbar */
-  margin-top: 35px;   /* Separa del navbar */
+  color: #A9746E; 
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.25); 
+  margin-top: 40px; 
 }
-
-/* ===== Subtítulos ===== */ 
 .subtitle { 
   font-size: 1.6rem; 
   text-align: center; 
-  color: #000; 
-  margin-bottom: 50px; 
-  font-weight: 600; 
-  text-shadow: 3px 3px 6px rgba(0,0,0,0.25); 
-} 
+  color: #6E4B3A; 
+  margin-bottom: 60px; 
+  font-weight: 500; 
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.15); 
+}
 
 /* ===== Secciones ===== */
 .section-title { 
-  font-size: 2.2rem; 
-  font-weight: 900; 
-  color: #6c4c4c; 
+  font-size: 2.4rem; 
+  font-weight: 700; 
+  color: #A9746E; 
   text-align: center; 
   margin-bottom: 30px; 
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.3); 
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2); 
 }
 
 /* ===== Historia ===== */ 
 section p { 
-  font-size: 1.1rem; 
-  line-height: 1.7; 
-  color: #1c2125; 
+  font-size: 1.15rem; 
+  line-height: 1.8; 
+  color: #6E4B3A; 
   text-align: justify; 
-  background-color: rgba(255, 255, 255, 0.85); 
-  padding: 20px; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+  background-color: rgba(255, 245, 228, 0.95); /* cálido y legible */
+  padding: 25px; 
+  border-radius: 12px; 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); 
 }
 
-/* ===== Equipo: Cards equilibradas ===== */ 
+/* ===== Equipo ===== */ 
 .team-row { 
   display: flex; 
   align-items: stretch; 
   gap: 25px; 
   margin-bottom: 40px; 
   background-color: rgba(255, 245, 228, 0.95); 
-  padding: 20px; 
-  border-radius: 12px; 
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
-  transition: transform 0.3s; 
+  padding: 25px; 
+  border-radius: 15px; 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+  transition: transform 0.3s, box-shadow 0.3s; 
 }
 .team-row:hover { 
   transform: translateY(-5px); 
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 } 
 .team-row.reverse { 
   flex-direction: row-reverse; 
@@ -140,7 +141,7 @@ section p {
   height: 100%; 
   object-fit: cover; 
   border-radius: 12px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25); 
 } 
 .team-text { 
   flex: 1; 
@@ -151,62 +152,27 @@ section p {
 } 
 .team-text h3 { 
   font-size: 1.8rem; 
-  color: #961b21; 
+  color: #A9746E; 
   margin-bottom: 15px; 
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.3); 
 } 
 .team-text p { 
-  font-size: 1.2rem; 
-  color: #1c2125; 
-  line-height: 1.8; 
+  font-size: 1.15rem; 
+  color: #6E4B3A; 
+  line-height: 1.7; 
   text-align: justify; 
-} 
+}
 
 /* ===== Objetivo, Misión y Visión ===== */
-.objetivo { color: #458fdf; font-weight: 600; } 
-.mision { color: #28a745; font-weight: 600; } 
-.vision { color: #e9862a; font-weight: 600; } 
-
-/* ===== Responsividad para móviles ===== */
-@media (max-width: 768px) {
-  /* Navbar en columna */
-  .navbar-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .navbar-nav .nav-link {
-    margin: 5px 0;
-    padding: 8px;
-    width: 100%;
-    border-radius: 6px;
-  }
-
-  /* Ajuste título */
-  .title {
-    font-size: 2.2rem;
-    margin-top: 80px;
-  }
-
-  .team-row { 
-    flex-direction: column !important; 
-    text-align: center; 
-  } 
-  .team-img-container { 
-    flex: 0 0 70%; 
-    margin: 0 auto 15px auto; 
-  } 
-  .team-text { padding: 0; } 
-  .team-text h3 { font-size: 1.5rem; } 
-  .team-text p { font-size: 1.1rem; line-height: 1.6; } 
-  .subtitle { font-size: 1.2rem; } 
+.info-box {
+  padding: 20px; 
+  margin-bottom: 20px; 
+  border-radius: 12px; 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  background-color: rgba(255,245,228,0.95);
 }
+.objetivo { color: #FFD97D; font-weight: 600; }
+.mision { color: #A9746E; font-weight: 600; }
+.vision { color: #6E4B3A; font-weight: 600; }
 
 /* ===== Fade-in animation ===== */ 
 .fade-in { 
@@ -222,9 +188,26 @@ section p {
 /* ===== Footer ===== */ 
 footer { 
   text-align: center; 
-  padding: 20px; 
-  color: #1d0f0f; 
-  background-color: rgba(126,126,126,0.35); 
+  padding: 25px; 
+  color: #FFF8F0; 
+  background-color: #A9746E; 
+  font-size: 1rem; 
   margin-top: 50px; 
-  font-size: 0.95rem; 
+  border-radius: 12px 12px 0 0;
+}
+
+/* ===== Responsividad ===== */
+@media (max-width: 768px) {
+  .navbar-container { flex-direction: column; text-align: center; padding: 15px; }
+  .navbar-nav { flex-direction: column; width: 100%; }
+  .navbar-nav .nav-link { margin: 5px 0; padding: 8px; width: 100%; border-radius: 6px; }
+
+  .title { font-size: 2.5rem; margin-top: 80px; }
+  .subtitle { font-size: 1.3rem; margin-bottom: 40px; }
+
+  .team-row { flex-direction: column !important; text-align: center; }
+  .team-img-container { flex: 0 0 70%; margin: 0 auto 15px auto; } 
+  .team-text { padding: 0; } 
+  .team-text h3 { font-size: 1.5rem; } 
+  .team-text p { font-size: 1.1rem; line-height: 1.6; } 
 }
