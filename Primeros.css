@@ -56,6 +56,26 @@ header.header {
     height: 160px;
     object-fit: cover;
 }
+* ===== Botón regresar junto a imágenes ===== */
+.btn-regresar {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0 auto;
+    padding: 12px 24px;
+    background-color: #DFAF74;
+    color: #5C4033;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-regresar:hover {
+    background-color: #C48E4E;
+    transform: scale(1.05);
+}
 
 .mascota span {
     display: block;
@@ -172,3 +192,4 @@ footer {
     margin-top: 40px;
     font-size: 0.9rem;
 }
+
