@@ -39,7 +39,8 @@ header.header {
     justify-content: center;
     gap: 25px;
 }
-* ===== Botón regresar junto a imágenes ===== */
+
+/* ===== Botón regresar junto a imágenes ===== */
 .btn-regresar {
     display: block;
     width: fit-content;
@@ -59,7 +60,6 @@ header.header {
     background-color: #C48E4E;
     transform: scale(1.05);
 }
-
 
 .mascota {
     width: 180px;
@@ -193,5 +193,3 @@ footer {
     margin-top: 40px;
     font-size: 0.9rem;
 }
-
-
