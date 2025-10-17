@@ -115,6 +115,29 @@ header p {
   transform: scale(1.05);
 }
 
+/* ===== Botón flotante volver al inicio ===== */
+#btn-flotante {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: var(--btn-color);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#btn-flotante:hover {
+  background-color: var(--btn-hover);
+  transform: scale(1.1);
+}
+
+
 /* ===== Chatbot burbuja ===== */
 #chatbot-bubble {
   position: fixed;
@@ -215,3 +238,4 @@ footer {
   .accordion-content img { max-width: 100%; }
   .btn-back { width: 80%; }
 }
+
