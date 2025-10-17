@@ -8,10 +8,14 @@ body, html {
   scroll-behavior: smooth;
   background-color: #FFF8F0; /* Fondo cálido */
 }
-
 /* ===== Video de fondo y overlay ===== */ 
-.background-video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
-.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 245, 228, 0.55); z-index: -1; }
+.background-video { position: fixed; 
+                   top: 0; left: 0;
+                   width: 100%; height: 100%; 
+                   object-fit: cover; z-index: -2; }
+.overlay { position: fixed; top: 0; left: 0; 
+          width: 100%; height: 100%; background: rgba(255, 245, 228, 0.55); 
+          z-index: -1; }
 
 /* ===== Navbar ===== */
 .navbar-container { 
@@ -195,5 +199,6 @@ footer {
   .team-text h3 { font-size: 1.5rem; } 
   .team-text p { font-size: 1.1rem; line-height: 1.6; } 
 }
+
 
 
