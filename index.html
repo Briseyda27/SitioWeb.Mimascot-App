@@ -5,16 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Registro / Inicio de sesión</title>
   <style>
+    /* ===== Paleta cafés y amarillos ===== */
+    :root {
+      --primary-color: #b38b6d;
+      --secondary-color: #f2d398;
+      --accent-color: #e6c49f;
+      --text-color: #4a3c31;
+      --btn-color: #d9a066;
+      --btn-hover: #c78c4d;
+    }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       height: 100vh;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
+      background: none; /* mantenemos el video como fondo */
     }
+
     video {
       position: fixed;
       top: 50%;
@@ -27,48 +40,52 @@
       transform: translate(-50%, -50%);
       z-index: -2;
     }
+
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        rgba(255, 229, 236, 0.5),
-        rgba(255, 245, 228, 0.5)
-      );
+      background: rgba(242, 211, 152, 0.35); /* superposición ligera */
       z-index: -1;
     }
+
     .container {
-      background: rgba(255, 253, 251, 0.7);
+      background: rgba(255, 253, 251, 0.8);
       backdrop-filter: blur(12px);
-      padding: 25px 30px;
-      border-radius: 15px;
+      padding: 30px 25px;
+      border-radius: 20px;
       max-width: 380px;
       width: 90%;
       text-align: center;
-      color: #6c4c4c;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+      color: var(--text-color);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
       animation: fadeIn 0.8s ease;
       display: none;
     }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     h2 { margin-bottom: 20px; font-weight: 600; }
+
     input {
       width: 90%;
       padding: 12px;
       margin: 10px 0;
       border-radius: 8px;
-      border: 1px solid #f0cfcf;
+      border: 1px solid var(--btn-color);
       font-size: 16px;
       outline: none;
       background-color: #fffdfb;
       transition: box-shadow 0.2s ease;
     }
-    input:focus { box-shadow: 0 0 8px rgba(248, 156, 171, 0.5); }
+
+    input:focus { box-shadow: 0 0 8px rgba(217, 160, 102, 0.5); }
+
     button {
       width: 45%;
       margin: 10px 5%;
@@ -80,36 +97,43 @@
       font-weight: bold;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
+
     button:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
+
     #btn-signup {
-      background-color: #fbb1bd;
+      background-color: var(--btn-color);
       color: white;
     }
-    #btn-signup:hover { background-color: #f89cab; }
+
+    #btn-signup:hover { background-color: var(--btn-hover); }
+
     #btn-login {
-      background-color: #fcd5ce;
-      color: #6c4c4c;
+      background-color: var(--accent-color);
+      color: var(--text-color);
     }
-    #btn-login:hover { background-color: #f8b4a0; color: white; }
+
+    #btn-login:hover { 
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
     #auth-error {
       color: #d9534f;
       font-size: 14px;
       margin-top: 10px;
       min-height: 20px;
     }
+
     @media (max-width: 768px) {
       video {
         object-fit: cover;
         min-width: 100%;
         min-height: 100%;
       }
-      .container {
-        max-width: 95%;
-        padding: 20px;
-      }
+      .container { max-width: 95%; padding: 20px; }
     }
   </style>
 </head>
@@ -133,127 +157,123 @@
   </div>
 
   <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-  import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    onAuthStateChanged
-  } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
-  import {
-    getFirestore,
-    doc,
-    setDoc,
-    getDoc,
-    serverTimestamp,
-    Timestamp
-  } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+    import {
+      getFirestore,
+      doc,
+      setDoc,
+      getDoc,
+      serverTimestamp,
+      Timestamp
+    } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyCBuqWPlOs6rW7bHenhDXSatHiimSI_JQI",
-    authDomain: "acceso-a-clientes-3d5c8.firebaseapp.com",
-    projectId: "acceso-a-clientes-3d5c8",
-    storageBucket: "acceso-a-clientes-3d5c8.firebasestorage.app",
-    messagingSenderId: "313567830869",
-    appId: "1:313567830869:web:7299d327b4b8cfa7a945dc"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBuqWPlOs6rW7bHenhDXSatHiimSI_JQI",
+      authDomain: "acceso-a-clientes-3d5c8.firebaseapp.com",
+      projectId: "acceso-a-clientes-3d5c8",
+      storageBucket: "acceso-a-clientes-3d5c8.firebasestorage.app",
+      messagingSenderId: "313567830869",
+      appId: "1:313567830869:web:7299d327b4b8cfa7a945dc"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-  const formContainer = document.getElementById("formContainer");
-  const errorDiv = document.getElementById("auth-error");
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const formContainer = document.getElementById("formContainer");
+    const errorDiv = document.getElementById("auth-error");
 
-  function addDaysAsTimestamp(date, days) {
-    const d = new Date(date);
-    d.setDate(d.getDate() + days);
-    return Timestamp.fromDate(d);
-  }
-
-  async function handleSignup() {
-    errorDiv.textContent = "";
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    if (password.length < 6) {
-      errorDiv.textContent = "La contraseña debe tener mínimo 6 caracteres.";
-      return;
+    function addDaysAsTimestamp(date, days) {
+      const d = new Date(date);
+      d.setDate(d.getDate() + days);
+      return Timestamp.fromDate(d);
     }
-    try {
-      const cred = await createUserWithEmailAndPassword(auth, email, password);
-      await setDoc(doc(db, "users", cred.user.uid), {
-        email,
-        createdAt: serverTimestamp(),
-        trialEnd: addDaysAsTimestamp(new Date(), 7),
-        subscription: { active: false }
-      });
-    } catch (e) {
-      showAuthError(e);
-    }
-  }
 
-  async function handleLogin() {
-    errorDiv.textContent = "";
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-
-    if (auth.currentUser) return;
-
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (e) {
-      showAuthError(e);
-    }
-  }
-
-  function showAuthError(e) {
-    switch (e.code) {
-      case "auth/user-not-found":
-        errorDiv.textContent = "No existe una cuenta con este correo.";
-        break;
-      case "auth/wrong-password":
-        errorDiv.textContent = "La contraseña no es correcta.";
-        break;
-      case "auth/invalid-email":
-        errorDiv.textContent = "El correo no es válido.";
-        break;
-      case "auth/invalid-credential":
-        errorDiv.textContent = "Credenciales inválidas. Intenta iniciar sesión de nuevo.";
-        break;
-      case "auth/email-already-in-use":
-        errorDiv.textContent = "Este correo ya está registrado.";
-        break;
-      default:
-        errorDiv.textContent = "Error: " + e.message;
-    }
-  }
-
-  document.getElementById("btn-signup").addEventListener("click", handleSignup);
-  document.getElementById("btn-login").addEventListener("click", handleLogin);
-
-  onAuthStateChanged(auth, async (user) => {
-    if (user) {
-      const ref = doc(db, "users", user.uid);
-      const snap = await getDoc(ref);
-      if (snap.exists()) {
-        const data = snap.data();
-        const now = new Date();
-        const trialEnd = data.trialEnd.toDate();
-
-        if (data.subscription?.active || now < trialEnd) {
-          window.location.href = "nosotros.html";
-        } else {
-          window.location.href = "Pago.html";
-        }
+    async function handleSignup() {
+      errorDiv.textContent = "";
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      if (password.length < 6) {
+        errorDiv.textContent = "La contraseña debe tener mínimo 6 caracteres.";
+        return;
       }
-    } else {
-      formContainer.style.display = "block";
+      try {
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        await setDoc(doc(db, "users", cred.user.uid), {
+          email,
+          createdAt: serverTimestamp(),
+          trialEnd: addDaysAsTimestamp(new Date(), 7),
+          subscription: { active: false }
+        });
+      } catch (e) {
+        showAuthError(e);
+      }
     }
-  });
-</script>
+
+    async function handleLogin() {
+      errorDiv.textContent = "";
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (auth.currentUser) return;
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+      } catch (e) {
+        showAuthError(e);
+      }
+    }
+
+    function showAuthError(e) {
+      switch (e.code) {
+        case "auth/user-not-found":
+          errorDiv.textContent = "No existe una cuenta con este correo.";
+          break;
+        case "auth/wrong-password":
+          errorDiv.textContent = "La contraseña no es correcta.";
+          break;
+        case "auth/invalid-email":
+          errorDiv.textContent = "El correo no es válido.";
+          break;
+        case "auth/invalid-credential":
+          errorDiv.textContent = "Credenciales inválidas. Intenta iniciar sesión de nuevo.";
+          break;
+        case "auth/email-already-in-use":
+          errorDiv.textContent = "Este correo ya está registrado.";
+          break;
+        default:
+          errorDiv.textContent = "Error: " + e.message;
+      }
+    }
+
+    document.getElementById("btn-signup").addEventListener("click", handleSignup);
+    document.getElementById("btn-login").addEventListener("click", handleLogin);
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const ref = doc(db, "users", user.uid);
+        const snap = await getDoc(ref);
+        if (snap.exists()) {
+          const data = snap.data();
+          const now = new Date();
+          const trialEnd = data.trialEnd.toDate();
+
+          if (data.subscription?.active || now < trialEnd) {
+            window.location.href = "nosotros.html";
+          } else {
+            window.location.href = "Pago.html";
+          }
+        }
+      } else {
+        formContainer.style.display = "block";
+      }
+    });
+  </script>
 
 </body>
 </html>
-
-
-
-
