@@ -1,131 +1,98 @@
-/* ===== Estilos generales ===== */
+/* ===== Fondo cálido y general ===== */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', 'Arial', sans-serif;
-  color: #5C4033; 
-  position: relative;
-  scroll-behavior: smooth;
-  background-color: #FFF8F0; 
+  font-family: 'Poppins', sans-serif;
+  color: #5C4033;
+  background: linear-gradient(135deg, #f8d071 0%, #e7cca6 50%, #FFF8F0 100%);
+  overflow-x: hidden;
 }
 
-/* ===== Video de fondo y overlay ===== */
-.background-video {
+/* ===== Mascotas animadas flotando ===== */
+.floating-pets {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -2;
+  pointer-events: none;
+  z-index: 0;
 }
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 245, 220, 0.55);
-  z-index: -1;
+.pet {
+  position: absolute;
+  width: 100px;
+  opacity: 0.6;
+  animation: float 12s ease-in-out infinite;
+}
+.pet1 { top: 20%; left: 10%; animation-duration: 14s; }
+.pet2 { top: 50%; left: 80%; animation-duration: 16s; }
+.pet3 { top: 70%; left: 40%; animation-duration: 18s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-40px) rotate(15deg); }
 }
 
 /* ===== Navbar ===== */
 .navbar-container {
-  background-color: #8B5E3C;
+  background: linear-gradient(90deg, #8B5E3C);
   border-radius: 12px;
-  padding: 20px 30px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  padding: 25px 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
+  position: relative;
 }
 .navbar-brand {
-  font-size: 1.8rem;
-  font-weight: 700;
   color: #FFF8F0 !important;
+  font-weight: 800;
+  font-size: 2rem;
   letter-spacing: 1px;
 }
-.navbar-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
 .navbar-nav .nav-link {
-  font-size: 1.1rem;
   color: #FFF8F0 !important;
-  margin: 0 10px;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
   transition: 0.3s;
 }
 .navbar-nav .nav-link:hover {
   color: #8B5E3C;
   background-color: #FFD166;
-  border-radius: 8px;
-  padding: 5px 12px;
-  font-weight: 600;
+  border-radius: 10px;
+  padding: 8px 15px;
+  font-weight: 700;
 }
 
-/* ===== Hero ===== */
-.hero-container {
-  position: relative;
-  z-index: 1;
+/* ===== Título principal ===== */
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #8B5E3C;
   text-align: center;
-  padding: 150px 20px 80px 20px;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.25);
+  margin-top: 160px;
+  margin-bottom: 15px;
 }
-.hero-buttons {
-  margin-top: 30px;
-}
-.btn-hero {
-  background-color: #FFD166;
-  color: #8B5E3C;
-  font-weight: 600;
-  margin: 0 10px;
-  padding: 12px 28px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-.btn-hero:hover {
-  background-color: #FFB800;
-  color: #FFF8F0;
-  transform: translateY(-3px);
-}
-.btn-hero-outline {
-  border: 2px solid #8B5E3C;
-  background: transparent;
-  color: #8B5E3C;
-  padding: 12px 28px;
-  border-radius: 8px;
-  margin: 0 10px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.btn-hero-outline:hover {
-  background-color: #8B5E3C;
-  color: #FFF8F0;
-  transform: translateY(-3px);
+.subtitle {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #5C4033;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.15);
 }
 
 /* ===== Contenido principal ===== */
 .main-content {
   position: relative;
   z-index: 1;
-  padding: 60px 20px 50px 20px;
+  padding: 20px 20px 50px 20px;
   max-width: 1100px;
   margin: 0 auto;
-}
-
-/* ===== Títulos ===== */
-.title {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #8B5E3C;
-  text-shadow: 2px 2px 12px rgba(0,0,0,0.25);
-}
-.subtitle {
-  font-size: 1.6rem;
-  color: #5C4033;
-  margin-top: 20px;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.15);
 }
 
 /* ===== Secciones ===== */
@@ -134,18 +101,16 @@ body, html {
   font-weight: 700;
   color: #8B5E3C;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
-
-/* ===== Historia ===== */
 section p {
   font-size: 1.15rem;
-  line-height: 1.8;
+  line-height: 1.7;
   color: #5C4033;
   text-align: justify;
   background-color: rgba(255, 245, 220, 0.95);
-  padding: 25px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
@@ -155,9 +120,9 @@ section p {
   display: flex;
   align-items: stretch;
   gap: 25px;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
   background-color: rgba(255, 245, 220, 0.95);
-  padding: 25px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -166,12 +131,8 @@ section p {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
-.team-row.reverse {
-  flex-direction: row-reverse;
-}
-.team-img-container {
-  flex: 0 0 250px;
-}
+.team-row.reverse { flex-direction: row-reverse; }
+.team-img-container { flex: 0 0 250px; }
 .team-img {
   width: 100%;
   height: 100%;
@@ -189,7 +150,7 @@ section p {
 .team-text h3 {
   font-size: 1.8rem;
   color: #8B5E3C;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .team-text p {
   font-size: 1.15rem;
@@ -210,7 +171,7 @@ section p {
 .mision { color: #8B5E3C; font-weight: 600; }
 .vision { color: #5C4033; font-weight: 600; }
 
-/* ===== Fade-in animation ===== */
+/* ===== Fade-in ===== */
 .fade-in {
   opacity: 0;
   transform: translateY(50px);
@@ -237,14 +198,11 @@ footer {
   .navbar-container { flex-direction: column; text-align: center; padding: 15px; }
   .navbar-nav { flex-direction: column; width: 100%; }
   .navbar-nav .nav-link { margin: 5px 0; padding: 8px; width: 100%; border-radius: 6px; }
-
-  .title { font-size: 2.5rem; }
-  .subtitle { font-size: 1.3rem; }
-
+  .title { font-size: 2.8rem; margin-top: 100px; }
+  .subtitle { font-size: 1.3rem; margin-bottom: 20px; }
   .team-row { flex-direction: column !important; text-align: center; }
-  .team-img-container { flex: 0 0 70%; margin: 0 auto 15px auto; } 
-  .team-text { padding: 0; } 
-  .team-text h3 { font-size: 1.5rem; } 
-  .team-text p { font-size: 1.1rem; line-height: 1.6; } 
+  .team-img-container { flex: 0 0 70%; margin: 0 auto 15px auto; }
+  .team-text { padding: 0; }
+  .team-text h3 { font-size: 1.5rem; }
+  .team-text p { font-size: 1.1rem; line-height: 1.6; }
 }
-
