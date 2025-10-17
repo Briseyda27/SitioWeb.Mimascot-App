@@ -103,7 +103,7 @@ header.header {
   bottom: 20px;
   left: 20px;
   background-color: var(--btn-color);
-  color: white;
+  color: black;
   border: none;
   padding: 15px 20px;
   border-radius: 50px;
@@ -194,4 +194,5 @@ footer {
     margin-top: 40px;
     font-size: 0.9rem;
 }
+
 
