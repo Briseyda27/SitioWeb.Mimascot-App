@@ -41,6 +41,15 @@
     </div>
   </nav>
 
+  <!-- Hero -->
+  <header class="pelu-hero">
+    <div class="container text-center">
+      <h1>Brilla con estilo</h1>
+      <p>Baño, corte y spa para consentir a tu mejor amigo.</p>
+      <a href="#services" class="btn btn-cta">Ver servicios</a>
+    </div>
+  </header>
+
   <!-- Servicios -->
   <section id="services" class="container my-5">
     <h2 class="text-center mb-4">Nuestras Peluquerías</h2>
@@ -52,6 +61,11 @@
           <div class="card-body">
             <h3 class="card-title">Peluquería Canina El Estilo</h3>
             <p class="card-text">Ofrecemos baño, corte de pelo y manicura para todo tipo de perros.</p>
+            <div class="badges">
+              <span class="badge-soft">Baño</span>
+              <span class="badge-soft">Corte</span>
+              <span class="badge-soft">Spa</span>
+            </div>
             <button class="btn btn-outline-dark" onclick="showBookingForm('Peluquería Canina El Estilo')">Reservar Cita</button>
           </div>
         </div>
@@ -64,6 +78,11 @@
           <div class="card-body">
             <h3 class="card-title">Salón de Belleza Encanto Pet</h3>
             <p class="card-text">Servicio de baño, corte de pelo y cuidado facial para tu mascota.</p>
+            <div class="badges">
+              <span class="badge-soft">Higiene</span>
+              <span class="badge-soft">Estilo</span>
+              <span class="badge-soft">Facial</span>
+            </div>
             <button class="btn btn-outline-dark" onclick="showBookingForm('Salón de Belleza Encanto Pet')">Reservar Cita</button>
           </div>
         </div>
@@ -76,12 +95,19 @@
           <div class="card-body">
             <h3 class="card-title">Peluquería Casa de Mascotas</h3>
             <p class="card-text">Especialistas en cuidado, belleza e higiene de gatos y perros.</p>
+            <div class="badges">
+              <span class="badge-soft">Gatos</span>
+              <span class="badge-soft">Perros</span>
+              <span class="badge-soft">Premium</span>
+            </div>
             <button class="btn btn-outline-dark" onclick="showBookingForm('Peluquería Casa de las Mascotas')">Reservar Cita</button>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  
 
   <!-- Formulario de Reservación -->
   <section id="formulario">
@@ -120,17 +146,17 @@
 
   <!-- Firebase (con módulo) -->
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
     // 🔹 Configuración de Firebase (peluqueria-27fc5)
     const firebaseConfig = {
-      apiKey: "AIzaSyAiifgUwRb_hPYkRcZhdoB7TjzNE_qSSUQ",
-      authDomain: "peluqueria-27fc5.firebaseapp.com",
-      projectId: "peluqueria-27fc5",
-      storageBucket: "peluqueria-27fc5.firebasestorage.app",
-      messagingSenderId: "914933585634",
-      appId: "1:914933585634:web:0645fef68fa6bd1126b0bb"
+      apiKey: "AIzaSyD33ncjm8T17l-_V--FjEFaBZP0HntYnX4",
+      authDomain: "peluq-fb3c5.firebaseapp.com",
+      projectId: "peluq-fb3c5",
+      storageBucket: "peluq-fb3c5.firebasestorage.app",
+      messagingSenderId: "39534335503",
+      appId: "1:39534335503:web:04d8b02dade1987307757a"
     };
 
     const app = initializeApp(firebaseConfig);
